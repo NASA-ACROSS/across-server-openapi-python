@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.permission_api import PermissionApi
+from across.sdk.v2.api.permission_api import PermissionApi
 
 
 class TestPermissionApi(unittest.TestCase):

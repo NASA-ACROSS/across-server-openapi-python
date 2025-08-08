@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.ivoa_obs_category import IVOAObsCategory
+from across.sdk.v2.models.ivoa_obs_category import IVOAObsCategory
 
 class TestIVOAObsCategory(unittest.TestCase):
     """IVOAObsCategory unit test stubs"""

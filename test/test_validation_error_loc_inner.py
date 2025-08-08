@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.validation_error_loc_inner import ValidationErrorLocInner
+from across.sdk.v2.models.validation_error_loc_inner import ValidationErrorLocInner
 
 class TestValidationErrorLocInner(unittest.TestCase):
     """ValidationErrorLocInner unit test stubs"""

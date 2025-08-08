@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.tle_create import TLECreate
+from across.sdk.v1.models.tle_create import TLECreate
 
 # TODO update the JSON string below
 json = "{}"

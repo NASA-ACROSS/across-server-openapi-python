@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.across_server_routes_v1_user_schemas_group_role import AcrossServerRoutesV1UserSchemasGroupRole
+from across.sdk.v2.models.across_server_routes_v1_user_schemas_group_role import AcrossServerRoutesV1UserSchemasGroupRole
 
 class TestAcrossServerRoutesV1UserSchemasGroupRole(unittest.TestCase):
     """AcrossServerRoutesV1UserSchemasGroupRole unit test stubs"""
@@ -38,7 +38,7 @@ class TestAcrossServerRoutesV1UserSchemasGroupRole(unittest.TestCase):
                 id = '',
                 name = '',
                 permissions = [
-                    across/sdk.models.permission.Permission(
+                    across.sdk.v2.models.permission.Permission(
                         id = '', 
                         name = '', )
                     ]
@@ -48,7 +48,7 @@ class TestAcrossServerRoutesV1UserSchemasGroupRole(unittest.TestCase):
                 id = '',
                 name = '',
                 permissions = [
-                    across/sdk.models.permission.Permission(
+                    across.sdk.v2.models.permission.Permission(
                         id = '', 
                         name = '', )
                     ],

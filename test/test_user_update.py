@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.user_update import UserUpdate
+from across.sdk.v2.models.user_update import UserUpdate
 
 class TestUserUpdate(unittest.TestCase):
     """UserUpdate unit test stubs"""

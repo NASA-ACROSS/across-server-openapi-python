@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.id_name_schema import IDNameSchema
+from across.sdk.v2.models.id_name_schema import IDNameSchema
 
 class TestIDNameSchema(unittest.TestCase):
     """IDNameSchema unit test stubs"""

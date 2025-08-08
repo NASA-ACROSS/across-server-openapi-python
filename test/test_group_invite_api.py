@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.group_invite_api import GroupInviteApi
+from across.sdk.v2.api.group_invite_api import GroupInviteApi
 
 
 class TestGroupInviteApi(unittest.TestCase):

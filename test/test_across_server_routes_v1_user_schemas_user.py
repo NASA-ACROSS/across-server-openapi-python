@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
+from across.sdk.v2.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
 
 class TestAcrossServerRoutesV1UserSchemasUser(unittest.TestCase):
     """AcrossServerRoutesV1UserSchemasUser unit test stubs"""
@@ -41,44 +41,44 @@ class TestAcrossServerRoutesV1UserSchemasUser(unittest.TestCase):
                 email = '',
                 id = '',
                 groups = [
-                    across/sdk.models.group.Group(
+                    across.sdk.v2.models.group.Group(
                         id = '', 
                         name = '', 
                         short_name = '', 
                         roles = [
-                            across/sdk.models.group_role.GroupRole(
+                            across.sdk.v2.models.group_role.GroupRole(
                                 id = '', 
                                 name = '', 
                                 permissions = [
-                                    across/sdk.models.permission.Permission(
+                                    across.sdk.v2.models.permission.Permission(
                                         id = '', 
                                         name = '', )
                                     ], )
                             ], )
                     ],
                 roles = [
-                    across/sdk.models.role_base.RoleBase(
+                    across.sdk.v2.models.role_base.RoleBase(
                         name = '', )
                     ],
                 group_roles = [
-                    across/sdk.models.group_role.GroupRole(
+                    across.sdk.v2.models.group_role.GroupRole(
                         id = '', 
                         name = '', 
                         permissions = [
-                            across/sdk.models.permission.Permission(
+                            across.sdk.v2.models.permission.Permission(
                                 id = '', 
                                 name = '', )
                             ], )
                     ],
                 received_invites = [
-                    across/sdk.models.group_invite.GroupInvite(
+                    across.sdk.v2.models.group_invite.GroupInvite(
                         id = '', 
-                        group = across/sdk.models.group_invite_group_details.GroupInviteGroupDetails(
+                        group = across.sdk.v2.models.group_invite_group_details.GroupInviteGroupDetails(
                             id = '', 
                             name = '', 
                             short_name = '', 
                             created_on = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
-                        sender = across/sdk.models.user_info.UserInfo(
+                        sender = across.sdk.v2.models.user_info.UserInfo(
                             username = '', 
                             first_name = '', 
                             last_name = '', 
@@ -94,44 +94,44 @@ class TestAcrossServerRoutesV1UserSchemasUser(unittest.TestCase):
                 email = '',
                 id = '',
                 groups = [
-                    across/sdk.models.group.Group(
+                    across.sdk.v2.models.group.Group(
                         id = '', 
                         name = '', 
                         short_name = '', 
                         roles = [
-                            across/sdk.models.group_role.GroupRole(
+                            across.sdk.v2.models.group_role.GroupRole(
                                 id = '', 
                                 name = '', 
                                 permissions = [
-                                    across/sdk.models.permission.Permission(
+                                    across.sdk.v2.models.permission.Permission(
                                         id = '', 
                                         name = '', )
                                     ], )
                             ], )
                     ],
                 roles = [
-                    across/sdk.models.role_base.RoleBase(
+                    across.sdk.v2.models.role_base.RoleBase(
                         name = '', )
                     ],
                 group_roles = [
-                    across/sdk.models.group_role.GroupRole(
+                    across.sdk.v2.models.group_role.GroupRole(
                         id = '', 
                         name = '', 
                         permissions = [
-                            across/sdk.models.permission.Permission(
+                            across.sdk.v2.models.permission.Permission(
                                 id = '', 
                                 name = '', )
                             ], )
                     ],
                 received_invites = [
-                    across/sdk.models.group_invite.GroupInvite(
+                    across.sdk.v2.models.group_invite.GroupInvite(
                         id = '', 
-                        group = across/sdk.models.group_invite_group_details.GroupInviteGroupDetails(
+                        group = across.sdk.v2.models.group_invite_group_details.GroupInviteGroupDetails(
                             id = '', 
                             name = '', 
                             short_name = '', 
                             created_on = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
-                        sender = across/sdk.models.user_info.UserInfo(
+                        sender = across.sdk.v2.models.user_info.UserInfo(
                             username = '', 
                             first_name = '', 
                             last_name = '', 

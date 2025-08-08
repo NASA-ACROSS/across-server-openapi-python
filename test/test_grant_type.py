@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.grant_type import GrantType
+from across.sdk.v2.models.grant_type import GrantType
 
 class TestGrantType(unittest.TestCase):
     """GrantType unit test stubs"""

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.tle_parameters import TLEParameters
+from across.sdk.v1.models.tle_parameters import TLEParameters
 
 # TODO update the JSON string below
 json = "{}"

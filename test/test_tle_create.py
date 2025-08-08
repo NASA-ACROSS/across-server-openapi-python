@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.tle_create import TLECreate
+from across.sdk.v2.models.tle_create import TLECreate
 
 class TestTLECreate(unittest.TestCase):
     """TLECreate unit test stubs"""

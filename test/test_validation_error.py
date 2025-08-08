@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.validation_error import ValidationError
+from across.sdk.v2.models.validation_error import ValidationError
 
 class TestValidationError(unittest.TestCase):
     """ValidationError unit test stubs"""

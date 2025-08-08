@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.date_range import DateRange
+from across.sdk.v2.models.date_range import DateRange
 
 class TestDateRange(unittest.TestCase):
     """DateRange unit test stubs"""

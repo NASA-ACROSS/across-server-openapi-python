@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.depth_unit import DepthUnit
+from across.sdk.v2.models.depth_unit import DepthUnit
 
 class TestDepthUnit(unittest.TestCase):
     """DepthUnit unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.user_api import UserApi
+from across.sdk.v2.api.user_api import UserApi
 
 
 class TestUserApi(unittest.TestCase):

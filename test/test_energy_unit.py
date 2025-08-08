@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.energy_unit import EnergyUnit
+from across.sdk.v2.models.energy_unit import EnergyUnit
 
 class TestEnergyUnit(unittest.TestCase):
     """EnergyUnit unit test stubs"""

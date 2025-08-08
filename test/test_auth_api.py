@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.auth_api import AuthApi
+from across.sdk.v2.api.auth_api import AuthApi
 
 
 class TestAuthApi(unittest.TestCase):

@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.observatory_ephemeris_type import ObservatoryEphemerisType
+from across.sdk.v2.models.observatory_ephemeris_type import ObservatoryEphemerisType
 
 class TestObservatoryEphemerisType(unittest.TestCase):
     """ObservatoryEphemerisType unit test stubs"""

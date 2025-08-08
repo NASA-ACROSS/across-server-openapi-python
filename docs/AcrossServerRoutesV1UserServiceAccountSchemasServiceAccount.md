@@ -6,17 +6,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**user_id** | **str** |  | 
 **name** | **str** |  | 
 **description** | **str** |  | 
 **expiration** | **datetime** |  | 
 **expiration_duration** | **int** |  | 
-**group_roles** | [**List[AcrossServerRoutesV1UserSchemasGroupRole]**](AcrossServerRoutesV1UserSchemasGroupRole.md) |  | 
+**group_roles** | [**List[GroupRoleRead]**](GroupRoleRead.md) |  | 
 
 ## Example
 
 ```python
-from across/sdk.models.across_server_routes_v1_user_service_account_schemas_service_account import AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount
+from across.sdk.v1.models.across_server_routes_v1_user_service_account_schemas_service_account import AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount
 
 # TODO update the JSON string below
 json = "{}"

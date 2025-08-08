@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.wavelength_unit import WavelengthUnit
+from across.sdk.v2.models.wavelength_unit import WavelengthUnit
 
 class TestWavelengthUnit(unittest.TestCase):
     """WavelengthUnit unit test stubs"""

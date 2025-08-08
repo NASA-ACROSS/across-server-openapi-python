@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.energy_bandpass import EnergyBandpass
+from across.sdk.v2.models.energy_bandpass import EnergyBandpass
 
 class TestEnergyBandpass(unittest.TestCase):
     """EnergyBandpass unit test stubs"""

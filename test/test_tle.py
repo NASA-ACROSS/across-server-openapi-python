@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.tle import TLE
+from across.sdk.v2.models.tle import TLE
 
 class TestTLE(unittest.TestCase):
     """TLE unit test stubs"""

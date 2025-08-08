@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.bandpass import Bandpass
+from across.sdk.v2.models.bandpass import Bandpass
 
 class TestBandpass(unittest.TestCase):
     """Bandpass unit test stubs"""

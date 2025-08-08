@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.observatory_type import ObservatoryType
+from across.sdk.v2.models.observatory_type import ObservatoryType
 
 class TestObservatoryType(unittest.TestCase):
     """ObservatoryType unit test stubs"""

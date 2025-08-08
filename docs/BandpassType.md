@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.bandpass_type import BandpassType
+from across.sdk.v1.models.bandpass_type import BandpassType
 
 # TODO update the JSON string below
 json = "{}"

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.telescope import Telescope
+from across.sdk.v1.models.telescope import Telescope
 
 # TODO update the JSON string below
 json = "{}"

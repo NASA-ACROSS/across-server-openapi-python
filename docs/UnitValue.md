@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.unit_value import UnitValue
+from across.sdk.v1.models.unit_value import UnitValue
 
 # TODO update the JSON string below
 json = "{}"

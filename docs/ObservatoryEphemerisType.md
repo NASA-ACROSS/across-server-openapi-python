@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.observatory_ephemeris_type import ObservatoryEphemerisType
+from across.sdk.v1.models.observatory_ephemeris_type import ObservatoryEphemerisType
 
 # TODO update the JSON string below
 json = "{}"

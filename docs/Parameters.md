@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.parameters import Parameters
+from across.sdk.v1.models.parameters import Parameters
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.observation_status import ObservationStatus
+from across.sdk.v2.models.observation_status import ObservationStatus
 
 class TestObservationStatus(unittest.TestCase):
     """ObservationStatus unit test stubs"""

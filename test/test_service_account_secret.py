@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.service_account_secret import ServiceAccountSecret
+from across.sdk.v2.models.service_account_secret import ServiceAccountSecret
 
 class TestServiceAccountSecret(unittest.TestCase):
     """ServiceAccountSecret unit test stubs"""
@@ -42,11 +42,11 @@ class TestServiceAccountSecret(unittest.TestCase):
                 expiration = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 expiration_duration = 56,
                 group_roles = [
-                    across/sdk.models.group_role.GroupRole(
+                    across.sdk.v2.models.group_role.GroupRole(
                         id = '', 
                         name = '', 
                         permissions = [
-                            across/sdk.models.permission.Permission(
+                            across.sdk.v2.models.permission.Permission(
                                 id = '', 
                                 name = '', )
                             ], )
@@ -62,11 +62,11 @@ class TestServiceAccountSecret(unittest.TestCase):
                 expiration = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 expiration_duration = 56,
                 group_roles = [
-                    across/sdk.models.group_role.GroupRole(
+                    across.sdk.v2.models.group_role.GroupRole(
                         id = '', 
                         name = '', 
                         permissions = [
-                            across/sdk.models.permission.Permission(
+                            across.sdk.v2.models.permission.Permission(
                                 id = '', 
                                 name = '', )
                             ], )

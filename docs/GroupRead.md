@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** |  | 
 **name** | **str** |  | 
 **short_name** | **str** |  | 
-**id** | **str** |  | 
 
 ## Example
 
 ```python
-from across/sdk.models.group_read import GroupRead
+from across.sdk.v1.models.group_read import GroupRead
 
 # TODO update the JSON string below
 json = "{}"

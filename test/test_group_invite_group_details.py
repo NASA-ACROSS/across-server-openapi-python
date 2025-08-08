@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.group_invite_group_details import GroupInviteGroupDetails
+from across.sdk.v2.models.group_invite_group_details import GroupInviteGroupDetails
 
 class TestGroupInviteGroupDetails(unittest.TestCase):
     """GroupInviteGroupDetails unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.frequency_unit import FrequencyUnit
+from across.sdk.v2.models.frequency_unit import FrequencyUnit
 
 class TestFrequencyUnit(unittest.TestCase):
     """FrequencyUnit unit test stubs"""

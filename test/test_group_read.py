@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.group_read import GroupRead
+from across.sdk.v2.models.group_read import GroupRead
 
 class TestGroupRead(unittest.TestCase):
     """GroupRead unit test stubs"""

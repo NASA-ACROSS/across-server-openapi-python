@@ -24,3 +24,6 @@
 
 .gitlab*
 .travis*
+git_push.sh
+pyproject.toml
+.github/**/*

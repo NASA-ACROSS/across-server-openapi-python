@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.across_server_routes_v1_group_role_schemas_group_role import AcrossServerRoutesV1GroupRoleSchemasGroupRole
+from across.sdk.v2.models.across_server_routes_v1_group_role_schemas_group_role import AcrossServerRoutesV1GroupRoleSchemasGroupRole
 
 class TestAcrossServerRoutesV1GroupRoleSchemasGroupRole(unittest.TestCase):
     """AcrossServerRoutesV1GroupRoleSchemasGroupRole unit test stubs"""
@@ -37,13 +37,13 @@ class TestAcrossServerRoutesV1GroupRoleSchemasGroupRole(unittest.TestCase):
             return AcrossServerRoutesV1GroupRoleSchemasGroupRole(
                 name = '',
                 permissions = [
-                    across/sdk.models.permission.Permission(
+                    across.sdk.v2.models.permission.Permission(
                         id = '', 
                         name = '', )
                     ],
                 id = '',
                 users = [
-                    across/sdk.models.user.User(
+                    across.sdk.v2.models.user.User(
                         id = '', 
                         first_name = '', 
                         last_name = '', 
@@ -51,11 +51,11 @@ class TestAcrossServerRoutesV1GroupRoleSchemasGroupRole(unittest.TestCase):
                         email = '', )
                     ],
                 service_accounts = [
-                    across/sdk.models.service_account.ServiceAccount(
+                    across.sdk.v2.models.service_account.ServiceAccount(
                         id = '', 
                         name = '', 
                         description = '', 
-                        user = across/sdk.models.user.User(
+                        user = across.sdk.v2.models.user.User(
                             id = '', 
                             first_name = '', 
                             last_name = '', 
@@ -67,13 +67,13 @@ class TestAcrossServerRoutesV1GroupRoleSchemasGroupRole(unittest.TestCase):
             return AcrossServerRoutesV1GroupRoleSchemasGroupRole(
                 name = '',
                 permissions = [
-                    across/sdk.models.permission.Permission(
+                    across.sdk.v2.models.permission.Permission(
                         id = '', 
                         name = '', )
                     ],
                 id = '',
                 users = [
-                    across/sdk.models.user.User(
+                    across.sdk.v2.models.user.User(
                         id = '', 
                         first_name = '', 
                         last_name = '', 
@@ -81,11 +81,11 @@ class TestAcrossServerRoutesV1GroupRoleSchemasGroupRole(unittest.TestCase):
                         email = '', )
                     ],
                 service_accounts = [
-                    across/sdk.models.service_account.ServiceAccount(
+                    across.sdk.v2.models.service_account.ServiceAccount(
                         id = '', 
                         name = '', 
                         description = '', 
-                        user = across/sdk.models.user.User(
+                        user = across.sdk.v2.models.user.User(
                             id = '', 
                             first_name = '', 
                             last_name = '', 

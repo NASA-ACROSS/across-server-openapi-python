@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.schedule_status import ScheduleStatus
+from across.sdk.v2.models.schedule_status import ScheduleStatus
 
 class TestScheduleStatus(unittest.TestCase):
     """ScheduleStatus unit test stubs"""

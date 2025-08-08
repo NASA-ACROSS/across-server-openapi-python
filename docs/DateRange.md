@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.date_range import DateRange
+from across.sdk.v1.models.date_range import DateRange
 
 # TODO update the JSON string below
 json = "{}"

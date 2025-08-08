@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.group_api import GroupApi
+from across.sdk.v2.api.group_api import GroupApi
 
 
 class TestGroupApi(unittest.TestCase):

@@ -5,12 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** |  | 
 **name** | **str** |  | 
 
 ## Example
 
 ```python
-from across/sdk.models.role_base import RoleBase
+from across.sdk.v1.models.role_base import RoleBase
 
 # TODO update the JSON string below
 json = "{}"

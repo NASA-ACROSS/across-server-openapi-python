@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.across_server_routes_v1_group_invite_schemas_group_invite import AcrossServerRoutesV1GroupInviteSchemasGroupInvite
+from across.sdk.v2.models.across_server_routes_v1_group_invite_schemas_group_invite import AcrossServerRoutesV1GroupInviteSchemasGroupInvite
 
 class TestAcrossServerRoutesV1GroupInviteSchemasGroupInvite(unittest.TestCase):
     """AcrossServerRoutesV1GroupInviteSchemasGroupInvite unit test stubs"""
@@ -36,17 +36,17 @@ class TestAcrossServerRoutesV1GroupInviteSchemasGroupInvite(unittest.TestCase):
         if include_optional:
             return AcrossServerRoutesV1GroupInviteSchemasGroupInvite(
                 id = '',
-                group = across/sdk.models.group_read.GroupRead(
+                group = across.sdk.v2.models.group_read.GroupRead(
                     name = '', 
                     short_name = '', 
                     id = '', ),
-                receiver = across/sdk.models.user_info.UserInfo(
+                receiver = across.sdk.v2.models.user_info.UserInfo(
                     username = '', 
                     first_name = '', 
                     last_name = '', 
                     email = '', 
                     id = '', ),
-                sender = across/sdk.models.user_info.UserInfo(
+                sender = across.sdk.v2.models.user_info.UserInfo(
                     username = '', 
                     first_name = '', 
                     last_name = '', 
@@ -56,17 +56,17 @@ class TestAcrossServerRoutesV1GroupInviteSchemasGroupInvite(unittest.TestCase):
         else:
             return AcrossServerRoutesV1GroupInviteSchemasGroupInvite(
                 id = '',
-                group = across/sdk.models.group_read.GroupRead(
+                group = across.sdk.v2.models.group_read.GroupRead(
                     name = '', 
                     short_name = '', 
                     id = '', ),
-                receiver = across/sdk.models.user_info.UserInfo(
+                receiver = across.sdk.v2.models.user_info.UserInfo(
                     username = '', 
                     first_name = '', 
                     last_name = '', 
                     email = '', 
                     id = '', ),
-                sender = across/sdk.models.user_info.UserInfo(
+                sender = across.sdk.v2.models.user_info.UserInfo(
                     username = '', 
                     first_name = '', 
                     last_name = '', 

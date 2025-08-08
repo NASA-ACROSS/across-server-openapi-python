@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.across_server_routes_v1_user_schemas_group_invite import AcrossServerRoutesV1UserSchemasGroupInvite
+from across.sdk.v2.models.across_server_routes_v1_user_schemas_group_invite import AcrossServerRoutesV1UserSchemasGroupInvite
 
 class TestAcrossServerRoutesV1UserSchemasGroupInvite(unittest.TestCase):
     """AcrossServerRoutesV1UserSchemasGroupInvite unit test stubs"""
@@ -36,12 +36,12 @@ class TestAcrossServerRoutesV1UserSchemasGroupInvite(unittest.TestCase):
         if include_optional:
             return AcrossServerRoutesV1UserSchemasGroupInvite(
                 id = '',
-                group = across/sdk.models.group_invite_group_details.GroupInviteGroupDetails(
+                group = across.sdk.v2.models.group_invite_group_details.GroupInviteGroupDetails(
                     id = '', 
                     name = '', 
                     short_name = '', 
                     created_on = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ),
-                sender = across/sdk.models.user_info.UserInfo(
+                sender = across.sdk.v2.models.user_info.UserInfo(
                     username = '', 
                     first_name = '', 
                     last_name = '', 
@@ -51,12 +51,12 @@ class TestAcrossServerRoutesV1UserSchemasGroupInvite(unittest.TestCase):
         else:
             return AcrossServerRoutesV1UserSchemasGroupInvite(
                 id = '',
-                group = across/sdk.models.group_invite_group_details.GroupInviteGroupDetails(
+                group = across.sdk.v2.models.group_invite_group_details.GroupInviteGroupDetails(
                     id = '', 
                     name = '', 
                     short_name = '', 
                     created_on = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ),
-                sender = across/sdk.models.user_info.UserInfo(
+                sender = across.sdk.v2.models.user_info.UserInfo(
                     username = '', 
                     first_name = '', 
                     last_name = '', 

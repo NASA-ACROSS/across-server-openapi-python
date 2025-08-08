@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.telescope import Telescope
+from across.sdk.v2.models.telescope import Telescope
 
 class TestTelescope(unittest.TestCase):
     """Telescope unit test stubs"""
@@ -39,12 +39,12 @@ class TestTelescope(unittest.TestCase):
                 created_on = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 name = '',
                 short_name = '',
-                observatory = across/sdk.models.id_name_schema.IDNameSchema(
+                observatory = across.sdk.v2.models.id_name_schema.IDNameSchema(
                     id = '', 
                     name = '', 
                     short_name = '', ),
                 instruments = [
-                    across/sdk.models.id_name_schema.IDNameSchema(
+                    across.sdk.v2.models.id_name_schema.IDNameSchema(
                         id = '', 
                         name = '', 
                         short_name = '', )

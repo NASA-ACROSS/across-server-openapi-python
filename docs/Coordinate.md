@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.coordinate import Coordinate
+from across.sdk.v1.models.coordinate import Coordinate
 
 # TODO update the JSON string below
 json = "{}"

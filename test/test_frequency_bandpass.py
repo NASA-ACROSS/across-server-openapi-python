@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.frequency_bandpass import FrequencyBandpass
+from across.sdk.v2.models.frequency_bandpass import FrequencyBandpass
 
 class TestFrequencyBandpass(unittest.TestCase):
     """FrequencyBandpass unit test stubs"""

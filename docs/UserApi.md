@@ -1,4 +1,4 @@
-# across/sdk.UserApi
+# across.sdk.v1.UserApi
 
 All URIs are relative to */api/v1*
 
@@ -27,13 +27,13 @@ Accept a group invitation to join a user group.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -43,14 +43,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.UserApi(api_client)
+    api_instance = across.sdk.v1.UserApi(api_client)
     user_id = 'user_id_example' # str | 
     invite_id = 'invite_id_example' # str | 
 
@@ -106,14 +106,14 @@ Create a new user for ACROSS.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.user_create import UserCreate
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.user_create import UserCreate
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -123,15 +123,15 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.UserApi(api_client)
-    user_create = across/sdk.UserCreate() # UserCreate | 
+    api_instance = across.sdk.v1.UserApi(api_client)
+    user_create = across.sdk.v1.UserCreate() # UserCreate | 
 
     try:
         # Create a user
@@ -186,13 +186,13 @@ Decline a group invitation to refuse joining a user group.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -202,14 +202,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.UserApi(api_client)
+    api_instance = across.sdk.v1.UserApi(api_client)
     user_id = 'user_id_example' # str | 
     invite_id = 'invite_id_example' # str | 
 
@@ -264,22 +264,22 @@ Permanently delete a user from the ACROSS system. This will also delete all asso
 
 
 ```python
-import across/sdk
-from across/sdk.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.UserApi(api_client)
+    api_instance = across.sdk.v1.UserApi(api_client)
     user_id = 'user_id_example' # str | 
 
     try:
@@ -335,14 +335,14 @@ Read a user's group invites by a user ID.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.across_server_routes_v1_user_schemas_group_invite import AcrossServerRoutesV1UserSchemasGroupInvite
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.across_server_routes_v1_user_schemas_group_invite import AcrossServerRoutesV1UserSchemasGroupInvite
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -352,14 +352,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.UserApi(api_client)
+    api_instance = across.sdk.v1.UserApi(api_client)
     user_id = 'user_id_example' # str | 
 
     try:
@@ -415,14 +415,14 @@ Read a user by a user ID.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -432,14 +432,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.UserApi(api_client)
+    api_instance = across.sdk.v1.UserApi(api_client)
     user_id = 'user_id_example' # str | 
 
     try:
@@ -492,22 +492,22 @@ Get Many
 
 
 ```python
-import across/sdk
-from across/sdk.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.UserApi(api_client)
+    api_instance = across.sdk.v1.UserApi(api_client)
 
     try:
         # Get Many
@@ -558,13 +558,13 @@ Leave a group by id
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -574,14 +574,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.UserApi(api_client)
+    api_instance = across.sdk.v1.UserApi(api_client)
     user_id = 'user_id_example' # str | 
     group_id = 'group_id_example' # str | 
 
@@ -637,15 +637,15 @@ Update a user's information for the allowed properties.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
-from across/sdk.models.user_update import UserUpdate
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
+from across.sdk.v1.models.user_update import UserUpdate
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -655,16 +655,16 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.UserApi(api_client)
+    api_instance = across.sdk.v1.UserApi(api_client)
     user_id = 'user_id_example' # str | 
-    user_update = across/sdk.UserUpdate() # UserUpdate | 
+    user_update = across.sdk.v1.UserUpdate() # UserUpdate | 
 
     try:
         # Update a user

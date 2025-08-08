@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.instrument import Instrument
+from across.sdk.v2.models.instrument import Instrument
 
 class TestInstrument(unittest.TestCase):
     """Instrument unit test stubs"""
@@ -39,19 +39,19 @@ class TestInstrument(unittest.TestCase):
                 created_on = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 name = '',
                 short_name = '',
-                telescope = across/sdk.models.id_name_schema.IDNameSchema(
+                telescope = across.sdk.v2.models.id_name_schema.IDNameSchema(
                     id = '', 
                     name = '', 
                     short_name = '', ),
                 footprints = [
                     [
-                        across/sdk.models.point.Point(
+                        across.sdk.v2.models.point.Point(
                             x = 1.337, 
                             y = 1.337, )
                         ]
                     ],
                 filters = [
-                    across/sdk.models.filter.Filter(
+                    across.sdk.v2.models.filter.Filter(
                         id = '', 
                         created_on = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         name = '', 

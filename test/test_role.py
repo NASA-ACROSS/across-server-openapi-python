@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.role import Role
+from across.sdk.v2.models.role import Role
 
 class TestRole(unittest.TestCase):
     """Role unit test stubs"""
@@ -38,7 +38,7 @@ class TestRole(unittest.TestCase):
                 name = '',
                 id = '',
                 users = [
-                    across/sdk.models.user.User(
+                    across.sdk.v2.models.user.User(
                         id = '', 
                         first_name = '', 
                         last_name = '', 
@@ -51,7 +51,7 @@ class TestRole(unittest.TestCase):
                 name = '',
                 id = '',
                 users = [
-                    across/sdk.models.user.User(
+                    across.sdk.v2.models.user.User(
                         id = '', 
                         first_name = '', 
                         last_name = '', 

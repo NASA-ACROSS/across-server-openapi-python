@@ -5,16 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** |  | 
 **name** | **str** |  | 
 **short_name** | **str** |  | 
-**id** | **str** |  | 
 **users** | [**List[AcrossServerRoutesV1GroupSchemasUser]**](AcrossServerRoutesV1GroupSchemasUser.md) |  | 
 **roles** | [**List[AcrossServerRoutesV1GroupRoleSchemasGroupRole]**](AcrossServerRoutesV1GroupRoleSchemasGroupRole.md) |  | 
 
 ## Example
 
 ```python
-from across/sdk.models.across_server_routes_v1_group_schemas_group import AcrossServerRoutesV1GroupSchemasGroup
+from across.sdk.v1.models.across_server_routes_v1_group_schemas_group import AcrossServerRoutesV1GroupSchemasGroup
 
 # TODO update the JSON string below
 json = "{}"

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.permission import Permission
+from across.sdk.v1.models.permission import Permission
 
 # TODO update the JSON string below
 json = "{}"

@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
+from across.sdk.v1.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
 
 # TODO update the JSON string below
 json = "{}"

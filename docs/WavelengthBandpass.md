@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.wavelength_bandpass import WavelengthBandpass
+from across.sdk.v1.models.wavelength_bandpass import WavelengthBandpass
 
 # TODO update the JSON string below
 json = "{}"

@@ -1,20 +1,20 @@
 [project]
-name = "across/sdk"
-version = "1.0.0"
+name = "across-server-openapi-python"
+version = "0.0.1"
 description = "FastAPI"
 authors = [
-  {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
+  { name = "OpenAPI Generator Community", email = "team@openapitools.org" },
 ]
-license = "NoLicense"
+license = { file = "LICENSE" }
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "FastAPI"]
-requires-python = "^3.9"
+requires-python = ">3.9"
 
 dependencies = [
   "urllib3 (>=2.1.0,<3.0.0)",
   "python-dateutil (>=2.8.2)",
   "pydantic (>=2)",
-  "typing-extensions (>=4.7.1)"
+  "typing-extensions (>=4.7.1)",
 ]
 
 [project.urls]
@@ -41,7 +41,7 @@ extension-pkg-whitelist = "pydantic"
 
 [tool.mypy]
 files = [
-  "across/sdk",
+  "across.sdk.v1",
   #"test",  # auto-generated tests
   "tests", # hand-written tests
 ]
@@ -78,9 +78,7 @@ disallow_any_generics = true
 #warn_return_any = true
 
 [[tool.mypy.overrides]]
-module = [
-  "across/sdk.configuration",
-]
+module = ["across.sdk.v1.configuration"]
 warn_unused_ignores = true
 strict_equality = true
 extra_checks = true

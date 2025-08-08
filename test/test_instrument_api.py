@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.instrument_api import InstrumentApi
+from across.sdk.v2.api.instrument_api import InstrumentApi
 
 
 class TestInstrumentApi(unittest.TestCase):

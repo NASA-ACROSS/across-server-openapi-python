@@ -1,4 +1,4 @@
-# across/sdk.ObservationApi
+# across.sdk.v1.ObservationApi
 
 All URIs are relative to */api/v1*
 
@@ -19,22 +19,22 @@ Read an observation by an observation ID.
 
 
 ```python
-import across/sdk
-from across/sdk.models.observation import Observation
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.observation import Observation
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.ObservationApi(api_client)
+    api_instance = across.sdk.v1.ObservationApi(api_client)
     observation_id = 'observation_id_example' # str | 
 
     try:
@@ -89,44 +89,44 @@ Read the observations based on query params
 
 
 ```python
-import across/sdk
-from across/sdk.models.depth_unit import DepthUnit
-from across/sdk.models.observation import Observation
-from across/sdk.models.observation_status import ObservationStatus
-from across/sdk.models.observation_type import ObservationType
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.depth_unit import DepthUnit
+from across.sdk.v1.models.observation import Observation
+from across.sdk.v1.models.observation_status import ObservationStatus
+from across.sdk.v1.models.observation_type import ObservationType
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.ObservationApi(api_client)
+    api_instance = across.sdk.v1.ObservationApi(api_client)
     external_id = 'external_id_example' # str |  (optional)
     schedule_ids = ['schedule_ids_example'] # List[Optional[str]] |  (optional)
     observatory_ids = ['observatory_ids_example'] # List[str] |  (optional)
     telescope_ids = ['telescope_ids_example'] # List[str] |  (optional)
     instrument_ids = ['instrument_ids_example'] # List[str] |  (optional)
-    status = across/sdk.ObservationStatus() # ObservationStatus |  (optional)
+    status = across.sdk.v1.ObservationStatus() # ObservationStatus |  (optional)
     proposal = 'proposal_example' # str |  (optional)
     object_name = 'object_name_example' # str |  (optional)
     date_range_begin = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     date_range_end = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     bandpass_min = 3.4 # float |  (optional)
     bandpass_max = 3.4 # float |  (optional)
-    bandpass_type = across/sdk.BandpassType() # BandpassType |  (optional)
+    bandpass_type = across.sdk.v1.BandpassType() # BandpassType |  (optional)
     cone_search_ra = 3.4 # float |  (optional)
     cone_search_dec = 3.4 # float |  (optional)
     cone_search_radius = 3.4 # float |  (optional)
-    type = across/sdk.ObservationType() # ObservationType |  (optional)
+    type = across.sdk.v1.ObservationType() # ObservationType |  (optional)
     depth_value = 3.4 # float |  (optional)
-    depth_unit = across/sdk.DepthUnit() # DepthUnit |  (optional)
+    depth_unit = across.sdk.v1.DepthUnit() # DepthUnit |  (optional)
 
     try:
         # Read observations(s)

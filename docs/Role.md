@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** |  | 
 **id** | **str** |  | 
+**name** | **str** |  | 
 **users** | [**List[AcrossServerRoutesV1RoleSchemasUser]**](AcrossServerRoutesV1RoleSchemasUser.md) |  | 
 
 ## Example
 
 ```python
-from across/sdk.models.role import Role
+from across.sdk.v1.models.role import Role
 
 # TODO update the JSON string below
 json = "{}"

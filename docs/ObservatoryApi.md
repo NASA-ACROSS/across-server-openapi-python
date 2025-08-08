@@ -1,4 +1,4 @@
-# across/sdk.ObservatoryApi
+# across.sdk.v1.ObservatoryApi
 
 All URIs are relative to */api/v1*
 
@@ -19,29 +19,29 @@ Read many observatories based on query params
 
 
 ```python
-import across/sdk
-from across/sdk.models.ephemeris_type import EphemerisType
-from across/sdk.models.observatory import Observatory
-from across/sdk.models.observatory_type import ObservatoryType
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.ephemeris_type import EphemerisType
+from across.sdk.v1.models.observatory import Observatory
+from across.sdk.v1.models.observatory_type import ObservatoryType
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.ObservatoryApi(api_client)
+    api_instance = across.sdk.v1.ObservatoryApi(api_client)
     name = 'name_example' # str |  (optional)
-    type = across/sdk.ObservatoryType() # ObservatoryType |  (optional)
+    type = across.sdk.v1.ObservatoryType() # ObservatoryType |  (optional)
     telescope_name = 'telescope_name_example' # str |  (optional)
     telescope_id = 'telescope_id_example' # str |  (optional)
-    ephemeris_type = [across/sdk.EphemerisType()] # List[EphemerisType] |  (optional)
+    ephemeris_type = [across.sdk.v1.EphemerisType()] # List[EphemerisType] |  (optional)
     created_on = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
     try:
@@ -101,22 +101,22 @@ Read a observatory by a observatory ID.
 
 
 ```python
-import across/sdk
-from across/sdk.models.observatory import Observatory
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.observatory import Observatory
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.ObservatoryApi(api_client)
+    api_instance = across.sdk.v1.ObservatoryApi(api_client)
     observatory_id = 'observatory_id_example' # str | 
 
     try:

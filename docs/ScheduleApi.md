@@ -1,4 +1,4 @@
-# across/sdk.ScheduleApi
+# across.sdk.v1.ScheduleApi
 
 All URIs are relative to */api/v1*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_many_schedules**
-> List[Optional[str]] create_many_schedules(schedule_create_many)
+> List[str] create_many_schedules(schedule_create_many)
 
 Create many Schedules
 
@@ -23,14 +23,14 @@ Create many new observing schedules for ACROSS.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.schedule_create_many import ScheduleCreateMany
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.schedule_create_many import ScheduleCreateMany
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -40,15 +40,15 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.ScheduleApi(api_client)
-    schedule_create_many = across/sdk.ScheduleCreateMany() # ScheduleCreateMany | 
+    api_instance = across.sdk.v1.ScheduleApi(api_client)
+    schedule_create_many = across.sdk.v1.ScheduleCreateMany() # ScheduleCreateMany | 
 
     try:
         # Create many Schedules
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List[Optional[str]]**
+**List[str]**
 
 ### Authorization
 
@@ -103,14 +103,14 @@ Create a new observing schedule for ACROSS.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.schedule_create import ScheduleCreate
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.schedule_create import ScheduleCreate
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -120,15 +120,15 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.ScheduleApi(api_client)
-    schedule_create = across/sdk.ScheduleCreate() # ScheduleCreate | 
+    api_instance = across.sdk.v1.ScheduleApi(api_client)
+    schedule_create = across.sdk.v1.ScheduleCreate() # ScheduleCreate | 
 
     try:
         # Create a Schedule
@@ -183,22 +183,22 @@ Read a schedule by a schedule ID.
 
 
 ```python
-import across/sdk
-from across/sdk.models.schedule import Schedule
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.schedule import Schedule
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.ScheduleApi(api_client)
+    api_instance = across.sdk.v1.ScheduleApi(api_client)
     schedule_id = 'schedule_id_example' # str | 
 
     try:
@@ -253,31 +253,31 @@ Read most recent schedules based on query params
 
 
 ```python
-import across/sdk
-from across/sdk.models.page_schedule import PageSchedule
-from across/sdk.models.schedule_fidelity import ScheduleFidelity
-from across/sdk.models.schedule_status import ScheduleStatus
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.page_schedule import PageSchedule
+from across.sdk.v1.models.schedule_fidelity import ScheduleFidelity
+from across.sdk.v1.models.schedule_status import ScheduleStatus
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.ScheduleApi(api_client)
+    api_instance = across.sdk.v1.ScheduleApi(api_client)
     page = 56 # int | Page number (optional)
     page_limit = 56 # int | Records per page (optional)
     date_range_begin = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     date_range_end = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
-    status = across/sdk.ScheduleStatus() # ScheduleStatus |  (optional)
+    status = across.sdk.v1.ScheduleStatus() # ScheduleStatus |  (optional)
     external_id = 'external_id_example' # str |  (optional)
-    fidelity = across/sdk.ScheduleFidelity() # ScheduleFidelity |  (optional)
+    fidelity = across.sdk.v1.ScheduleFidelity() # ScheduleFidelity |  (optional)
     created_on = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     observatory_ids = [] # List[Optional[str]] |  (optional) (default to [])
     observatory_names = [] # List[Optional[str]] |  (optional) (default to [])
@@ -349,31 +349,31 @@ Read many recent schedules based on query params
 
 
 ```python
-import across/sdk
-from across/sdk.models.page_schedule import PageSchedule
-from across/sdk.models.schedule_fidelity import ScheduleFidelity
-from across/sdk.models.schedule_status import ScheduleStatus
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.page_schedule import PageSchedule
+from across.sdk.v1.models.schedule_fidelity import ScheduleFidelity
+from across.sdk.v1.models.schedule_status import ScheduleStatus
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.ScheduleApi(api_client)
+    api_instance = across.sdk.v1.ScheduleApi(api_client)
     page = 56 # int | Page number (optional)
     page_limit = 56 # int | Records per page (optional)
     date_range_begin = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     date_range_end = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
-    status = across/sdk.ScheduleStatus() # ScheduleStatus |  (optional)
+    status = across.sdk.v1.ScheduleStatus() # ScheduleStatus |  (optional)
     external_id = 'external_id_example' # str |  (optional)
-    fidelity = across/sdk.ScheduleFidelity() # ScheduleFidelity |  (optional)
+    fidelity = across.sdk.v1.ScheduleFidelity() # ScheduleFidelity |  (optional)
     created_on = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     observatory_ids = [] # List[Optional[str]] |  (optional) (default to [])
     observatory_names = [] # List[Optional[str]] |  (optional) (default to [])

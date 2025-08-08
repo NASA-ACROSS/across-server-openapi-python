@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.observation_api import ObservationApi
+from across.sdk.v2.api.observation_api import ObservationApi
 
 
 class TestObservationApi(unittest.TestCase):

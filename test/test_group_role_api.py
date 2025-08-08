@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.group_role_api import GroupRoleApi
+from across.sdk.v2.api.group_role_api import GroupRoleApi
 
 
 class TestGroupRoleApi(unittest.TestCase):

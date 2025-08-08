@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.jpl_parameters import JPLParameters
+from across.sdk.v1.models.jpl_parameters import JPLParameters
 
 # TODO update the JSON string below
 json = "{}"

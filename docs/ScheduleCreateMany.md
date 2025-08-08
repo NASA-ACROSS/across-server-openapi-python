@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.schedule_create_many import ScheduleCreateMany
+from across.sdk.v1.models.schedule_create_many import ScheduleCreateMany
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.ephemeris_type import EphemerisType
+from across.sdk.v2.models.ephemeris_type import EphemerisType
 
 class TestEphemerisType(unittest.TestCase):
     """EphemerisType unit test stubs"""

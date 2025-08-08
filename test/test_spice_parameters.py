@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.spice_parameters import SPICEParameters
+from across.sdk.v2.models.spice_parameters import SPICEParameters
 
 class TestSPICEParameters(unittest.TestCase):
     """SPICEParameters unit test stubs"""

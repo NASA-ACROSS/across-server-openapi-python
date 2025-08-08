@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.observation_create import ObservationCreate
+from across.sdk.v1.models.observation_create import ObservationCreate
 
 # TODO update the JSON string below
 json = "{}"

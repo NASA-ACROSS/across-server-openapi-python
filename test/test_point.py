@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.point import Point
+from across.sdk.v2.models.point import Point
 
 class TestPoint(unittest.TestCase):
     """Point unit test stubs"""

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.group_role_read import GroupRoleRead
+from across.sdk.v1.models.group_role_read import GroupRoleRead
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.schedule_create_many import ScheduleCreateMany
+from across.sdk.v2.models.schedule_create_many import ScheduleCreateMany
 
 class TestScheduleCreateMany(unittest.TestCase):
     """ScheduleCreateMany unit test stubs"""
@@ -36,23 +36,23 @@ class TestScheduleCreateMany(unittest.TestCase):
         if include_optional:
             return ScheduleCreateMany(
                 schedules = [
-                    across/sdk.models.schedule_create.ScheduleCreate(
+                    across.sdk.v2.models.schedule_create.ScheduleCreate(
                         telescope_id = '', 
                         name = '', 
-                        date_range = across/sdk.models.date_range.DateRange(
+                        date_range = across.sdk.v2.models.date_range.DateRange(
                             begin = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
                         status = 'planned', 
                         external_id = '', 
                         fidelity = 'low', 
                         observations = [
-                            across/sdk.models.observation_create.ObservationCreate(
+                            across.sdk.v2.models.observation_create.ObservationCreate(
                                 instrument_id = '', 
                                 object_name = '', 
-                                pointing_position = across/sdk.models.coordinate.Coordinate(
+                                pointing_position = across.sdk.v2.models.coordinate.Coordinate(
                                     ra = 0.0, 
                                     dec = -90.0, ), 
-                                date_range = across/sdk.models.date_range.DateRange(
+                                date_range = across.sdk.v2.models.date_range.DateRange(
                                     begin = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
                                 external_observation_id = '', 
@@ -63,10 +63,10 @@ class TestScheduleCreateMany(unittest.TestCase):
                                 reason = '', 
                                 description = '', 
                                 proposal_reference = '', 
-                                object_position = across/sdk.models.coordinate.Coordinate(
+                                object_position = across.sdk.v2.models.coordinate.Coordinate(
                                     ra = 0.0, 
                                     dec = -90.0, ), 
-                                depth = across/sdk.models.unit_value.UnitValue(
+                                depth = across.sdk.v2.models.unit_value.UnitValue(
                                     value = 1.337, 
                                     unit = null, ), 
                                 bandpass = null, 
@@ -87,23 +87,23 @@ class TestScheduleCreateMany(unittest.TestCase):
         else:
             return ScheduleCreateMany(
                 schedules = [
-                    across/sdk.models.schedule_create.ScheduleCreate(
+                    across.sdk.v2.models.schedule_create.ScheduleCreate(
                         telescope_id = '', 
                         name = '', 
-                        date_range = across/sdk.models.date_range.DateRange(
+                        date_range = across.sdk.v2.models.date_range.DateRange(
                             begin = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
                         status = 'planned', 
                         external_id = '', 
                         fidelity = 'low', 
                         observations = [
-                            across/sdk.models.observation_create.ObservationCreate(
+                            across.sdk.v2.models.observation_create.ObservationCreate(
                                 instrument_id = '', 
                                 object_name = '', 
-                                pointing_position = across/sdk.models.coordinate.Coordinate(
+                                pointing_position = across.sdk.v2.models.coordinate.Coordinate(
                                     ra = 0.0, 
                                     dec = -90.0, ), 
-                                date_range = across/sdk.models.date_range.DateRange(
+                                date_range = across.sdk.v2.models.date_range.DateRange(
                                     begin = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
                                 external_observation_id = '', 
@@ -114,10 +114,10 @@ class TestScheduleCreateMany(unittest.TestCase):
                                 reason = '', 
                                 description = '', 
                                 proposal_reference = '', 
-                                object_position = across/sdk.models.coordinate.Coordinate(
+                                object_position = across.sdk.v2.models.coordinate.Coordinate(
                                     ra = 0.0, 
                                     dec = -90.0, ), 
-                                depth = across/sdk.models.unit_value.UnitValue(
+                                depth = across.sdk.v2.models.unit_value.UnitValue(
                                     value = 1.337, 
                                     unit = null, ), 
                                 bandpass = null, 

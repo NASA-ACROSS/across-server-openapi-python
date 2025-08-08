@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.ground_parameters import GroundParameters
+from across.sdk.v1.models.ground_parameters import GroundParameters
 
 # TODO update the JSON string below
 json = "{}"

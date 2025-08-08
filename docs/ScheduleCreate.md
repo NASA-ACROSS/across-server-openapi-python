@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.schedule_create import ScheduleCreate
+from across.sdk.v1.models.schedule_create import ScheduleCreate
 
 # TODO update the JSON string below
 json = "{}"

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.spice_parameters import SPICEParameters
+from across.sdk.v1.models.spice_parameters import SPICEParameters
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.service_account_update import ServiceAccountUpdate
+from across.sdk.v2.models.service_account_update import ServiceAccountUpdate
 
 class TestServiceAccountUpdate(unittest.TestCase):
     """ServiceAccountUpdate unit test stubs"""

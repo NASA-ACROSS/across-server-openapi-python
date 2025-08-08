@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.service_account_create import ServiceAccountCreate
+from across.sdk.v2.models.service_account_create import ServiceAccountCreate
 
 class TestServiceAccountCreate(unittest.TestCase):
     """ServiceAccountCreate unit test stubs"""

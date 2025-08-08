@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.access_token_response import AccessTokenResponse
+from across.sdk.v1.models.access_token_response import AccessTokenResponse
 
 # TODO update the JSON string below
 json = "{}"

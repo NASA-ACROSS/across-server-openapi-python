@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.user_info import UserInfo
+from across.sdk.v2.models.user_info import UserInfo
 
 class TestUserInfo(unittest.TestCase):
     """UserInfo unit test stubs"""

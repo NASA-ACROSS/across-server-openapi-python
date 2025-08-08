@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.filter import Filter
+from across.sdk.v2.models.filter import Filter
 
 class TestFilter(unittest.TestCase):
     """Filter unit test stubs"""

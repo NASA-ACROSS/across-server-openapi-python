@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.filter import Filter
+from across.sdk.v1.models.filter import Filter
 
 # TODO update the JSON string below
 json = "{}"

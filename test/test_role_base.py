@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.role_base import RoleBase
+from across.sdk.v2.models.role_base import RoleBase
 
 class TestRoleBase(unittest.TestCase):
     """RoleBase unit test stubs"""

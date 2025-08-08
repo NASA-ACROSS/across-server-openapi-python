@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.wavelength_bandpass import WavelengthBandpass
+from across.sdk.v2.models.wavelength_bandpass import WavelengthBandpass
 
 class TestWavelengthBandpass(unittest.TestCase):
     """WavelengthBandpass unit test stubs"""

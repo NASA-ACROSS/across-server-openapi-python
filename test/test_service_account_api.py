@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.service_account_api import ServiceAccountApi
+from across.sdk.v2.api.service_account_api import ServiceAccountApi
 
 
 class TestServiceAccountApi(unittest.TestCase):

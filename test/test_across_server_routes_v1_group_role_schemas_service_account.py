@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.across_server_routes_v1_group_role_schemas_service_account import AcrossServerRoutesV1GroupRoleSchemasServiceAccount
+from across.sdk.v2.models.across_server_routes_v1_group_role_schemas_service_account import AcrossServerRoutesV1GroupRoleSchemasServiceAccount
 
 class TestAcrossServerRoutesV1GroupRoleSchemasServiceAccount(unittest.TestCase):
     """AcrossServerRoutesV1GroupRoleSchemasServiceAccount unit test stubs"""
@@ -38,7 +38,7 @@ class TestAcrossServerRoutesV1GroupRoleSchemasServiceAccount(unittest.TestCase):
                 id = '',
                 name = '',
                 description = '',
-                user = across/sdk.models.user.User(
+                user = across.sdk.v2.models.user.User(
                     id = '', 
                     first_name = '', 
                     last_name = '', 
@@ -50,7 +50,7 @@ class TestAcrossServerRoutesV1GroupRoleSchemasServiceAccount(unittest.TestCase):
                 id = '',
                 name = '',
                 description = '',
-                user = across/sdk.models.user.User(
+                user = across.sdk.v2.models.user.User(
                     id = '', 
                     first_name = '', 
                     last_name = '', 

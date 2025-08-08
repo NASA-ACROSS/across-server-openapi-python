@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.observatory import Observatory
+from across.sdk.v2.models.observatory import Observatory
 
 class TestObservatory(unittest.TestCase):
     """Observatory unit test stubs"""
@@ -41,13 +41,13 @@ class TestObservatory(unittest.TestCase):
                 short_name = '',
                 type = 'SPACE_BASED',
                 telescopes = [
-                    across/sdk.models.id_name_schema.IDNameSchema(
+                    across.sdk.v2.models.id_name_schema.IDNameSchema(
                         id = '', 
                         name = '', 
                         short_name = '', )
                     ],
                 ephemeris_types = [
-                    across/sdk.models.observatory_ephemeris_type.ObservatoryEphemerisType(
+                    across.sdk.v2.models.observatory_ephemeris_type.ObservatoryEphemerisType(
                         ephemeris_type = 'tle', 
                         priority = 56, 
                         parameters = null, )

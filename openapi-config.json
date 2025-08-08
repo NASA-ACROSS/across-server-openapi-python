@@ -1,6 +1,6 @@
 {
     "generateAliasAsModel": false,
-    "packageName": "across/sdk",
+    "packageName": "across.sdk",
     "generateSourceCodeOnly": false,
     "useOneOfDiscriminatorLookup": true,
     "enumPropertyNaming": "UPPERCASE",

@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.schedule_api import ScheduleApi
+from across.sdk.v2.api.schedule_api import ScheduleApi
 
 
 class TestScheduleApi(unittest.TestCase):

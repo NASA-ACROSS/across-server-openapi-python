@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.point import Point
+from across.sdk.v1.models.point import Point
 
 # TODO update the JSON string below
 json = "{}"

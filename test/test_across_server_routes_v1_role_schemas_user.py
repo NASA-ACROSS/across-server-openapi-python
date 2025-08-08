@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.across_server_routes_v1_role_schemas_user import AcrossServerRoutesV1RoleSchemasUser
+from across.sdk.v2.models.across_server_routes_v1_role_schemas_user import AcrossServerRoutesV1RoleSchemasUser
 
 class TestAcrossServerRoutesV1RoleSchemasUser(unittest.TestCase):
     """AcrossServerRoutesV1RoleSchemasUser unit test stubs"""

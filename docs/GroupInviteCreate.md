@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.group_invite_create import GroupInviteCreate
+from across.sdk.v1.models.group_invite_create import GroupInviteCreate
 
 # TODO update the JSON string below
 json = "{}"

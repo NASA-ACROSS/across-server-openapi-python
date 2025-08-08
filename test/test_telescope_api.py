@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.telescope_api import TelescopeApi
+from across.sdk.v2.api.telescope_api import TelescopeApi
 
 
 class TestTelescopeApi(unittest.TestCase):

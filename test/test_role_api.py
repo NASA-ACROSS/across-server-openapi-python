@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.role_api import RoleApi
+from across.sdk.v2.api.role_api import RoleApi
 
 
 class TestRoleApi(unittest.TestCase):

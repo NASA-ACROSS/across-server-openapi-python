@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.group_role_read import GroupRoleRead
+from across.sdk.v2.models.group_role_read import GroupRoleRead
 
 class TestGroupRoleRead(unittest.TestCase):
     """GroupRoleRead unit test stubs"""
@@ -37,7 +37,7 @@ class TestGroupRoleRead(unittest.TestCase):
             return GroupRoleRead(
                 name = '',
                 permissions = [
-                    across/sdk.models.permission.Permission(
+                    across.sdk.v2.models.permission.Permission(
                         id = '', 
                         name = '', )
                     ],
@@ -47,7 +47,7 @@ class TestGroupRoleRead(unittest.TestCase):
             return GroupRoleRead(
                 name = '',
                 permissions = [
-                    across/sdk.models.permission.Permission(
+                    across.sdk.v2.models.permission.Permission(
                         id = '', 
                         name = '', )
                     ],

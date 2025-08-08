@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.filter_api import FilterApi
+from across.sdk.v2.api.filter_api import FilterApi
 
 
 class TestFilterApi(unittest.TestCase):

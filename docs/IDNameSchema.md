@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.id_name_schema import IDNameSchema
+from across.sdk.v1.models.id_name_schema import IDNameSchema
 
 # TODO update the JSON string below
 json = "{}"

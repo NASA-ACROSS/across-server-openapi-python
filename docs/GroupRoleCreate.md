@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.group_role_create import GroupRoleCreate
+from across.sdk.v1.models.group_role_create import GroupRoleCreate
 
 # TODO update the JSON string below
 json = "{}"

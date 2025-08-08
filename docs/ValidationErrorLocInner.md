@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.validation_error_loc_inner import ValidationErrorLocInner
+from across.sdk.v1.models.validation_error_loc_inner import ValidationErrorLocInner
 
 # TODO update the JSON string below
 json = "{}"

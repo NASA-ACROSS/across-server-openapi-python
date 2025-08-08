@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.ivoa_obs_tracking_type import IVOAObsTrackingType
+from across.sdk.v2.models.ivoa_obs_tracking_type import IVOAObsTrackingType
 
 class TestIVOAObsTrackingType(unittest.TestCase):
     """IVOAObsTrackingType unit test stubs"""

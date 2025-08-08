@@ -6,18 +6,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**user_id** | **str** |  | 
 **name** | **str** |  | 
 **description** | **str** |  | 
 **expiration** | **datetime** |  | 
 **expiration_duration** | **int** |  | 
-**group_roles** | [**List[AcrossServerRoutesV1UserSchemasGroupRole]**](AcrossServerRoutesV1UserSchemasGroupRole.md) |  | 
+**group_roles** | [**List[GroupRoleRead]**](GroupRoleRead.md) |  | 
 **secret_key** | **str** |  | [optional] 
 
 ## Example
 
 ```python
-from across/sdk.models.service_account_secret import ServiceAccountSecret
+from across.sdk.v1.models.service_account_secret import ServiceAccountSecret
 
 # TODO update the JSON string below
 json = "{}"

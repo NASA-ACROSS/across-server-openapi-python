@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.across_server_routes_v1_user_schemas_group_invite import AcrossServerRoutesV1UserSchemasGroupInvite
+from across.sdk.v1.models.across_server_routes_v1_user_schemas_group_invite import AcrossServerRoutesV1UserSchemasGroupInvite
 
 # TODO update the JSON string below
 json = "{}"

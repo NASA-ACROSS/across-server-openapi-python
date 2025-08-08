@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.ground_parameters import GroundParameters
+from across.sdk.v2.models.ground_parameters import GroundParameters
 
 class TestGroundParameters(unittest.TestCase):
     """GroundParameters unit test stubs"""

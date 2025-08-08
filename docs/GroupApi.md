@@ -1,4 +1,4 @@
-# across/sdk.GroupApi
+# across.sdk.v1.GroupApi
 
 All URIs are relative to */api/v1*
 
@@ -21,14 +21,14 @@ Read a group by role ID.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.across_server_routes_v1_group_schemas_group import AcrossServerRoutesV1GroupSchemasGroup
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.across_server_routes_v1_group_schemas_group import AcrossServerRoutesV1GroupSchemasGroup
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -38,14 +38,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.GroupApi(api_client)
+    api_instance = across.sdk.v1.GroupApi(api_client)
     group_id = 'group_id_example' # str | 
 
     try:
@@ -101,14 +101,14 @@ Read many groups.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.across_server_routes_v1_group_schemas_group import AcrossServerRoutesV1GroupSchemasGroup
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.across_server_routes_v1_group_schemas_group import AcrossServerRoutesV1GroupSchemasGroup
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -118,14 +118,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.GroupApi(api_client)
+    api_instance = across.sdk.v1.GroupApi(api_client)
 
     try:
         # Read groups
@@ -176,13 +176,13 @@ Remove a user from a group by ID
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -192,14 +192,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.GroupApi(api_client)
+    api_instance = across.sdk.v1.GroupApi(api_client)
     user_id = 'user_id_example' # str | 
     group_id = 'group_id_example' # str | 
 

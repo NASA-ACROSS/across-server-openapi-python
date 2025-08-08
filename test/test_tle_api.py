@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.tle_api import TLEApi
+from across.sdk.v2.api.tle_api import TLEApi
 
 
 class TestTLEApi(unittest.TestCase):

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.validation_error import ValidationError
+from across.sdk.v1.models.validation_error import ValidationError
 
 # TODO update the JSON string below
 json = "{}"

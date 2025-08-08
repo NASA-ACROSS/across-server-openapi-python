@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.user_create import UserCreate
+from across.sdk.v2.models.user_create import UserCreate
 
 class TestUserCreate(unittest.TestCase):
     """UserCreate unit test stubs"""

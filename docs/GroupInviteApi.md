@@ -1,4 +1,4 @@
-# across/sdk.GroupInviteApi
+# across.sdk.v1.GroupInviteApi
 
 All URIs are relative to */api/v1*
 
@@ -22,13 +22,13 @@ Delete a group invite by ID
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -38,14 +38,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.GroupInviteApi(api_client)
+    api_instance = across.sdk.v1.GroupInviteApi(api_client)
     invite_id = 'invite_id_example' # str | 
     group_id = 'group_id_example' # str | 
 
@@ -101,14 +101,14 @@ Read a single group invite by ID
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.across_server_routes_v1_group_invite_schemas_group_invite import AcrossServerRoutesV1GroupInviteSchemasGroupInvite
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.across_server_routes_v1_group_invite_schemas_group_invite import AcrossServerRoutesV1GroupInviteSchemasGroupInvite
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -118,14 +118,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.GroupInviteApi(api_client)
+    api_instance = across.sdk.v1.GroupInviteApi(api_client)
     group_id = 'group_id_example' # str | 
     invite_id = 'invite_id_example' # str | 
 
@@ -183,14 +183,14 @@ Read all group invites for a group
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.across_server_routes_v1_group_invite_schemas_group_invite import AcrossServerRoutesV1GroupInviteSchemasGroupInvite
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.across_server_routes_v1_group_invite_schemas_group_invite import AcrossServerRoutesV1GroupInviteSchemasGroupInvite
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -200,14 +200,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.GroupInviteApi(api_client)
+    api_instance = across.sdk.v1.GroupInviteApi(api_client)
     group_id = 'group_id_example' # str | 
 
     try:
@@ -263,15 +263,15 @@ Create and send a group invite to a user
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.across_server_routes_v1_group_invite_schemas_group_invite import AcrossServerRoutesV1GroupInviteSchemasGroupInvite
-from across/sdk.models.group_invite_create import GroupInviteCreate
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.across_server_routes_v1_group_invite_schemas_group_invite import AcrossServerRoutesV1GroupInviteSchemasGroupInvite
+from across.sdk.v1.models.group_invite_create import GroupInviteCreate
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -281,16 +281,16 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.GroupInviteApi(api_client)
+    api_instance = across.sdk.v1.GroupInviteApi(api_client)
     group_id = 'group_id_example' # str | 
-    group_invite_create = across/sdk.GroupInviteCreate() # GroupInviteCreate | 
+    group_invite_create = across.sdk.v1.GroupInviteCreate() # GroupInviteCreate | 
 
     try:
         # Create and send a group invite

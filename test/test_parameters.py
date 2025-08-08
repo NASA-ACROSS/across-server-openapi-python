@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.parameters import Parameters
+from across.sdk.v2.models.parameters import Parameters
 
 class TestParameters(unittest.TestCase):
     """Parameters unit test stubs"""

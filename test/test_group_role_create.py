@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.group_role_create import GroupRoleCreate
+from across.sdk.v2.models.group_role_create import GroupRoleCreate
 
 class TestGroupRoleCreate(unittest.TestCase):
     """GroupRoleCreate unit test stubs"""

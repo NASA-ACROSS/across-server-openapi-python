@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.jpl_parameters import JPLParameters
+from across.sdk.v2.models.jpl_parameters import JPLParameters
 
 class TestJPLParameters(unittest.TestCase):
     """JPLParameters unit test stubs"""

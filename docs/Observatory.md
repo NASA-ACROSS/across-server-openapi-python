@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.observatory import Observatory
+from across.sdk.v1.models.observatory import Observatory
 
 # TODO update the JSON string below
 json = "{}"

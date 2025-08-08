@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.schedule_fidelity import ScheduleFidelity
+from across.sdk.v2.models.schedule_fidelity import ScheduleFidelity
 
 class TestScheduleFidelity(unittest.TestCase):
     """ScheduleFidelity unit test stubs"""

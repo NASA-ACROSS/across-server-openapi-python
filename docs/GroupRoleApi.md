@@ -1,4 +1,4 @@
-# across/sdk.GroupRoleApi
+# across.sdk.v1.GroupRoleApi
 
 All URIs are relative to */api/v1*
 
@@ -25,13 +25,13 @@ Assign a group role by id to a user id within that group.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -41,14 +41,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.GroupRoleApi(api_client)
+    api_instance = across.sdk.v1.GroupRoleApi(api_client)
     group_role_id = 'group_role_id_example' # str | 
     group_id = 'group_id_example' # str | 
     user_id = 'user_id_example' # str | 
@@ -106,15 +106,15 @@ Create a group role with a set of permissions in a group that you control
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.group_role_create import GroupRoleCreate
-from across/sdk.models.group_role_read import GroupRoleRead
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.group_role_create import GroupRoleCreate
+from across.sdk.v1.models.group_role_read import GroupRoleRead
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -124,16 +124,16 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.GroupRoleApi(api_client)
+    api_instance = across.sdk.v1.GroupRoleApi(api_client)
     group_id = 'group_id_example' # str | 
-    group_role_create = across/sdk.GroupRoleCreate() # GroupRoleCreate | 
+    group_role_create = across.sdk.v1.GroupRoleCreate() # GroupRoleCreate | 
 
     try:
         # Create a group role
@@ -189,13 +189,13 @@ Delete a group role by role ID.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -205,14 +205,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.GroupRoleApi(api_client)
+    api_instance = across.sdk.v1.GroupRoleApi(api_client)
     group_id = 'group_id_example' # str | 
     group_role_id = 'group_role_id_example' # str | 
 
@@ -268,14 +268,14 @@ Read a group role by role ID.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.across_server_routes_v1_group_role_schemas_group_role import AcrossServerRoutesV1GroupRoleSchemasGroupRole
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.across_server_routes_v1_group_role_schemas_group_role import AcrossServerRoutesV1GroupRoleSchemasGroupRole
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -285,14 +285,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.GroupRoleApi(api_client)
+    api_instance = across.sdk.v1.GroupRoleApi(api_client)
     group_id = 'group_id_example' # str | 
     group_role_id = 'group_role_id_example' # str | 
 
@@ -350,14 +350,14 @@ Read many group roles.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.group_role_read import GroupRoleRead
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.group_role_read import GroupRoleRead
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -367,14 +367,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.GroupRoleApi(api_client)
+    api_instance = across.sdk.v1.GroupRoleApi(api_client)
     group_id = 'group_id_example' # str | 
 
     try:
@@ -430,13 +430,13 @@ Remove a group role by id from a user id within that group.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -446,14 +446,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.GroupRoleApi(api_client)
+    api_instance = across.sdk.v1.GroupRoleApi(api_client)
     group_role_id = 'group_role_id_example' # str | 
     group_id = 'group_id_example' # str | 
     user_id = 'user_id_example' # str | 
@@ -511,14 +511,14 @@ Update a group role and its permissions in a group that you control
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.group_role_create import GroupRoleCreate
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.group_role_create import GroupRoleCreate
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -528,17 +528,17 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.GroupRoleApi(api_client)
+    api_instance = across.sdk.v1.GroupRoleApi(api_client)
     group_role_id = 'group_role_id_example' # str | 
     group_id = 'group_id_example' # str | 
-    group_role_create = across/sdk.GroupRoleCreate() # GroupRoleCreate | 
+    group_role_create = across.sdk.v1.GroupRoleCreate() # GroupRoleCreate | 
 
     try:
         # Update a group role

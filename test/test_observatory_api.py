@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.api.observatory_api import ObservatoryApi
+from across.sdk.v2.api.observatory_api import ObservatoryApi
 
 
 class TestObservatoryApi(unittest.TestCase):

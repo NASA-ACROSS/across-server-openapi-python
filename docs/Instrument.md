@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.instrument import Instrument
+from across.sdk.v1.models.instrument import Instrument
 
 # TODO update the JSON string below
 json = "{}"

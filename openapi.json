@@ -143,6 +143,7 @@
                     "Auth"
                 ],
                 "summary": "Token",
+                "description": "Retrieve a token for authorization once authentication has been successful.\nA `grant_type` must be provided. For JWTs: `urn:ietf:params:oauth:grant-type:jwt-bearer` or for client credentials: `client_credentials`.",
                 "operationId": "token",
                 "requestBody": {
                     "content": {
@@ -184,7 +185,7 @@
                         "Authorization": []
                     },
                     {
-                        "Service Account Authorization": []
+                        "ServiceAccountAuthorization": []
                     }
                 ]
             }
@@ -729,7 +730,7 @@
                 ],
                 "summary": "Create a service account",
                 "description": "Create a new service account for an ACROSS user.",
-                "operationId": "create_service_account",
+                "operationId": "create_user_service_account",
                 "security": [
                     {
                         "Authorization": []
@@ -791,7 +792,7 @@
                 ],
                 "summary": "Read a service account",
                 "description": "Read a service account by an ID.",
-                "operationId": "get_service_account",
+                "operationId": "get_user_service_account",
                 "security": [
                     {
                         "Authorization": []
@@ -851,7 +852,7 @@
                 ],
                 "summary": "Update a service account",
                 "description": "Update a service account's information.",
-                "operationId": "update_service_account",
+                "operationId": "update_user_service_account",
                 "security": [
                     {
                         "Authorization": []
@@ -921,7 +922,7 @@
                 ],
                 "summary": "Delete a service_account",
                 "description": "Expire a service account, the account will still exist for log/record purposes, but it will not be usable anymore.",
-                "operationId": "delete_service_account",
+                "operationId": "delete_user_service_account",
                 "security": [
                     {
                         "Authorization": []
@@ -976,7 +977,7 @@
                 ],
                 "summary": "Rotate a service account key",
                 "description": "Rotate service account key and reset expiration based on expiration_duration",
-                "operationId": "rotate_key",
+                "operationId": "user_service_account_rotate_key",
                 "security": [
                     {
                         "Authorization": []
@@ -2664,12 +2665,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "items": {
-                                        "type": "string",
-                                        "format": "uuid"
-                                    },
-                                    "type": "array",
-                                    "title": "Response 201 Create Many Schedules"
+                                    "$ref": "#/components/schemas/ListResponse_UUID_"
                                 }
                             }
                         }
@@ -3803,6 +3799,110 @@
                     }
                 }
             }
+        },
+        "/service-account/{service_account_id}": {
+            "get": {
+                "tags": [
+                    "Internal"
+                ],
+                "summary": "Get a system service account",
+                "description": "Rotate service account key and reset expiration based on expiration duration",
+                "operationId": "get_service_account",
+                "security": [
+                    {
+                        "Authorization": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "service_account_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "title": "UUID of the service account"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The rotated service account",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SystemServiceAccount"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Service account not found."
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/service-account/{service_account_id}/rotate_key": {
+            "patch": {
+                "tags": [
+                    "Internal"
+                ],
+                "summary": "Rotate a service account key",
+                "description": "Rotate service account key and reset expiration based on expiration duration",
+                "operationId": "service_account_rotate_key",
+                "security": [
+                    {
+                        "Authorization": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "service_account_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "title": "UUID of the service account"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The rotated service account",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SystemServiceAccountSecret"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Service account not found."
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -4224,6 +4324,11 @@
             },
             "GroupRead": {
                 "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Id"
+                    },
                     "name": {
                         "type": "string",
                         "title": "Name"
@@ -4231,18 +4336,13 @@
                     "short_name": {
                         "type": "string",
                         "title": "Short Name"
-                    },
-                    "id": {
-                        "type": "string",
-                        "format": "uuid",
-                        "title": "Id"
                     }
                 },
                 "type": "object",
                 "required": [
+                    "id",
                     "name",
-                    "short_name",
-                    "id"
+                    "short_name"
                 ],
                 "title": "GroupRead"
             },
@@ -4436,6 +4536,14 @@
                     "naif_id"
                 ],
                 "title": "JPLParameters"
+            },
+            "ListResponse_UUID_": {
+                "items": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "type": "array",
+                "title": "ListResponse[UUID]"
             },
             "Observation": {
                 "properties": {
@@ -5154,14 +5262,14 @@
             },
             "Role": {
                 "properties": {
-                    "name": {
-                        "type": "string",
-                        "title": "Name"
-                    },
                     "id": {
                         "type": "string",
                         "format": "uuid",
                         "title": "Id"
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
                     },
                     "users": {
                         "items": {
@@ -5173,14 +5281,19 @@
                 },
                 "type": "object",
                 "required": [
-                    "name",
                     "id",
+                    "name",
                     "users"
                 ],
                 "title": "Role"
             },
             "RoleBase": {
                 "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Id"
+                    },
                     "name": {
                         "type": "string",
                         "title": "Name"
@@ -5188,6 +5301,7 @@
                 },
                 "type": "object",
                 "required": [
+                    "id",
                     "name"
                 ],
                 "title": "RoleBase"
@@ -5445,11 +5559,6 @@
                         "format": "uuid",
                         "title": "Id"
                     },
-                    "user_id": {
-                        "type": "string",
-                        "format": "uuid",
-                        "title": "User Id"
-                    },
                     "name": {
                         "type": "string",
                         "title": "Name"
@@ -5476,7 +5585,7 @@
                     },
                     "group_roles": {
                         "items": {
-                            "$ref": "#/components/schemas/across_server__routes__v1__user__schemas__GroupRole"
+                            "$ref": "#/components/schemas/GroupRoleRead"
                         },
                         "type": "array",
                         "title": "Group Roles"
@@ -5496,7 +5605,6 @@
                 "type": "object",
                 "required": [
                     "id",
-                    "user_id",
                     "name",
                     "description",
                     "expiration",
@@ -5543,6 +5651,125 @@
                 },
                 "type": "object",
                 "title": "ServiceAccountUpdate"
+            },
+            "SystemServiceAccount": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Id"
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "description": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Description"
+                    },
+                    "expiration": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Expiration"
+                    },
+                    "expiration_duration": {
+                        "type": "integer",
+                        "title": "Expiration Duration"
+                    },
+                    "roles": {
+                        "items": {
+                            "$ref": "#/components/schemas/RoleBase"
+                        },
+                        "type": "array",
+                        "title": "Roles"
+                    },
+                    "group_roles": {
+                        "items": {
+                            "$ref": "#/components/schemas/GroupRoleRead"
+                        },
+                        "type": "array",
+                        "title": "Group Roles"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id",
+                    "name",
+                    "expiration",
+                    "expiration_duration",
+                    "roles",
+                    "group_roles"
+                ],
+                "title": "SystemServiceAccount"
+            },
+            "SystemServiceAccountSecret": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Id"
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "description": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Description"
+                    },
+                    "expiration": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Expiration"
+                    },
+                    "expiration_duration": {
+                        "type": "integer",
+                        "title": "Expiration Duration"
+                    },
+                    "roles": {
+                        "items": {
+                            "$ref": "#/components/schemas/RoleBase"
+                        },
+                        "type": "array",
+                        "title": "Roles"
+                    },
+                    "group_roles": {
+                        "items": {
+                            "$ref": "#/components/schemas/GroupRoleRead"
+                        },
+                        "type": "array",
+                        "title": "Group Roles"
+                    },
+                    "secret_key": {
+                        "type": "string",
+                        "title": "Secret Key"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id",
+                    "name",
+                    "expiration",
+                    "expiration_duration",
+                    "roles",
+                    "group_roles",
+                    "secret_key"
+                ],
+                "title": "SystemServiceAccountSecret"
             },
             "TLE": {
                 "properties": {
@@ -6085,6 +6312,11 @@
             },
             "across_server__routes__v1__group__schemas__Group": {
                 "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Id"
+                    },
                     "name": {
                         "type": "string",
                         "title": "Name"
@@ -6092,11 +6324,6 @@
                     "short_name": {
                         "type": "string",
                         "title": "Short Name"
-                    },
-                    "id": {
-                        "type": "string",
-                        "format": "uuid",
-                        "title": "Id"
                     },
                     "users": {
                         "items": {
@@ -6115,9 +6342,9 @@
                 },
                 "type": "object",
                 "required": [
+                    "id",
                     "name",
                     "short_name",
-                    "id",
                     "users",
                     "roles"
                 ],
@@ -6354,11 +6581,6 @@
                         "format": "uuid",
                         "title": "Id"
                     },
-                    "user_id": {
-                        "type": "string",
-                        "format": "uuid",
-                        "title": "User Id"
-                    },
                     "name": {
                         "type": "string",
                         "title": "Name"
@@ -6385,7 +6607,7 @@
                     },
                     "group_roles": {
                         "items": {
-                            "$ref": "#/components/schemas/across_server__routes__v1__user__schemas__GroupRole"
+                            "$ref": "#/components/schemas/GroupRoleRead"
                         },
                         "type": "array",
                         "title": "Group Roles"
@@ -6394,7 +6616,6 @@
                 "type": "object",
                 "required": [
                     "id",
-                    "user_id",
                     "name",
                     "description",
                     "expiration",

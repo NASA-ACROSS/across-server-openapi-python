@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.permission import Permission
+from across.sdk.v2.models.permission import Permission
 
 class TestPermission(unittest.TestCase):
     """Permission unit test stubs"""

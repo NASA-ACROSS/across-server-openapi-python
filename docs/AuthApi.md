@@ -1,4 +1,4 @@
-# across/sdk.AuthApi
+# across.sdk.v1.AuthApi
 
 All URIs are relative to */api/v1*
 
@@ -20,13 +20,13 @@ Login
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -36,14 +36,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.AuthApi(api_client)
+    api_instance = across.sdk.v1.AuthApi(api_client)
     email = 'email_example' # str | 
 
     try:
@@ -97,14 +97,14 @@ Refresh Token
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.access_token_response import AccessTokenResponse
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.access_token_response import AccessTokenResponse
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -114,14 +114,14 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.AuthApi(api_client)
+    api_instance = across.sdk.v1.AuthApi(api_client)
 
     try:
         # Refresh Token
@@ -165,20 +165,24 @@ This endpoint does not need any parameter.
 
 Token
 
+Retrieve a token for authorization once authentication has been successful.
+A `grant_type` must be provided. For JWTs: `urn:ietf:params:oauth:grant-type:jwt-bearer` or for client credentials: `client_credentials`.
+
 ### Example
 
 * Bearer Authentication (Authorization):
+* Basic Authentication (ServiceAccountAuthorization):
 
 ```python
-import across/sdk
-from across/sdk.models.access_token_response import AccessTokenResponse
-from across/sdk.models.grant_type import GrantType
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.access_token_response import AccessTokenResponse
+from across.sdk.v1.models.grant_type import GrantType
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -188,15 +192,21 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
+# Configure HTTP basic authorization: ServiceAccountAuthorization
+configuration = across.sdk.v1.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.AuthApi(api_client)
-    grant_type = across/sdk.GrantType() # GrantType | 
+    api_instance = across.sdk.v1.AuthApi(api_client)
+    grant_type = across.sdk.v1.GrantType() # GrantType | 
 
     try:
         # Token
@@ -222,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+[Authorization](../README.md#Authorization), [ServiceAccountAuthorization](../README.md#ServiceAccountAuthorization)
 
 ### HTTP request headers
 
@@ -248,22 +258,22 @@ Verify
 
 
 ```python
-import across/sdk
-from across/sdk.models.access_token_response import AccessTokenResponse
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.access_token_response import AccessTokenResponse
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.AuthApi(api_client)
+    api_instance = across.sdk.v1.AuthApi(api_client)
     token = 'token_example' # str | 
 
     try:

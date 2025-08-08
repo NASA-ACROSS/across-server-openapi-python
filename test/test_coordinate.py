@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.coordinate import Coordinate
+from across.sdk.v2.models.coordinate import Coordinate
 
 class TestCoordinate(unittest.TestCase):
     """Coordinate unit test stubs"""

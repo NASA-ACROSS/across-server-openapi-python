@@ -1,4 +1,4 @@
-# across/sdk.TLEApi
+# across.sdk.v1.TLEApi
 
 All URIs are relative to */api/v1*
 
@@ -19,15 +19,15 @@ Create a new TLE for ACROSS.
 * Bearer Authentication (Authorization):
 
 ```python
-import across/sdk
-from across/sdk.models.tle import TLE
-from across/sdk.models.tle_create import TLECreate
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.tle import TLE
+from across.sdk.v1.models.tle_create import TLECreate
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
@@ -37,15 +37,15 @@ configuration = across/sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.TLEApi(api_client)
-    tle_create = across/sdk.TLECreate() # TLECreate | 
+    api_instance = across.sdk.v1.TLEApi(api_client)
+    tle_create = across.sdk.v1.TLECreate() # TLECreate | 
 
     try:
         # Create a TLE

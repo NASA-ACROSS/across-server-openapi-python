@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.access_token_response import AccessTokenResponse
+from across.sdk.v2.models.access_token_response import AccessTokenResponse
 
 class TestAccessTokenResponse(unittest.TestCase):
     """AccessTokenResponse unit test stubs"""

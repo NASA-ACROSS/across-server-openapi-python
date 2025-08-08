@@ -1,4 +1,4 @@
-# across/sdk.InstrumentApi
+# across.sdk.v1.InstrumentApi
 
 All URIs are relative to */api/v1*
 
@@ -19,22 +19,22 @@ Read an instrument by a instrument ID.
 
 
 ```python
-import across/sdk
-from across/sdk.models.instrument import Instrument
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.instrument import Instrument
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.InstrumentApi(api_client)
+    api_instance = across.sdk.v1.InstrumentApi(api_client)
     instrument_id = 'instrument_id_example' # str | 
 
     try:
@@ -89,22 +89,22 @@ Read many instruments based on query params
 
 
 ```python
-import across/sdk
-from across/sdk.models.instrument import Instrument
-from across/sdk.rest import ApiException
+import across.sdk.v1
+from across.sdk.v1.models.instrument import Instrument
+from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = across/sdk.Configuration(
+configuration = across.sdk.v1.Configuration(
     host = "/api/v1"
 )
 
 
 # Enter a context with an instance of the API client
-with across/sdk.ApiClient(configuration) as api_client:
+with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = across/sdk.InstrumentApi(api_client)
+    api_instance = across.sdk.v1.InstrumentApi(api_client)
     name = 'name_example' # str |  (optional)
     telescope_id = 'telescope_id_example' # str |  (optional)
     telescope_name = 'telescope_name_example' # str |  (optional)

@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.tle_parameters import TLEParameters
+from across.sdk.v2.models.tle_parameters import TLEParameters
 
 class TestTLEParameters(unittest.TestCase):
     """TLEParameters unit test stubs"""

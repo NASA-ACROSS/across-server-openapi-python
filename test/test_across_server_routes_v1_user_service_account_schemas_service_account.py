@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.across_server_routes_v1_user_service_account_schemas_service_account import AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount
+from across.sdk.v2.models.across_server_routes_v1_user_service_account_schemas_service_account import AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount
 
 class TestAcrossServerRoutesV1UserServiceAccountSchemasServiceAccount(unittest.TestCase):
     """AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount unit test stubs"""
@@ -42,11 +42,11 @@ class TestAcrossServerRoutesV1UserServiceAccountSchemasServiceAccount(unittest.T
                 expiration = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 expiration_duration = 56,
                 group_roles = [
-                    across/sdk.models.group_role.GroupRole(
+                    across.sdk.v2.models.group_role.GroupRole(
                         id = '', 
                         name = '', 
                         permissions = [
-                            across/sdk.models.permission.Permission(
+                            across.sdk.v2.models.permission.Permission(
                                 id = '', 
                                 name = '', )
                             ], )
@@ -61,11 +61,11 @@ class TestAcrossServerRoutesV1UserServiceAccountSchemasServiceAccount(unittest.T
                 expiration = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 expiration_duration = 56,
                 group_roles = [
-                    across/sdk.models.group_role.GroupRole(
+                    across.sdk.v2.models.group_role.GroupRole(
                         id = '', 
                         name = '', 
                         permissions = [
-                            across/sdk.models.permission.Permission(
+                            across.sdk.v2.models.permission.Permission(
                                 id = '', 
                                 name = '', )
                             ], )

@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.across_server_routes_v1_group_schemas_group import AcrossServerRoutesV1GroupSchemasGroup
+from across.sdk.v2.models.across_server_routes_v1_group_schemas_group import AcrossServerRoutesV1GroupSchemasGroup
 
 class TestAcrossServerRoutesV1GroupSchemasGroup(unittest.TestCase):
     """AcrossServerRoutesV1GroupSchemasGroup unit test stubs"""
@@ -39,17 +39,17 @@ class TestAcrossServerRoutesV1GroupSchemasGroup(unittest.TestCase):
                 short_name = '',
                 id = '',
                 users = [
-                    across/sdk.models.user.User(
+                    across.sdk.v2.models.user.User(
                         id = '', 
                         username = '', 
                         first_name = '', 
                         last_name = '', 
                         email = '', 
                         group_roles = [
-                            across/sdk.models.group_role_read.GroupRoleRead(
+                            across.sdk.v2.models.group_role_read.GroupRoleRead(
                                 name = '', 
                                 permissions = [
-                                    across/sdk.models.permission.Permission(
+                                    across.sdk.v2.models.permission.Permission(
                                         id = '', 
                                         name = '', )
                                     ], 
@@ -57,16 +57,16 @@ class TestAcrossServerRoutesV1GroupSchemasGroup(unittest.TestCase):
                             ], )
                     ],
                 roles = [
-                    across/sdk.models.group_role.GroupRole(
+                    across.sdk.v2.models.group_role.GroupRole(
                         name = '', 
                         permissions = [
-                            across/sdk.models.permission.Permission(
+                            across.sdk.v2.models.permission.Permission(
                                 id = '', 
                                 name = '', )
                             ], 
                         id = '', 
                         users = [
-                            across/sdk.models.user.User(
+                            across.sdk.v2.models.user.User(
                                 id = '', 
                                 first_name = '', 
                                 last_name = '', 
@@ -74,11 +74,11 @@ class TestAcrossServerRoutesV1GroupSchemasGroup(unittest.TestCase):
                                 email = '', )
                             ], 
                         service_accounts = [
-                            across/sdk.models.service_account.ServiceAccount(
+                            across.sdk.v2.models.service_account.ServiceAccount(
                                 id = '', 
                                 name = '', 
                                 description = '', 
-                                user = across/sdk.models.user.User(
+                                user = across.sdk.v2.models.user.User(
                                     id = '', 
                                     first_name = '', 
                                     last_name = '', 
@@ -93,17 +93,17 @@ class TestAcrossServerRoutesV1GroupSchemasGroup(unittest.TestCase):
                 short_name = '',
                 id = '',
                 users = [
-                    across/sdk.models.user.User(
+                    across.sdk.v2.models.user.User(
                         id = '', 
                         username = '', 
                         first_name = '', 
                         last_name = '', 
                         email = '', 
                         group_roles = [
-                            across/sdk.models.group_role_read.GroupRoleRead(
+                            across.sdk.v2.models.group_role_read.GroupRoleRead(
                                 name = '', 
                                 permissions = [
-                                    across/sdk.models.permission.Permission(
+                                    across.sdk.v2.models.permission.Permission(
                                         id = '', 
                                         name = '', )
                                     ], 
@@ -111,16 +111,16 @@ class TestAcrossServerRoutesV1GroupSchemasGroup(unittest.TestCase):
                             ], )
                     ],
                 roles = [
-                    across/sdk.models.group_role.GroupRole(
+                    across.sdk.v2.models.group_role.GroupRole(
                         name = '', 
                         permissions = [
-                            across/sdk.models.permission.Permission(
+                            across.sdk.v2.models.permission.Permission(
                                 id = '', 
                                 name = '', )
                             ], 
                         id = '', 
                         users = [
-                            across/sdk.models.user.User(
+                            across.sdk.v2.models.user.User(
                                 id = '', 
                                 first_name = '', 
                                 last_name = '', 
@@ -128,11 +128,11 @@ class TestAcrossServerRoutesV1GroupSchemasGroup(unittest.TestCase):
                                 email = '', )
                             ], 
                         service_accounts = [
-                            across/sdk.models.service_account.ServiceAccount(
+                            across.sdk.v2.models.service_account.ServiceAccount(
                                 id = '', 
                                 name = '', 
                                 description = '', 
-                                user = across/sdk.models.user.User(
+                                user = across.sdk.v2.models.user.User(
                                     id = '', 
                                     first_name = '', 
                                     last_name = '', 

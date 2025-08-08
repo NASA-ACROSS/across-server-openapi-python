@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.http_validation_error import HTTPValidationError
+from across.sdk.v1.models.http_validation_error import HTTPValidationError
 
 # TODO update the JSON string below
 json = "{}"

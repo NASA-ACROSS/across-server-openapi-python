@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.group_invite_create import GroupInviteCreate
+from across.sdk.v2.models.group_invite_create import GroupInviteCreate
 
 class TestGroupInviteCreate(unittest.TestCase):
     """GroupInviteCreate unit test stubs"""

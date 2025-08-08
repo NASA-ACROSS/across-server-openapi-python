@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.page_schedule import PageSchedule
+from across.sdk.v1.models.page_schedule import PageSchedule
 
 # TODO update the JSON string below
 json = "{}"

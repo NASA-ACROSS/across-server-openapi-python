@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from across/sdk.models.energy_bandpass import EnergyBandpass
+from across.sdk.v1.models.energy_bandpass import EnergyBandpass
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from across/sdk.models.unit_value import UnitValue
+from across.sdk.v2.models.unit_value import UnitValue
 
 class TestUnitValue(unittest.TestCase):
     """UnitValue unit test stubs"""

@@ -5,4 +5,5 @@ sdk: ## Generate sdk client
 		-i /local/openapi.json \
 		-g python \
 		-o /local/. \
-		-c /local/openapi-config.json
+		-c /local/openapi-config.json \
+		--package-name across.sdk.v1
