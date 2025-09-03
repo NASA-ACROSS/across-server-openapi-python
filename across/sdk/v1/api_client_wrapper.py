@@ -101,10 +101,13 @@ class ApiClientWrapper(sdk.ApiClient):
             if err.status == 401:
                 logger.debug("Access token is unauthenticated or it has expired.")
 
-                self.refresh_token()
+                refreshed = self.refresh_token()
 
                 # Attempt the call again
-                return super().call_api(*args, **kwargs)
+                if refreshed:
+                    return super().call_api(*args, **kwargs)
+                else:
+                    raise err
             else:
                 raise err
 
@@ -123,15 +126,22 @@ class ApiClientWrapper(sdk.ApiClient):
                     self._cred_store.update_key(res.secret_key)
                     self.configuration.password = res.secret_key
 
-    def refresh_token(self) -> None:
-        logger.debug("Refreshing access token...")
+    def refresh_token(self) -> bool:
+        if self.configuration.username and self.configuration.password:
+            logger.debug("Refreshing access token...")
 
-        # Instantiate with super to avoid infinite recursion through call_api
-        token = sdk.AuthApi(super()).token(grant_type=sdk.GrantType.CLIENT_CREDENTIALS)
+            # Instantiate with super to avoid infinite recursion through call_api
+            token = sdk.AuthApi(super()).token(
+                grant_type=sdk.GrantType.CLIENT_CREDENTIALS
+            )
 
-        self.configuration.access_token = token.access_token
+            self.configuration.access_token = token.access_token
 
-        logger.debug("Successfully refreshed token!")
+            logger.debug("Successfully refreshed token!")
+
+            return True
+
+        return False
 
     def _should_rotate(self, cred_store: ICredStorage) -> bool:
         now = datetime.now(timezone.utc)
