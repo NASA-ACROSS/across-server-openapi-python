@@ -6,12 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**name** | **str** |  | 
-**description** | **str** |  | 
 **expiration** | **datetime** |  | 
 **expiration_duration** | **int** |  | 
-**group_roles** | [**List[GroupRoleRead]**](GroupRoleRead.md) |  | 
-**secret_key** | **str** |  | [optional] 
+**secret_key** | **str** |  | 
+**name** | **str** |  | 
+**description** | **str** |  | 
 
 ## Example
 

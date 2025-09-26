@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **type** | [**ObservatoryType**](ObservatoryType.md) |  | 
 **telescopes** | [**List[IDNameSchema]**](IDNameSchema.md) |  | [optional] 
 **ephemeris_types** | [**List[ObservatoryEphemerisType]**](ObservatoryEphemerisType.md) |  | [optional] 
+**reference_url** | **str** |  | 
 
 ## Example
 

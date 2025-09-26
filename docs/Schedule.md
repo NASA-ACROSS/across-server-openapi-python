@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **fidelity** | [**ScheduleFidelity**](ScheduleFidelity.md) |  | [optional] 
 **id** | **str** |  | 
 **observations** | [**List[Observation]**](Observation.md) |  | 
+**observation_count** | **int** |  | 
 **created_on** | **datetime** |  | 
 **created_by_id** | **str** |  | 
 **checksum** | **str** |  | [optional] [default to '']

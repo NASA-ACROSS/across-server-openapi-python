@@ -18,23 +18,21 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
-from across.sdk.v1.models.group_role_read import GroupRoleRead
+from across.sdk.v1.models.schedule_status import ScheduleStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AcrossServerRoutesV1GroupSchemasUser(BaseModel):
+class ScheduleCadence(BaseModel):
     """
-    AcrossServerRoutesV1GroupSchemasUser
+    ScheduleCadence
     """ # noqa: E501
     id: UUID
-    username: StrictStr
-    first_name: StrictStr
-    last_name: StrictStr
-    email: StrictStr
-    group_roles: List[GroupRoleRead]
-    __properties: ClassVar[List[str]] = ["id", "username", "first_name", "last_name", "email", "group_roles"]
+    telescope_id: UUID
+    cron: Optional[StrictStr]
+    schedule_status: ScheduleStatus
+    __properties: ClassVar[List[str]] = ["id", "telescope_id", "cron", "schedule_status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -54,7 +52,7 @@ class AcrossServerRoutesV1GroupSchemasUser(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AcrossServerRoutesV1GroupSchemasUser from a JSON string"""
+        """Create an instance of ScheduleCadence from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,18 +73,16 @@ class AcrossServerRoutesV1GroupSchemasUser(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in group_roles (list)
-        _items = []
-        if self.group_roles:
-            for _item_group_roles in self.group_roles:
-                if _item_group_roles:
-                    _items.append(_item_group_roles.to_dict())
-            _dict['group_roles'] = _items
+        # set to None if cron (nullable) is None
+        # and model_fields_set contains the field
+        if self.cron is None and "cron" in self.model_fields_set:
+            _dict['cron'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AcrossServerRoutesV1GroupSchemasUser from a dict"""
+        """Create an instance of ScheduleCadence from a dict"""
         if obj is None:
             return None
 
@@ -95,11 +91,9 @@ class AcrossServerRoutesV1GroupSchemasUser(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "username": obj.get("username"),
-            "first_name": obj.get("first_name"),
-            "last_name": obj.get("last_name"),
-            "email": obj.get("email"),
-            "group_roles": [GroupRoleRead.from_dict(_item) for _item in obj["group_roles"]] if obj.get("group_roles") is not None else None
+            "telescope_id": obj.get("telescope_id"),
+            "cron": obj.get("cron"),
+            "schedule_status": obj.get("schedule_status")
         })
         return _obj
 

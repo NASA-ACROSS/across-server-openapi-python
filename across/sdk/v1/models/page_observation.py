@@ -17,24 +17,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from uuid import UUID
-from across.sdk.v1.models.group_role_read import GroupRoleRead
+from pydantic import BaseModel, ConfigDict, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional
+from across.sdk.v1.models.observation import Observation
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AcrossServerRoutesV1GroupSchemasUser(BaseModel):
+class PageObservation(BaseModel):
     """
-    AcrossServerRoutesV1GroupSchemasUser
+    PageObservation
     """ # noqa: E501
-    id: UUID
-    username: StrictStr
-    first_name: StrictStr
-    last_name: StrictStr
-    email: StrictStr
-    group_roles: List[GroupRoleRead]
-    __properties: ClassVar[List[str]] = ["id", "username", "first_name", "last_name", "email", "group_roles"]
+    total_number: Optional[StrictInt]
+    page: Optional[StrictInt]
+    page_limit: Optional[StrictInt]
+    items: List[Observation]
+    __properties: ClassVar[List[str]] = ["total_number", "page", "page_limit", "items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -54,7 +51,7 @@ class AcrossServerRoutesV1GroupSchemasUser(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AcrossServerRoutesV1GroupSchemasUser from a JSON string"""
+        """Create an instance of PageObservation from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,18 +72,33 @@ class AcrossServerRoutesV1GroupSchemasUser(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in group_roles (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
-        if self.group_roles:
-            for _item_group_roles in self.group_roles:
-                if _item_group_roles:
-                    _items.append(_item_group_roles.to_dict())
-            _dict['group_roles'] = _items
+        if self.items:
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
+            _dict['items'] = _items
+        # set to None if total_number (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_number is None and "total_number" in self.model_fields_set:
+            _dict['total_number'] = None
+
+        # set to None if page (nullable) is None
+        # and model_fields_set contains the field
+        if self.page is None and "page" in self.model_fields_set:
+            _dict['page'] = None
+
+        # set to None if page_limit (nullable) is None
+        # and model_fields_set contains the field
+        if self.page_limit is None and "page_limit" in self.model_fields_set:
+            _dict['page_limit'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AcrossServerRoutesV1GroupSchemasUser from a dict"""
+        """Create an instance of PageObservation from a dict"""
         if obj is None:
             return None
 
@@ -94,12 +106,10 @@ class AcrossServerRoutesV1GroupSchemasUser(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "username": obj.get("username"),
-            "first_name": obj.get("first_name"),
-            "last_name": obj.get("last_name"),
-            "email": obj.get("email"),
-            "group_roles": [GroupRoleRead.from_dict(_item) for _item in obj["group_roles"]] if obj.get("group_roles") is not None else None
+            "total_number": obj.get("total_number"),
+            "page": obj.get("page"),
+            "page_limit": obj.get("page_limit"),
+            "items": [Observation.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **expiration** | **datetime** |  | 
 **expiration_duration** | **int** |  | 
-**roles** | [**List[RoleBase]**](RoleBase.md) |  | 
-**group_roles** | [**List[GroupRoleRead]**](GroupRoleRead.md) |  | 
+**roles** | [**List[RoleBase]**](RoleBase.md) |  | [optional] [default to []]
+**group_roles** | [**List[GroupRoleRead]**](GroupRoleRead.md) |  | [optional] [default to []]
 
 ## Example
 

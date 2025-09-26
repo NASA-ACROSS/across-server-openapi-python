@@ -27,9 +27,9 @@ from across.sdk.v1.models.point import Point
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Instrument(BaseModel):
+class TelescopeInstrument(BaseModel):
     """
-    A Pydantic model class representing a created Instrument  Notes ----- Inherits from InstrumentBase  Methods ------- from_orm(instrument: InstrumentModel) -> Instrument     Static method that instantiates this class from a Instrument database record
+    A Pydantic model class representing a created Instrument for the Telescope Endpoint  Notes ----- Inherits from InstrumentBase  Methods ------- from_orm(instrument: InstrumentModel, include_footprints: bool, include_filters: bool) -> Instrument     Static method that instantiates this class from a Instrument database record
     """ # noqa: E501
     id: UUID
     created_on: datetime
@@ -58,7 +58,7 @@ class Instrument(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Instrument from a JSON string"""
+        """Create an instance of TelescopeInstrument from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -112,7 +112,7 @@ class Instrument(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Instrument from a dict"""
+        """Create an instance of TelescopeInstrument from a dict"""
         if obj is None:
             return None
 

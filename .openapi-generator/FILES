@@ -69,6 +69,7 @@ across/sdk/v1/models/observation_type.py
 across/sdk/v1/models/observatory.py
 across/sdk/v1/models/observatory_ephemeris_type.py
 across/sdk/v1/models/observatory_type.py
+across/sdk/v1/models/page_observation.py
 across/sdk/v1/models/page_schedule.py
 across/sdk/v1/models/parameters.py
 across/sdk/v1/models/permission.py
@@ -76,6 +77,7 @@ across/sdk/v1/models/point.py
 across/sdk/v1/models/role.py
 across/sdk/v1/models/role_base.py
 across/sdk/v1/models/schedule.py
+across/sdk/v1/models/schedule_cadence.py
 across/sdk/v1/models/schedule_create.py
 across/sdk/v1/models/schedule_create_many.py
 across/sdk/v1/models/schedule_fidelity.py
@@ -85,8 +87,8 @@ across/sdk/v1/models/service_account_secret.py
 across/sdk/v1/models/service_account_update.py
 across/sdk/v1/models/spice_parameters.py
 across/sdk/v1/models/system_service_account.py
-across/sdk/v1/models/system_service_account_secret.py
 across/sdk/v1/models/telescope.py
+across/sdk/v1/models/telescope_instrument.py
 across/sdk/v1/models/tle.py
 across/sdk/v1/models/tle_create.py
 across/sdk/v1/models/tle_parameters.py
@@ -153,6 +155,7 @@ docs/Observatory.md
 docs/ObservatoryApi.md
 docs/ObservatoryEphemerisType.md
 docs/ObservatoryType.md
+docs/PageObservation.md
 docs/PageSchedule.md
 docs/Parameters.md
 docs/Permission.md
@@ -164,6 +167,7 @@ docs/RoleBase.md
 docs/SPICEParameters.md
 docs/Schedule.md
 docs/ScheduleApi.md
+docs/ScheduleCadence.md
 docs/ScheduleCreate.md
 docs/ScheduleCreateMany.md
 docs/ScheduleFidelity.md
@@ -173,13 +177,13 @@ docs/ServiceAccountCreate.md
 docs/ServiceAccountSecret.md
 docs/ServiceAccountUpdate.md
 docs/SystemServiceAccount.md
-docs/SystemServiceAccountSecret.md
 docs/TLE.md
 docs/TLEApi.md
 docs/TLECreate.md
 docs/TLEParameters.md
 docs/Telescope.md
 docs/TelescopeApi.md
+docs/TelescopeInstrument.md
 docs/UnitValue.md
 docs/UserApi.md
 docs/UserCreate.md
@@ -194,6 +198,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_system_service_account.py
-test/test_system_service_account_secret.py
 tox.ini

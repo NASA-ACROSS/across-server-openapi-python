@@ -79,7 +79,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_observations**
-> List[Observation] get_observations(external_id=external_id, schedule_ids=schedule_ids, observatory_ids=observatory_ids, telescope_ids=telescope_ids, instrument_ids=instrument_ids, status=status, proposal=proposal, object_name=object_name, date_range_begin=date_range_begin, date_range_end=date_range_end, bandpass_min=bandpass_min, bandpass_max=bandpass_max, bandpass_type=bandpass_type, cone_search_ra=cone_search_ra, cone_search_dec=cone_search_dec, cone_search_radius=cone_search_radius, type=type, depth_value=depth_value, depth_unit=depth_unit)
+> PageObservation get_observations(page=page, page_limit=page_limit, external_id=external_id, schedule_ids=schedule_ids, observatory_ids=observatory_ids, telescope_ids=telescope_ids, instrument_ids=instrument_ids, status=status, proposal=proposal, object_name=object_name, date_range_begin=date_range_begin, date_range_end=date_range_end, bandpass_min=bandpass_min, bandpass_max=bandpass_max, bandpass_type=bandpass_type, cone_search_ra=cone_search_ra, cone_search_dec=cone_search_dec, cone_search_radius=cone_search_radius, type=type, depth_value=depth_value, depth_unit=depth_unit)
 
 Read observations(s)
 
@@ -91,9 +91,9 @@ Read the observations based on query params
 ```python
 import across.sdk.v1
 from across.sdk.v1.models.depth_unit import DepthUnit
-from across.sdk.v1.models.observation import Observation
 from across.sdk.v1.models.observation_status import ObservationStatus
 from across.sdk.v1.models.observation_type import ObservationType
+from across.sdk.v1.models.page_observation import PageObservation
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
@@ -108,6 +108,8 @@ configuration = across.sdk.v1.Configuration(
 with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = across.sdk.v1.ObservationApi(api_client)
+    page = 56 # int | Page number (optional)
+    page_limit = 56 # int | Records per page (optional)
     external_id = 'external_id_example' # str |  (optional)
     schedule_ids = ['schedule_ids_example'] # List[Optional[str]] |  (optional)
     observatory_ids = ['observatory_ids_example'] # List[str] |  (optional)
@@ -130,7 +132,7 @@ with across.sdk.v1.ApiClient(configuration) as api_client:
 
     try:
         # Read observations(s)
-        api_response = api_instance.get_observations(external_id=external_id, schedule_ids=schedule_ids, observatory_ids=observatory_ids, telescope_ids=telescope_ids, instrument_ids=instrument_ids, status=status, proposal=proposal, object_name=object_name, date_range_begin=date_range_begin, date_range_end=date_range_end, bandpass_min=bandpass_min, bandpass_max=bandpass_max, bandpass_type=bandpass_type, cone_search_ra=cone_search_ra, cone_search_dec=cone_search_dec, cone_search_radius=cone_search_radius, type=type, depth_value=depth_value, depth_unit=depth_unit)
+        api_response = api_instance.get_observations(page=page, page_limit=page_limit, external_id=external_id, schedule_ids=schedule_ids, observatory_ids=observatory_ids, telescope_ids=telescope_ids, instrument_ids=instrument_ids, status=status, proposal=proposal, object_name=object_name, date_range_begin=date_range_begin, date_range_end=date_range_end, bandpass_min=bandpass_min, bandpass_max=bandpass_max, bandpass_type=bandpass_type, cone_search_ra=cone_search_ra, cone_search_dec=cone_search_dec, cone_search_radius=cone_search_radius, type=type, depth_value=depth_value, depth_unit=depth_unit)
         print("The response of ObservationApi->get_observations:\n")
         pprint(api_response)
     except Exception as e:
@@ -144,6 +146,8 @@ with across.sdk.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number | [optional] 
+ **page_limit** | **int**| Records per page | [optional] 
  **external_id** | **str**|  | [optional] 
  **schedule_ids** | [**List[Optional[str]]**](str.md)|  | [optional] 
  **observatory_ids** | [**List[str]**](str.md)|  | [optional] 
@@ -166,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[Observation]**](Observation.md)
+[**PageObservation**](PageObservation.md)
 
 ### Authorization
 

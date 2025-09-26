@@ -10,8 +10,9 @@ Name | Type | Description | Notes
 **created_on** | **datetime** |  | 
 **name** | **str** |  | 
 **short_name** | **str** |  | 
+**schedule_cadences** | [**List[ScheduleCadence]**](ScheduleCadence.md) |  | [optional] 
 **observatory** | [**IDNameSchema**](IDNameSchema.md) |  | [optional] 
-**instruments** | [**List[IDNameSchema]**](IDNameSchema.md) |  | [optional] 
+**instruments** | [**List[TelescopeInstrument]**](TelescopeInstrument.md) |  | [optional] 
 
 ## Example
 

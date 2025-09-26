@@ -79,7 +79,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_telescopes**
-> List[Telescope] get_telescopes(name=name, instrument_id=instrument_id, instrument_name=instrument_name, created_on=created_on)
+> List[Telescope] get_telescopes(name=name, instrument_id=instrument_id, instrument_name=instrument_name, created_on=created_on, include_filters=include_filters, include_footprints=include_footprints)
 
 Read telescopes(s)
 
@@ -109,10 +109,12 @@ with across.sdk.v1.ApiClient(configuration) as api_client:
     instrument_id = 'instrument_id_example' # str |  (optional)
     instrument_name = 'instrument_name_example' # str |  (optional)
     created_on = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    include_filters = False # bool |  (optional) (default to False)
+    include_footprints = False # bool |  (optional) (default to False)
 
     try:
         # Read telescopes(s)
-        api_response = api_instance.get_telescopes(name=name, instrument_id=instrument_id, instrument_name=instrument_name, created_on=created_on)
+        api_response = api_instance.get_telescopes(name=name, instrument_id=instrument_id, instrument_name=instrument_name, created_on=created_on, include_filters=include_filters, include_footprints=include_footprints)
         print("The response of TelescopeApi->get_telescopes:\n")
         pprint(api_response)
     except Exception as e:
@@ -130,6 +132,8 @@ Name | Type | Description  | Notes
  **instrument_id** | **str**|  | [optional] 
  **instrument_name** | **str**|  | [optional] 
  **created_on** | **datetime**|  | [optional] 
+ **include_filters** | **bool**|  | [optional] [default to False]
+ **include_footprints** | **bool**|  | [optional] [default to False]
 
 ### Return type
 
