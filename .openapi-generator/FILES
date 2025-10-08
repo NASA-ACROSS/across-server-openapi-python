@@ -14,7 +14,6 @@ across/sdk/v1/api/internal_api.py
 across/sdk/v1/api/observation_api.py
 across/sdk/v1/api/observatory_api.py
 across/sdk/v1/api/permission_api.py
-across/sdk/v1/api/role_api.py
 across/sdk/v1/api/schedule_api.py
 across/sdk/v1/api/service_account_api.py
 across/sdk/v1/api/telescope_api.py
@@ -32,7 +31,6 @@ across/sdk/v1/models/across_server_routes_v1_group_role_schemas_service_account.
 across/sdk/v1/models/across_server_routes_v1_group_role_schemas_user.py
 across/sdk/v1/models/across_server_routes_v1_group_schemas_group.py
 across/sdk/v1/models/across_server_routes_v1_group_schemas_user.py
-across/sdk/v1/models/across_server_routes_v1_role_schemas_user.py
 across/sdk/v1/models/across_server_routes_v1_user_schemas_group.py
 across/sdk/v1/models/across_server_routes_v1_user_schemas_group_invite.py
 across/sdk/v1/models/across_server_routes_v1_user_schemas_group_role.py
@@ -74,7 +72,6 @@ across/sdk/v1/models/page_schedule.py
 across/sdk/v1/models/parameters.py
 across/sdk/v1/models/permission.py
 across/sdk/v1/models/point.py
-across/sdk/v1/models/role.py
 across/sdk/v1/models/role_base.py
 across/sdk/v1/models/schedule.py
 across/sdk/v1/models/schedule_cadence.py
@@ -109,7 +106,6 @@ docs/AcrossServerRoutesV1GroupRoleSchemasServiceAccount.md
 docs/AcrossServerRoutesV1GroupRoleSchemasUser.md
 docs/AcrossServerRoutesV1GroupSchemasGroup.md
 docs/AcrossServerRoutesV1GroupSchemasUser.md
-docs/AcrossServerRoutesV1RoleSchemasUser.md
 docs/AcrossServerRoutesV1UserSchemasGroup.md
 docs/AcrossServerRoutesV1UserSchemasGroupInvite.md
 docs/AcrossServerRoutesV1UserSchemasGroupRole.md
@@ -161,8 +157,6 @@ docs/Parameters.md
 docs/Permission.md
 docs/PermissionApi.md
 docs/Point.md
-docs/Role.md
-docs/RoleApi.md
 docs/RoleBase.md
 docs/SPICEParameters.md
 docs/Schedule.md

@@ -5,7 +5,6 @@ All URIs are relative to */api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_group**](GroupApi.md#get_group) | **GET** /group/{group_id} | Read a group
-[**get_groups**](GroupApi.md#get_groups) | **GET** /group/ | Read groups
 [**remove_user**](GroupApi.md#remove_user) | **DELETE** /group/{group_id}/user/{user_id} | Remove a user from a group
 
 
@@ -86,81 +85,6 @@ Name | Type | Description  | Notes
 **200** | The requested group |  -  |
 **404** | The group does not exist. |  -  |
 **422** | Validation Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_groups**
-> List[AcrossServerRoutesV1GroupSchemasGroup] get_groups()
-
-Read groups
-
-Read many groups.
-
-### Example
-
-* Bearer Authentication (Authorization):
-
-```python
-import across.sdk.v1
-from across.sdk.v1.models.across_server_routes_v1_group_schemas_group import AcrossServerRoutesV1GroupSchemasGroup
-from across.sdk.v1.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to /api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: Authorization
-configuration = across.sdk.v1.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with across.sdk.v1.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = across.sdk.v1.GroupApi(api_client)
-
-    try:
-        # Read groups
-        api_response = api_instance.get_groups()
-        print("The response of GroupApi->get_groups:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling GroupApi->get_groups: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List[AcrossServerRoutesV1GroupSchemasGroup]**](AcrossServerRoutesV1GroupSchemasGroup.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A list of groups |  -  |
-**404** | The group does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -11,7 +11,6 @@ from across.sdk.v1.api.internal_api import InternalApi
 from across.sdk.v1.api.observation_api import ObservationApi
 from across.sdk.v1.api.observatory_api import ObservatoryApi
 from across.sdk.v1.api.permission_api import PermissionApi
-from across.sdk.v1.api.role_api import RoleApi
 from across.sdk.v1.api.schedule_api import ScheduleApi
 from across.sdk.v1.api.service_account_api import ServiceAccountApi
 from across.sdk.v1.api.tle_api import TLEApi
