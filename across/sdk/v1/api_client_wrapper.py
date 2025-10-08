@@ -167,10 +167,10 @@ class ApiClientWrapper(sdk.ApiClient):
 
         self._set_exp(res.expiration)
 
-        return res.expiration
+        return self._exp
 
     def _set_exp(self, date: datetime):
         if date.tzinfo is None:
-            dt = date.replace(tzinfo=timezone.utc)
-
-        self._exp = dt
+            self._exp = date.replace(tzinfo=timezone.utc)
+        else:
+            self._exp = date
