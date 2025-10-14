@@ -1,7 +1,11 @@
 import threading
 import logging
 import os
+import base64
+import json
 from datetime import datetime, timedelta, timezone
+import time
+from typing import Any
 
 import across.sdk.v1 as sdk
 from across.sdk.v1 import rest
@@ -113,6 +117,11 @@ class ApiClientWrapper(sdk.ApiClient):
 
     def refresh(self) -> None:
         if not self.configuration.access_token:
+            logger.debug('No access_token, refreshing')
+            self.refresh_token()
+
+        if self._is_token_invalid(self.configuration.access_token):
+            logger.debug('Expired access_token, refreshing')
             self.refresh_token()
 
         if self._cred_store:
@@ -125,6 +134,56 @@ class ApiClientWrapper(sdk.ApiClient):
                     self._set_exp(res.expiration)
                     self._cred_store.update_key(res.secret_key)
                     self.configuration.password = res.secret_key
+
+    
+
+    def _decode_jwt_part(self, encoded_part) -> dict[str, Any]:
+        """Decodes a Base64Url-encoded JWT part and returns the decoded JSON as a dictionary."""
+        # Add padding characters if missing, as Base64Url encoding might omit them.
+        # Base64 requires padding to be a multiple of 4.
+        missing_padding = len(encoded_part) % 4
+        if missing_padding != 0:
+            encoded_part += '=' * (4 - missing_padding)
+
+        # Decode from Base64Url to bytes to UTF-8
+        decoded_bytes = base64.urlsafe_b64decode(encoded_part).decode('utf-8')
+
+        if decoded_bytes is None:
+            logger.debug("Could not decode jwt payload as bytes")
+            return {}
+
+        decoded_json = json.loads(decoded_bytes)
+        return decoded_json
+
+    def _is_token_invalid(self, jwt_token):
+        """Returns True when the token is expired, malformed, or missing expiration"""
+        # JWT contains 3 parts, we're looking for the middle part; the payload with the exp key
+        jwt_parts = jwt_token.split('.')
+
+        if len(jwt_parts) != 3:
+            return True
+
+        payload_encoded = jwt_parts[1]
+
+        if payload_encoded is None:
+            logger.debug("Token missing payload")
+            return True
+
+        payload = self._decode_jwt_part(payload_encoded)
+        token_exp = payload.get('exp')
+        current_timestamp = time.time()
+
+        if token_exp is None:
+            logger.debug("Token missing exp")
+            return True
+
+        # Add 30 seconds to avoid boundary condition expiry while request is in flight
+        if token_exp < current_timestamp + 30:
+            logger.debug("Token is expired")
+            return True
+        
+        return False
+        
 
     def refresh_token(self) -> bool:
         if self.configuration.username and self.configuration.password:
