@@ -22,7 +22,9 @@ from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from across.sdk.v1.models.filter import Filter
 from across.sdk.v1.models.id_name_schema import IDNameSchema
+from across.sdk.v1.models.instrument_constraints_inner import InstrumentConstraintsInner
 from across.sdk.v1.models.point import Point
+from across.sdk.v1.models.visibility_type import VisibilityType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -37,7 +39,9 @@ class TelescopeInstrument(BaseModel):
     telescope: Optional[IDNameSchema] = None
     footprints: Optional[List[List[Point]]] = None
     filters: Optional[List[Filter]] = None
-    __properties: ClassVar[List[str]] = ["id", "created_on", "name", "short_name", "telescope", "footprints", "filters"]
+    constraints: Optional[List[InstrumentConstraintsInner]] = None
+    visibility_type: Optional[VisibilityType] = None
+    __properties: ClassVar[List[str]] = ["id", "created_on", "name", "short_name", "telescope", "footprints", "filters", "constraints", "visibility_type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,6 +101,13 @@ class TelescopeInstrument(BaseModel):
                 if _item_filters:
                     _items.append(_item_filters.to_dict())
             _dict['filters'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in constraints (list)
+        _items = []
+        if self.constraints:
+            for _item_constraints in self.constraints:
+                if _item_constraints:
+                    _items.append(_item_constraints.to_dict())
+            _dict['constraints'] = _items
         # set to None if telescope (nullable) is None
         # and model_fields_set contains the field
         if self.telescope is None and "telescope" in self.model_fields_set:
@@ -106,6 +117,21 @@ class TelescopeInstrument(BaseModel):
         # and model_fields_set contains the field
         if self.footprints is None and "footprints" in self.model_fields_set:
             _dict['footprints'] = None
+
+        # set to None if filters (nullable) is None
+        # and model_fields_set contains the field
+        if self.filters is None and "filters" in self.model_fields_set:
+            _dict['filters'] = None
+
+        # set to None if constraints (nullable) is None
+        # and model_fields_set contains the field
+        if self.constraints is None and "constraints" in self.model_fields_set:
+            _dict['constraints'] = None
+
+        # set to None if visibility_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.visibility_type is None and "visibility_type" in self.model_fields_set:
+            _dict['visibility_type'] = None
 
         return _dict
 
@@ -128,7 +154,9 @@ class TelescopeInstrument(BaseModel):
                     [Point.from_dict(_inner_item) for _inner_item in _item]
                     for _item in obj["footprints"]
                 ] if obj.get("footprints") is not None else None,
-            "filters": [Filter.from_dict(_item) for _item in obj["filters"]] if obj.get("filters") is not None else None
+            "filters": [Filter.from_dict(_item) for _item in obj["filters"]] if obj.get("filters") is not None else None,
+            "constraints": [InstrumentConstraintsInner.from_dict(_item) for _item in obj["constraints"]] if obj.get("constraints") is not None else None,
+            "visibility_type": obj.get("visibility_type")
         })
         return _obj
 

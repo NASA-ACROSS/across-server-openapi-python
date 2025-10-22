@@ -3841,13 +3841,123 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ServiceAccountSecret"
+                                    "$ref": "#/components/schemas/SystemServiceAccount"
                                 }
                             }
                         }
                     },
                     "404": {
                         "description": "Service account not found."
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tools/visibility-calculator/windows/{instrument_id}": {
+            "get": {
+                "tags": [
+                    "Tools",
+                    "Tools"
+                ],
+                "summary": "Calculated Visibility Windows",
+                "description": "Calculate visibility windows of a telescope from a given location.",
+                "operationId": "calculate_windows_tools_visibility_calculator_windows__instrument_id__get",
+                "parameters": [
+                    {
+                        "name": "instrument_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "title": "Instrument Id"
+                        }
+                    },
+                    {
+                        "name": "ra",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "maximum": 360.0,
+                            "minimum": 0.0,
+                            "title": "Ra"
+                        }
+                    },
+                    {
+                        "name": "dec",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "maximum": 90.0,
+                            "minimum": -90.0,
+                            "title": "Dec"
+                        }
+                    },
+                    {
+                        "name": "date_range_begin",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time",
+                            "title": "Date Range Begin"
+                        }
+                    },
+                    {
+                        "name": "date_range_end",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time",
+                            "title": "Date Range End"
+                        }
+                    },
+                    {
+                        "name": "hi_res",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": true,
+                            "title": "Hi Res"
+                        }
+                    },
+                    {
+                        "name": "min_visibility_duration",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 0,
+                            "title": "Min Visibility Duration"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Return visibility window calculation results.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VisibilityResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The visibility calculator does not exist."
                     },
                     "422": {
                         "description": "Validation Error",
@@ -3883,6 +3993,89 @@
                 ],
                 "title": "AccessTokenResponse"
             },
+            "AltAzConstraint": {
+                "properties": {
+                    "short_name": {
+                        "type": "string",
+                        "title": "Short Name",
+                        "default": "AltAz"
+                    },
+                    "name": {
+                        "type": "string",
+                        "const": "Altitude/Azimuth Avoidance",
+                        "title": "Name",
+                        "default": "Altitude/Azimuth Avoidance"
+                    },
+                    "polygon": {
+                        "items": {
+                            "items": {
+                                "type": "number"
+                            },
+                            "type": "array"
+                        },
+                        "type": "array",
+                        "title": "Polygon"
+                    },
+                    "altitude_min": {
+                        "anyOf": [
+                            {
+                                "type": "number",
+                                "maximum": 90.0,
+                                "minimum": 0.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Altitude Min"
+                    },
+                    "altitude_max": {
+                        "anyOf": [
+                            {
+                                "type": "number",
+                                "maximum": 90.0,
+                                "minimum": 0.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Altitude Max"
+                    },
+                    "azimuth_min": {
+                        "anyOf": [
+                            {
+                                "type": "number",
+                                "exclusiveMaximum": 360.0,
+                                "minimum": 0.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Azimuth Min"
+                    },
+                    "azimuth_max": {
+                        "anyOf": [
+                            {
+                                "type": "number",
+                                "exclusiveMaximum": 360.0,
+                                "minimum": 0.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Azimuth Max"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "polygon"
+                ],
+                "title": "AltAzConstraint",
+                "description": "For a given Alt/Az constraint, is a given coordinate inside this\nconstraint? Constraint is both defined by a polygon exclusion region and a\nminimum and maximum altitude. By default the minimum and maximum altitude\nvalues are 0 and 90 degrees respectively. Polygon restriction regions can\nbe combined with minimum and maximum altitude restrictions.\n\nParameters\n----------\npolygon\n    The polygon defining the exclusion region.\nmin\n    The minimum altitude in degrees.\nmax\n    The maximum altitude in degrees."
+            },
             "Body_token": {
                 "properties": {
                     "grant_type": {
@@ -3894,6 +4087,65 @@
                     "grant_type"
                 ],
                 "title": "Body_token"
+            },
+            "ConstrainedDate": {
+                "properties": {
+                    "datetime": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Datetime"
+                    },
+                    "constraint": {
+                        "$ref": "#/components/schemas/ConstraintType"
+                    },
+                    "observatory_id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Observatory Id"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "datetime",
+                    "constraint",
+                    "observatory_id"
+                ],
+                "title": "ConstrainedDate",
+                "description": "Represents a constrained date."
+            },
+            "ConstraintReason": {
+                "properties": {
+                    "start_reason": {
+                        "type": "string",
+                        "title": "Start Reason"
+                    },
+                    "end_reason": {
+                        "type": "string",
+                        "title": "End Reason"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "start_reason",
+                    "end_reason"
+                ],
+                "title": "ConstraintReason",
+                "description": "Represents the reasons for constraints."
+            },
+            "ConstraintType": {
+                "type": "string",
+                "enum": [
+                    "Sun Angle",
+                    "Moon Angle",
+                    "Earth Limb",
+                    "Window",
+                    "Unknown",
+                    "South Atlantic Anomaly",
+                    "Altitude/Azimuth Avoidance",
+                    "Test Constraint"
+                ],
+                "title": "ConstraintType",
+                "description": "Represents a constraint."
             },
             "Coordinate": {
                 "properties": {
@@ -3960,6 +4212,53 @@
                     "flux_jy"
                 ],
                 "title": "DepthUnit"
+            },
+            "EarthLimbConstraint": {
+                "properties": {
+                    "short_name": {
+                        "type": "string",
+                        "const": "Earth",
+                        "title": "Short Name",
+                        "default": "Earth"
+                    },
+                    "name": {
+                        "type": "string",
+                        "const": "Earth Limb",
+                        "title": "Name",
+                        "default": "Earth Limb"
+                    },
+                    "min_angle": {
+                        "anyOf": [
+                            {
+                                "type": "number",
+                                "maximum": 180.0,
+                                "minimum": 0.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Min Angle",
+                        "description": "Minimum angle from the Earth limb"
+                    },
+                    "max_angle": {
+                        "anyOf": [
+                            {
+                                "type": "number",
+                                "maximum": 180.0,
+                                "minimum": 0.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Max Angle",
+                        "description": "Maximum angle from the Earth limb"
+                    }
+                },
+                "type": "object",
+                "title": "EarthLimbConstraint",
+                "description": "For a given Earth limb avoidance angle, is a given coordinate inside this\nconstraint?\n\nParameters\n----------\nname\n    The name of the constraint.\nshort_name\n    The short name of the constraint.\nmin_angle\n    The minimum angle from the Earth limb that the spacecraft can point.\n\nMethods\n-------\n__call__(coord, ephemeris, earth_radius_angle=None)\n    Checks if a given coordinate is inside the constraint."
             },
             "EnergyBandpass": {
                 "properties": {
@@ -4464,12 +4763,68 @@
                         "title": "Footprints"
                     },
                     "filters": {
-                        "items": {
-                            "$ref": "#/components/schemas/Filter"
-                        },
-                        "type": "array",
-                        "title": "Filters",
-                        "default": []
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "$ref": "#/components/schemas/Filter"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Filters"
+                    },
+                    "constraints": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "oneOf": [
+                                        {
+                                            "$ref": "#/components/schemas/EarthLimbConstraint"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/MoonAngleConstraint"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/SunAngleConstraint"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/SAAPolygonConstraint"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/AltAzConstraint"
+                                        }
+                                    ],
+                                    "discriminator": {
+                                        "propertyName": "name",
+                                        "mapping": {
+                                            "Altitude/Azimuth Avoidance": "#/components/schemas/AltAzConstraint",
+                                            "Earth Limb": "#/components/schemas/EarthLimbConstraint",
+                                            "Moon Angle": "#/components/schemas/MoonAngleConstraint",
+                                            "South Atlantic Anomaly": "#/components/schemas/SAAPolygonConstraint",
+                                            "Sun Angle": "#/components/schemas/SunAngleConstraint"
+                                        }
+                                    }
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Constraints"
+                    },
+                    "visibility_type": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/VisibilityType"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
                     }
                 },
                 "type": "object",
@@ -4502,6 +4857,87 @@
                 },
                 "type": "array",
                 "title": "ListResponse[UUID]"
+            },
+            "MoonAngleConstraint": {
+                "properties": {
+                    "short_name": {
+                        "type": "string",
+                        "const": "Moon",
+                        "title": "Short Name",
+                        "default": "Moon"
+                    },
+                    "name": {
+                        "type": "string",
+                        "const": "Moon Angle",
+                        "title": "Name",
+                        "default": "Moon Angle"
+                    },
+                    "min_angle": {
+                        "anyOf": [
+                            {
+                                "type": "number",
+                                "maximum": 180.0,
+                                "minimum": 0.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Min Angle",
+                        "description": "Minimum angle from the Moon"
+                    },
+                    "max_angle": {
+                        "anyOf": [
+                            {
+                                "type": "number",
+                                "maximum": 180.0,
+                                "minimum": 0.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Max Angle",
+                        "description": "Maximum angle from the Moon"
+                    }
+                },
+                "type": "object",
+                "title": "MoonAngleConstraint",
+                "description": "For a given Moon avoidance angle, is a given coordinate inside this\nconstraint?\n\nParameters\n----------\nmin_angle\n    The minimum angle from the Moon that the spacecraft can point.\n\nMethods\n-------\n__call__(coord, ephemeris, moon_radius_angle=None)\n    Checks if a given coordinate is inside the constraint."
+            },
+            "NullableDateRange": {
+                "properties": {
+                    "begin": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Begin"
+                    },
+                    "end": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "End"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "begin",
+                    "end"
+                ],
+                "title": "NullableDateRange"
             },
             "Observation": {
                 "properties": {
@@ -5083,6 +5519,16 @@
                             }
                         ],
                         "title": "Reference Url"
+                    },
+                    "operational": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/NullableDateRange"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
                     }
                 },
                 "type": "object",
@@ -5092,7 +5538,8 @@
                     "name",
                     "short_name",
                     "type",
-                    "reference_url"
+                    "reference_url",
+                    "operational"
                 ],
                 "title": "Observatory",
                 "description": "A Pydantic model class representing a created observatory\n\nNotes\n-----\nInherits from ObservatoryBase"
@@ -5300,6 +5747,34 @@
                     "name"
                 ],
                 "title": "RoleBase"
+            },
+            "SAAPolygonConstraint": {
+                "properties": {
+                    "short_name": {
+                        "type": "string",
+                        "title": "Short Name",
+                        "default": "SAA"
+                    },
+                    "name": {
+                        "type": "string",
+                        "const": "South Atlantic Anomaly",
+                        "title": "Name",
+                        "default": "South Atlantic Anomaly"
+                    },
+                    "polygon": {
+                        "items": {
+                            "items": {
+                                "type": "number"
+                            },
+                            "type": "array"
+                        },
+                        "type": "array",
+                        "title": "Polygon"
+                    }
+                },
+                "type": "object",
+                "title": "SAAPolygonConstraint",
+                "description": "Polygon based SAA constraint. The SAA is defined by a Shapely Polygon, and\nthis constraint will calculate for a given set of times and a given\nephemeris whether the spacecraft is in that SAA polygon.\n\nAttributes\n----------\npolygon\n    Shapely Polygon object defining the SAA polygon."
             },
             "SPICEParameters": {
                 "properties": {
@@ -5674,6 +6149,53 @@
                 "type": "object",
                 "title": "ServiceAccountUpdate"
             },
+            "SunAngleConstraint": {
+                "properties": {
+                    "short_name": {
+                        "type": "string",
+                        "const": "Sun",
+                        "title": "Short Name",
+                        "default": "Sun"
+                    },
+                    "name": {
+                        "type": "string",
+                        "const": "Sun Angle",
+                        "title": "Name",
+                        "default": "Sun Angle"
+                    },
+                    "min_angle": {
+                        "anyOf": [
+                            {
+                                "type": "number",
+                                "maximum": 180.0,
+                                "minimum": 0.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Min Angle",
+                        "description": "Minimum angle from the Sun"
+                    },
+                    "max_angle": {
+                        "anyOf": [
+                            {
+                                "type": "number",
+                                "maximum": 180.0,
+                                "minimum": 0.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Max Angle",
+                        "description": "Maximum angle from the Sun"
+                    }
+                },
+                "type": "object",
+                "title": "SunAngleConstraint",
+                "description": "For a given Sun avoidance angle, is a given coordinate inside this\nconstraint?\n\nParameters\n----------\nmin_angle\n    The minimum angle from the Sun that the spacecraft can point.\n\nmax_angle\n    The maximum angle from the Sun that the spacecraft can point.\n\nMethods\n-------\n__call__(coord, ephemeris, sun_radius_angle=None)\n    Checks if a given coordinate is inside the constraint."
+            },
             "SystemServiceAccount": {
                 "properties": {
                     "id": {
@@ -5938,12 +6460,68 @@
                         "title": "Footprints"
                     },
                     "filters": {
-                        "items": {
-                            "$ref": "#/components/schemas/Filter"
-                        },
-                        "type": "array",
-                        "title": "Filters",
-                        "default": []
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "$ref": "#/components/schemas/Filter"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Filters"
+                    },
+                    "constraints": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "oneOf": [
+                                        {
+                                            "$ref": "#/components/schemas/EarthLimbConstraint"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/MoonAngleConstraint"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/SunAngleConstraint"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/SAAPolygonConstraint"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/AltAzConstraint"
+                                        }
+                                    ],
+                                    "discriminator": {
+                                        "propertyName": "name",
+                                        "mapping": {
+                                            "Altitude/Azimuth Avoidance": "#/components/schemas/AltAzConstraint",
+                                            "Earth Limb": "#/components/schemas/EarthLimbConstraint",
+                                            "Moon Angle": "#/components/schemas/MoonAngleConstraint",
+                                            "South Atlantic Anomaly": "#/components/schemas/SAAPolygonConstraint",
+                                            "Sun Angle": "#/components/schemas/SunAngleConstraint"
+                                        }
+                                    }
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Constraints"
+                    },
+                    "visibility_type": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/VisibilityType"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
                     }
                 },
                 "type": "object",
@@ -6109,6 +6687,60 @@
                 ],
                 "title": "ValidationError"
             },
+            "VisibilityResult": {
+                "properties": {
+                    "instrument_id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Instrument Id"
+                    },
+                    "visibility_windows": {
+                        "items": {
+                            "$ref": "#/components/schemas/VisibilityWindow"
+                        },
+                        "type": "array",
+                        "title": "Visibility Windows"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "instrument_id",
+                    "visibility_windows"
+                ],
+                "title": "VisibilityResult",
+                "description": "A Pydantic model class representing the visibility calculation parameters.\n\nThis class is used for visibility calculations in the ACROSS SSA system."
+            },
+            "VisibilityType": {
+                "type": "string",
+                "enum": [
+                    "ephemeris",
+                    "vo",
+                    "custom"
+                ],
+                "title": "VisibilityType"
+            },
+            "VisibilityWindow": {
+                "properties": {
+                    "window": {
+                        "$ref": "#/components/schemas/Window"
+                    },
+                    "max_visibility_duration": {
+                        "type": "integer",
+                        "title": "Max Visibility Duration"
+                    },
+                    "constraint_reason": {
+                        "$ref": "#/components/schemas/ConstraintReason"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "window",
+                    "max_visibility_duration",
+                    "constraint_reason"
+                ],
+                "title": "VisibilityWindow",
+                "description": "Represents a Visibility Window with max visibility duration and\ninformation about the start and end constraints reason."
+            },
             "WavelengthBandpass": {
                 "properties": {
                     "filter_name": {
@@ -6204,6 +6836,23 @@
                 ],
                 "title": "WavelengthUnit",
                 "description": "Enum to represent the bandpass wavelength"
+            },
+            "Window": {
+                "properties": {
+                    "begin": {
+                        "$ref": "#/components/schemas/ConstrainedDate"
+                    },
+                    "end": {
+                        "$ref": "#/components/schemas/ConstrainedDate"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "begin",
+                    "end"
+                ],
+                "title": "Window",
+                "description": "Visibility Window"
             },
             "across_server__routes__v1__group__invite__schemas__GroupInvite": {
                 "properties": {
@@ -6304,7 +6953,11 @@
                         "title": "Description"
                     },
                     "user": {
-                        "$ref": "#/components/schemas/across_server__routes__v1__group__role__schemas__User"
+                        "items": {
+                            "$ref": "#/components/schemas/across_server__routes__v1__group__role__schemas__User"
+                        },
+                        "type": "array",
+                        "title": "User"
                     }
                 },
                 "type": "object",

@@ -17,21 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from across.sdk.v1.models.across_server_routes_v1_group_role_schemas_user import AcrossServerRoutesV1GroupRoleSchemasUser
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List
+from across.sdk.v1.models.constrained_date import ConstrainedDate
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AcrossServerRoutesV1GroupRoleSchemasServiceAccount(BaseModel):
+class Window(BaseModel):
     """
-    AcrossServerRoutesV1GroupRoleSchemasServiceAccount
+    Visibility Window
     """ # noqa: E501
-    id: StrictStr
-    name: StrictStr
-    description: Optional[StrictStr]
-    user: List[AcrossServerRoutesV1GroupRoleSchemasUser]
-    __properties: ClassVar[List[str]] = ["id", "name", "description", "user"]
+    begin: ConstrainedDate
+    end: ConstrainedDate
+    __properties: ClassVar[List[str]] = ["begin", "end"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -51,7 +49,7 @@ class AcrossServerRoutesV1GroupRoleSchemasServiceAccount(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AcrossServerRoutesV1GroupRoleSchemasServiceAccount from a JSON string"""
+        """Create an instance of Window from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,23 +70,17 @@ class AcrossServerRoutesV1GroupRoleSchemasServiceAccount(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in user (list)
-        _items = []
-        if self.user:
-            for _item_user in self.user:
-                if _item_user:
-                    _items.append(_item_user.to_dict())
-            _dict['user'] = _items
-        # set to None if description (nullable) is None
-        # and model_fields_set contains the field
-        if self.description is None and "description" in self.model_fields_set:
-            _dict['description'] = None
-
+        # override the default output from pydantic by calling `to_dict()` of begin
+        if self.begin:
+            _dict['begin'] = self.begin.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of end
+        if self.end:
+            _dict['end'] = self.end.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AcrossServerRoutesV1GroupRoleSchemasServiceAccount from a dict"""
+        """Create an instance of Window from a dict"""
         if obj is None:
             return None
 
@@ -96,10 +88,8 @@ class AcrossServerRoutesV1GroupRoleSchemasServiceAccount(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "name": obj.get("name"),
-            "description": obj.get("description"),
-            "user": [AcrossServerRoutesV1GroupRoleSchemasUser.from_dict(_item) for _item in obj["user"]] if obj.get("user") is not None else None
+            "begin": ConstrainedDate.from_dict(obj["begin"]) if obj.get("begin") is not None else None,
+            "end": ConstrainedDate.from_dict(obj["end"]) if obj.get("end") is not None else None
         })
         return _obj
 

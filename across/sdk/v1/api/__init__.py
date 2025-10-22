@@ -15,5 +15,6 @@ from across.sdk.v1.api.schedule_api import ScheduleApi
 from across.sdk.v1.api.service_account_api import ServiceAccountApi
 from across.sdk.v1.api.tle_api import TLEApi
 from across.sdk.v1.api.telescope_api import TelescopeApi
+from across.sdk.v1.api.tools_api import ToolsApi
 from across.sdk.v1.api.user_api import UserApi
 

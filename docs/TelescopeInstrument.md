@@ -12,7 +12,9 @@ Name | Type | Description | Notes
 **short_name** | **str** |  | 
 **telescope** | [**IDNameSchema**](IDNameSchema.md) |  | [optional] 
 **footprints** | **List[List[Point]]** |  | [optional] 
-**filters** | [**List[Filter]**](Filter.md) |  | [optional] [default to []]
+**filters** | [**List[Filter]**](Filter.md) |  | [optional] 
+**constraints** | [**List[InstrumentConstraintsInner]**](InstrumentConstraintsInner.md) |  | [optional] 
+**visibility_type** | [**VisibilityType**](VisibilityType.md) |  | [optional] 
 
 ## Example
 

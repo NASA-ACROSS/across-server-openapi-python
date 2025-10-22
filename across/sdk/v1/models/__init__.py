@@ -26,11 +26,16 @@ from across.sdk.v1.models.across_server_routes_v1_user_schemas_group_invite impo
 from across.sdk.v1.models.across_server_routes_v1_user_schemas_group_role import AcrossServerRoutesV1UserSchemasGroupRole
 from across.sdk.v1.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
 from across.sdk.v1.models.across_server_routes_v1_user_service_account_schemas_service_account import AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount
+from across.sdk.v1.models.alt_az_constraint import AltAzConstraint
 from across.sdk.v1.models.bandpass import Bandpass
 from across.sdk.v1.models.bandpass_type import BandpassType
+from across.sdk.v1.models.constrained_date import ConstrainedDate
+from across.sdk.v1.models.constraint_reason import ConstraintReason
+from across.sdk.v1.models.constraint_type import ConstraintType
 from across.sdk.v1.models.coordinate import Coordinate
 from across.sdk.v1.models.date_range import DateRange
 from across.sdk.v1.models.depth_unit import DepthUnit
+from across.sdk.v1.models.earth_limb_constraint import EarthLimbConstraint
 from across.sdk.v1.models.energy_bandpass import EnergyBandpass
 from across.sdk.v1.models.energy_unit import EnergyUnit
 from across.sdk.v1.models.ephemeris_type import EphemerisType
@@ -49,7 +54,10 @@ from across.sdk.v1.models.id_name_schema import IDNameSchema
 from across.sdk.v1.models.ivoa_obs_category import IVOAObsCategory
 from across.sdk.v1.models.ivoa_obs_tracking_type import IVOAObsTrackingType
 from across.sdk.v1.models.instrument import Instrument
+from across.sdk.v1.models.instrument_constraints_inner import InstrumentConstraintsInner
 from across.sdk.v1.models.jpl_parameters import JPLParameters
+from across.sdk.v1.models.moon_angle_constraint import MoonAngleConstraint
+from across.sdk.v1.models.nullable_date_range import NullableDateRange
 from across.sdk.v1.models.observation import Observation
 from across.sdk.v1.models.observation_create import ObservationCreate
 from across.sdk.v1.models.observation_status import ObservationStatus
@@ -63,6 +71,7 @@ from across.sdk.v1.models.parameters import Parameters
 from across.sdk.v1.models.permission import Permission
 from across.sdk.v1.models.point import Point
 from across.sdk.v1.models.role_base import RoleBase
+from across.sdk.v1.models.saa_polygon_constraint import SAAPolygonConstraint
 from across.sdk.v1.models.spice_parameters import SPICEParameters
 from across.sdk.v1.models.schedule import Schedule
 from across.sdk.v1.models.schedule_cadence import ScheduleCadence
@@ -73,6 +82,7 @@ from across.sdk.v1.models.schedule_status import ScheduleStatus
 from across.sdk.v1.models.service_account_create import ServiceAccountCreate
 from across.sdk.v1.models.service_account_secret import ServiceAccountSecret
 from across.sdk.v1.models.service_account_update import ServiceAccountUpdate
+from across.sdk.v1.models.sun_angle_constraint import SunAngleConstraint
 from across.sdk.v1.models.system_service_account import SystemServiceAccount
 from across.sdk.v1.models.tle import TLE
 from across.sdk.v1.models.tle_create import TLECreate
@@ -85,5 +95,9 @@ from across.sdk.v1.models.user_info import UserInfo
 from across.sdk.v1.models.user_update import UserUpdate
 from across.sdk.v1.models.validation_error import ValidationError
 from across.sdk.v1.models.validation_error_loc_inner import ValidationErrorLocInner
+from across.sdk.v1.models.visibility_result import VisibilityResult
+from across.sdk.v1.models.visibility_type import VisibilityType
+from across.sdk.v1.models.visibility_window import VisibilityWindow
 from across.sdk.v1.models.wavelength_bandpass import WavelengthBandpass
 from across.sdk.v1.models.wavelength_unit import WavelengthUnit
+from across.sdk.v1.models.window import Window

@@ -21,6 +21,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from across.sdk.v1.models.id_name_schema import IDNameSchema
+from across.sdk.v1.models.nullable_date_range import NullableDateRange
 from across.sdk.v1.models.observatory_ephemeris_type import ObservatoryEphemerisType
 from across.sdk.v1.models.observatory_type import ObservatoryType
 from typing import Optional, Set
@@ -38,7 +39,8 @@ class Observatory(BaseModel):
     telescopes: Optional[List[IDNameSchema]] = None
     ephemeris_types: Optional[List[ObservatoryEphemerisType]] = None
     reference_url: Optional[StrictStr]
-    __properties: ClassVar[List[str]] = ["id", "created_on", "name", "short_name", "type", "telescopes", "ephemeris_types", "reference_url"]
+    operational: Optional[NullableDateRange]
+    __properties: ClassVar[List[str]] = ["id", "created_on", "name", "short_name", "type", "telescopes", "ephemeris_types", "reference_url", "operational"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +95,9 @@ class Observatory(BaseModel):
                 if _item_ephemeris_types:
                     _items.append(_item_ephemeris_types.to_dict())
             _dict['ephemeris_types'] = _items
+        # override the default output from pydantic by calling `to_dict()` of operational
+        if self.operational:
+            _dict['operational'] = self.operational.to_dict()
         # set to None if telescopes (nullable) is None
         # and model_fields_set contains the field
         if self.telescopes is None and "telescopes" in self.model_fields_set:
@@ -107,6 +112,11 @@ class Observatory(BaseModel):
         # and model_fields_set contains the field
         if self.reference_url is None and "reference_url" in self.model_fields_set:
             _dict['reference_url'] = None
+
+        # set to None if operational (nullable) is None
+        # and model_fields_set contains the field
+        if self.operational is None and "operational" in self.model_fields_set:
+            _dict['operational'] = None
 
         return _dict
 
@@ -127,7 +137,8 @@ class Observatory(BaseModel):
             "type": obj.get("type"),
             "telescopes": [IDNameSchema.from_dict(_item) for _item in obj["telescopes"]] if obj.get("telescopes") is not None else None,
             "ephemeris_types": [ObservatoryEphemerisType.from_dict(_item) for _item in obj["ephemeris_types"]] if obj.get("ephemeris_types") is not None else None,
-            "reference_url": obj.get("reference_url")
+            "reference_url": obj.get("reference_url"),
+            "operational": NullableDateRange.from_dict(obj["operational"]) if obj.get("operational") is not None else None
         })
         return _obj
 

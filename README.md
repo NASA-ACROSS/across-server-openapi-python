@@ -138,6 +138,8 @@ Class | Method | HTTP request | Description
 *TLEApi* | [**create_tle**](docs/TLEApi.md#create_tle) | **POST** /tle/ | Create a TLE
 *TelescopeApi* | [**get_telescope**](docs/TelescopeApi.md#get_telescope) | **GET** /telescope/{telescope_id} | Read an telescope
 *TelescopeApi* | [**get_telescopes**](docs/TelescopeApi.md#get_telescopes) | **GET** /telescope/ | Read telescopes(s)
+*ToolsApi* | [**calculate_windows_tools_visibility_calculator_windows_instrument_id_get**](docs/ToolsApi.md#calculate_windows_tools_visibility_calculator_windows_instrument_id_get) | **GET** /tools/visibility-calculator/windows/{instrument_id} | Calculated Visibility Windows
+*ToolsApi* | [**calculate_windows_tools_visibility_calculator_windows_instrument_id_get_0**](docs/ToolsApi.md#calculate_windows_tools_visibility_calculator_windows_instrument_id_get_0) | **GET** /tools/visibility-calculator/windows/{instrument_id} | Calculated Visibility Windows
 *UserApi* | [**accept_invite**](docs/UserApi.md#accept_invite) | **PATCH** /user/{user_id}/invite/{invite_id} | Accept a group invitation
 *UserApi* | [**create_user**](docs/UserApi.md#create_user) | **POST** /user/ | Create a user
 *UserApi* | [**decline_invite**](docs/UserApi.md#decline_invite) | **DELETE** /user/{user_id}/invite/{invite_id} | Decline a group invitation
@@ -162,11 +164,16 @@ Class | Method | HTTP request | Description
  - [AcrossServerRoutesV1UserSchemasGroupRole](docs/AcrossServerRoutesV1UserSchemasGroupRole.md)
  - [AcrossServerRoutesV1UserSchemasUser](docs/AcrossServerRoutesV1UserSchemasUser.md)
  - [AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount](docs/AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount.md)
+ - [AltAzConstraint](docs/AltAzConstraint.md)
  - [Bandpass](docs/Bandpass.md)
  - [BandpassType](docs/BandpassType.md)
+ - [ConstrainedDate](docs/ConstrainedDate.md)
+ - [ConstraintReason](docs/ConstraintReason.md)
+ - [ConstraintType](docs/ConstraintType.md)
  - [Coordinate](docs/Coordinate.md)
  - [DateRange](docs/DateRange.md)
  - [DepthUnit](docs/DepthUnit.md)
+ - [EarthLimbConstraint](docs/EarthLimbConstraint.md)
  - [EnergyBandpass](docs/EnergyBandpass.md)
  - [EnergyUnit](docs/EnergyUnit.md)
  - [EphemerisType](docs/EphemerisType.md)
@@ -185,7 +192,10 @@ Class | Method | HTTP request | Description
  - [IVOAObsCategory](docs/IVOAObsCategory.md)
  - [IVOAObsTrackingType](docs/IVOAObsTrackingType.md)
  - [Instrument](docs/Instrument.md)
+ - [InstrumentConstraintsInner](docs/InstrumentConstraintsInner.md)
  - [JPLParameters](docs/JPLParameters.md)
+ - [MoonAngleConstraint](docs/MoonAngleConstraint.md)
+ - [NullableDateRange](docs/NullableDateRange.md)
  - [Observation](docs/Observation.md)
  - [ObservationCreate](docs/ObservationCreate.md)
  - [ObservationStatus](docs/ObservationStatus.md)
@@ -199,6 +209,7 @@ Class | Method | HTTP request | Description
  - [Permission](docs/Permission.md)
  - [Point](docs/Point.md)
  - [RoleBase](docs/RoleBase.md)
+ - [SAAPolygonConstraint](docs/SAAPolygonConstraint.md)
  - [SPICEParameters](docs/SPICEParameters.md)
  - [Schedule](docs/Schedule.md)
  - [ScheduleCadence](docs/ScheduleCadence.md)
@@ -209,6 +220,7 @@ Class | Method | HTTP request | Description
  - [ServiceAccountCreate](docs/ServiceAccountCreate.md)
  - [ServiceAccountSecret](docs/ServiceAccountSecret.md)
  - [ServiceAccountUpdate](docs/ServiceAccountUpdate.md)
+ - [SunAngleConstraint](docs/SunAngleConstraint.md)
  - [SystemServiceAccount](docs/SystemServiceAccount.md)
  - [TLE](docs/TLE.md)
  - [TLECreate](docs/TLECreate.md)
@@ -221,8 +233,12 @@ Class | Method | HTTP request | Description
  - [UserUpdate](docs/UserUpdate.md)
  - [ValidationError](docs/ValidationError.md)
  - [ValidationErrorLocInner](docs/ValidationErrorLocInner.md)
+ - [VisibilityResult](docs/VisibilityResult.md)
+ - [VisibilityType](docs/VisibilityType.md)
+ - [VisibilityWindow](docs/VisibilityWindow.md)
  - [WavelengthBandpass](docs/WavelengthBandpass.md)
  - [WavelengthUnit](docs/WavelengthUnit.md)
+ - [Window](docs/Window.md)
 
 
 <a id="documentation-for-authorization"></a>

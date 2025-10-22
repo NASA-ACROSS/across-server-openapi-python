@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **telescopes** | [**List[IDNameSchema]**](IDNameSchema.md) |  | [optional] 
 **ephemeris_types** | [**List[ObservatoryEphemerisType]**](ObservatoryEphemerisType.md) |  | [optional] 
 **reference_url** | **str** |  | 
+**operational** | [**NullableDateRange**](NullableDateRange.md) |  | 
 
 ## Example
 
