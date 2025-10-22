@@ -97,7 +97,8 @@ class ApiClientWrapper(sdk.ApiClient):
         return cls._client
 
     def call_api(self, *args, **kwargs) -> rest.RESTResponse:
-        self.refresh()
+        if args[0].lower() != "get":
+            self.refresh()
 
         try:
             return super().call_api(*args, **kwargs)
@@ -158,6 +159,9 @@ class ApiClientWrapper(sdk.ApiClient):
     def _is_token_invalid(self, jwt_token):
         """Returns True when the token is expired, malformed, or missing expiration"""
         # JWT contains 3 parts, we're looking for the middle part; the payload with the exp key
+        if not isinstance(jwt_token, str):
+            return True
+        
         jwt_parts = jwt_token.split('.')
 
         if len(jwt_parts) != 3:
