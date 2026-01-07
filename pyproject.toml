@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
+Repository = "https://github.com/NASA-ACROSS/across-server-openapi-python"
 
 [tool.poetry]
 requires-poetry = ">=2.0"
