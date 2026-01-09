@@ -66,6 +66,7 @@ across/sdk/v1/models/instrument.py
 across/sdk/v1/models/instrument_constraints_inner.py
 across/sdk/v1/models/ivoa_obs_category.py
 across/sdk/v1/models/ivoa_obs_tracking_type.py
+across/sdk/v1/models/joint_visibility_result.py
 across/sdk/v1/models/jpl_parameters.py
 across/sdk/v1/models/moon_angle_constraint.py
 across/sdk/v1/models/nullable_date_range.py
@@ -163,6 +164,7 @@ docs/InstrumentApi.md
 docs/InstrumentConstraintsInner.md
 docs/InternalApi.md
 docs/JPLParameters.md
+docs/JointVisibilityResult.md
 docs/MoonAngleConstraint.md
 docs/NullableDateRange.md
 docs/Observation.md
@@ -222,19 +224,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_alt_az_constraint.py
-test/test_constrained_date.py
-test/test_constraint_reason.py
-test/test_constraint_type.py
-test/test_earth_limb_constraint.py
-test/test_instrument_constraints_inner.py
-test/test_moon_angle_constraint.py
-test/test_nullable_date_range.py
-test/test_saa_polygon_constraint.py
-test/test_sun_angle_constraint.py
-test/test_tools_api.py
-test/test_visibility_result.py
-test/test_visibility_type.py
-test/test_visibility_window.py
-test/test_window.py
+test/test_joint_visibility_result.py
 tox.ini

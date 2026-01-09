@@ -23,13 +23,14 @@ from across.sdk.v1.models.visibility_window import VisibilityWindow
 from typing import Optional, Set
 from typing_extensions import Self
 
-class VisibilityResult(BaseModel):
+class JointVisibilityResult(BaseModel):
     """
-    A Pydantic model class representing the visibility calculation parameters.  This class is used for visibility calculations in the ACROSS SSA system.
+    A Pydantic model class representing the joint visibility calculation parameters.  This class is used for joint visibility calculations in the ACROSS SSA system.  Parameters ---------- instrument_ids: list[UUID]     List of instrument IDs to check visibility against visibility_windows: list[VisibilityWindow]     List of joint visibility windows for all the instruments observatory_visibility_windows: dict[UUID, list[VisibilityWindow]]     Dictionary mapping instrument IDs to their respective visibility windows
     """ # noqa: E501
-    instrument_id: StrictStr
+    instrument_ids: List[StrictStr]
     visibility_windows: List[VisibilityWindow]
-    __properties: ClassVar[List[str]] = ["instrument_id", "visibility_windows"]
+    observatory_visibility_windows: Dict[str, List[VisibilityWindow]]
+    __properties: ClassVar[List[str]] = ["instrument_ids", "visibility_windows", "observatory_visibility_windows"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +50,7 @@ class VisibilityResult(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of VisibilityResult from a JSON string"""
+        """Create an instance of JointVisibilityResult from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,11 +78,20 @@ class VisibilityResult(BaseModel):
                 if _item_visibility_windows:
                     _items.append(_item_visibility_windows.to_dict())
             _dict['visibility_windows'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each value in observatory_visibility_windows (dict of array)
+        _field_dict_of_array = {}
+        if self.observatory_visibility_windows:
+            for _key_observatory_visibility_windows in self.observatory_visibility_windows:
+                if self.observatory_visibility_windows[_key_observatory_visibility_windows] is not None:
+                    _field_dict_of_array[_key_observatory_visibility_windows] = [
+                        _item.to_dict() for _item in self.observatory_visibility_windows[_key_observatory_visibility_windows]
+                    ]
+            _dict['observatory_visibility_windows'] = _field_dict_of_array
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of VisibilityResult from a dict"""
+        """Create an instance of JointVisibilityResult from a dict"""
         if obj is None:
             return None
 
@@ -89,8 +99,16 @@ class VisibilityResult(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "instrument_id": obj.get("instrument_id"),
-            "visibility_windows": [VisibilityWindow.from_dict(_item) for _item in obj["visibility_windows"]] if obj.get("visibility_windows") is not None else None
+            "instrument_ids": obj.get("instrument_ids"),
+            "visibility_windows": [VisibilityWindow.from_dict(_item) for _item in obj["visibility_windows"]] if obj.get("visibility_windows") is not None else None,
+            "observatory_visibility_windows": dict(
+                (_k,
+                        [VisibilityWindow.from_dict(_item) for _item in _v]
+                        if _v is not None
+                        else None
+                )
+                for _k, _v in obj.get("observatory_visibility_windows", {}).items()
+            )
         })
         return _obj
 
