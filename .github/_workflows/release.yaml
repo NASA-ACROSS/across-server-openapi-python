@@ -1,5 +1,4 @@
-# Run this workflow only on merged release-please PRs
-name: Release PR Merged
+name: Release PR
 on:
   push:
     branches:
