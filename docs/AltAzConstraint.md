@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **short_name** | **str** |  | [optional] [default to 'AltAz']
 **name** | **str** |  | [optional] [default to 'Altitude/Azimuth Avoidance']
-**polygon** | **List[List[float]]** |  | 
+**polygon** | **List[List[float]]** |  | [optional] 
 **altitude_min** | **float** |  | [optional] 
 **altitude_max** | **float** |  | [optional] 
 **azimuth_min** | **float** |  | [optional] 

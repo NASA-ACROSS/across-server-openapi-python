@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] [default to 'Altitude/Azimuth Avoidance']
 **min_angle** | **float** |  | [optional] 
 **max_angle** | **float** |  | [optional] 
-**polygon** | **List[List[float]]** |  | 
+**polygon** | **List[List[float]]** |  | [optional] 
 **altitude_min** | **float** |  | [optional] 
 **altitude_max** | **float** |  | [optional] 
 **azimuth_min** | **float** |  | [optional] 

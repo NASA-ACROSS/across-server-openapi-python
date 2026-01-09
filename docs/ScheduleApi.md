@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_schedule**
-> Schedule get_schedule(schedule_id)
+> Schedule get_schedule(schedule_id, include_observations=include_observations)
 
 Read a schedule
 
@@ -200,10 +200,11 @@ with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = across.sdk.v1.ScheduleApi(api_client)
     schedule_id = 'schedule_id_example' # str | 
+    include_observations = False # bool |  (optional) (default to False)
 
     try:
         # Read a schedule
-        api_response = api_instance.get_schedule(schedule_id)
+        api_response = api_instance.get_schedule(schedule_id, include_observations=include_observations)
         print("The response of ScheduleApi->get_schedule:\n")
         pprint(api_response)
     except Exception as e:
@@ -218,6 +219,7 @@ with across.sdk.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **schedule_id** | **str**|  | 
+ **include_observations** | **bool**|  | [optional] [default to False]
 
 ### Return type
 

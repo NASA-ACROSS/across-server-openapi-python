@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **service_account_rotate_key**
-> SystemServiceAccount service_account_rotate_key(service_account_id)
+> ServiceAccountSecret service_account_rotate_key(service_account_id)
 
 Rotate a service account key
 
@@ -101,7 +101,7 @@ Rotate service account key and reset expiration based on expiration duration
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.system_service_account import SystemServiceAccount
+from across.sdk.v1.models.service_account_secret import ServiceAccountSecret
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SystemServiceAccount**](SystemServiceAccount.md)
+[**ServiceAccountSecret**](ServiceAccountSecret.md)
 
 ### Authorization
 
