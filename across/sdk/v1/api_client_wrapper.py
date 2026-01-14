@@ -8,6 +8,7 @@ import time
 from typing import Any
 
 import across.sdk.v1 as sdk
+import across.sdk.v1.exceptions as sdk_exceptions
 from across.sdk.v1 import rest
 
 from .abstract_credential_storage import CredentialStorage as ICredStorage
@@ -99,13 +100,23 @@ class ApiClientWrapper(sdk.ApiClient):
 
         return cls._client
 
-    def call_api(self, *args, **kwargs) -> rest.RESTResponse:
-        if args[0].lower() != "get":
+    def param_serialize(self, *args, **kwargs) -> Any:
+        """
+        Override param_serialize to refresh token before non-GET calls.
+
+        :return: Serialized parameters, will be RequestSerialized from ApiClient but it is not exported.
+        """
+        # API class routers (e.g. sdk.ScheduleApi), will serialize params before calling `call_api`.
+        # Ensure token is fresh before making non-GET calls.
+        if kwargs["method"].lower() != "get":
             self.refresh()
 
+        return super().param_serialize(*args, **kwargs)
+
+    def call_api(self, *args, **kwargs) -> rest.RESTResponse:
         try:
             return super().call_api(*args, **kwargs)
-        except sdk.ApiException as err:
+        except (sdk.ApiException, sdk_exceptions.UnauthorizedException) as err:
             if err.status == 401:
                 logger.debug("Access token is unauthenticated or it has expired.")
 
@@ -113,6 +124,11 @@ class ApiClientWrapper(sdk.ApiClient):
 
                 # Attempt the call again
                 if refreshed:
+                    # Reset the Authorization header with the new token and retry
+                    args[2]["Authorization"] = (
+                        f"Bearer {self.configuration.access_token}"
+                    )
+                    logger.debug("Retrying API call with refreshed token...")
                     return super().call_api(*args, **kwargs)
                 else:
                     raise err
@@ -121,11 +137,11 @@ class ApiClientWrapper(sdk.ApiClient):
 
     def refresh(self) -> None:
         if not self.configuration.access_token:
-            logger.debug("No access_token, refreshing")
+            logger.debug("No access_token.")
             self.refresh_token()
 
         if self._is_token_invalid(self.configuration.access_token):
-            logger.debug("Expired access_token, refreshing")
+            logger.debug("Expired access_token.")
             self.refresh_token()
 
         if self._cred_store:
