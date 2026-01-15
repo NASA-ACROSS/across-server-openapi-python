@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/NASA-ACROSS/across-server-openapi-python/compare/v1.1.0...v1.1.1) (2026-01-15)
+
+
+### Bug Fixes
+
+* refresh before `param_serialize` so token is set for call ([#27](https://github.com/NASA-ACROSS/across-server-openapi-python/issues/27)) ([e41a86b](https://github.com/NASA-ACROSS/across-server-openapi-python/commit/e41a86b989e54681352e65a4c0606b97bce24107))
+* refresh before param_serialize so token is set for call ([e41a86b](https://github.com/NASA-ACROSS/across-server-openapi-python/commit/e41a86b989e54681352e65a4c0606b97bce24107))
+
 ## [1.1.0](https://github.com/NASA-ACROSS/across-server-openapi-python/compare/v1.0.0...v1.1.0) (2026-01-09)
 
 
