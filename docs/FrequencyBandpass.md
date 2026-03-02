@@ -1,6 +1,6 @@
 # FrequencyBandpass
 
-A class representing a bandpass filter defined in terms of frequency.  Inherits from `BaseBandpass`, this class specializes the filter to operate in the frequency domain.  Attributes:     type (Literal['FREQUENCY']): A constant string indicating the type of the bandpass filter.     unit (FrequencyUnit): The unit of measurement for the frequency.  Methods:     model_post_init(__context: Any) -> None:         Ensures the min and max frequency values are positive and valid.
+A class representing a bandpass filter defined in terms of frequency.  Inherits from `BaseBandpass`, this class specializes the filter to operate in the frequency domain.  Attributes ---------- type : Literal['FREQUENCY']     A constant string indicating the type of the bandpass filter. unit : FrequencyUnit     The unit of measurement for the frequency.
 
 ## Properties
 

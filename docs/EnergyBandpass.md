@@ -1,6 +1,6 @@
 # EnergyBandpass
 
-A class representing a bandpass filter defined in terms of energy.  Inherits from `BaseBandpass`, this class specializes the filter to operate in the energy domain.  Attributes:     type (Literal['ENERGY']): A constant string indicating the type of the bandpass filter.     unit (EnergyUnit): The unit of measurement for the energy.  Methods:     model_post_init(__context: Any) -> None:         Ensures the min and max energy values are positive and valid.
+A class representing a bandpass filter defined in terms of energy.  Inherits from `BaseBandpass`, this class specializes the filter to operate in the energy domain.  Attributes ---------- type : Literal['ENERGY']     A constant string indicating the type of the bandpass filter. unit : EnergyUnit     The unit of measurement for the energy.
 
 ## Properties
 

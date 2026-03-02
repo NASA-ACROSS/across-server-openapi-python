@@ -1,5 +1,6 @@
 # Coordinate
 
+Class that represents a point in spherical space
 
 ## Properties
 

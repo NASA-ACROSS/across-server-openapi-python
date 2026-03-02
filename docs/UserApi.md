@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**accept_invite**](UserApi.md#accept_invite) | **PATCH** /user/{user_id}/invite/{invite_id} | Accept a group invitation
 [**create_user**](UserApi.md#create_user) | **POST** /user/ | Create a user
 [**decline_invite**](UserApi.md#decline_invite) | **DELETE** /user/{user_id}/invite/{invite_id} | Decline a group invitation
-[**delete_user**](UserApi.md#delete_user) | **DELETE** /user/{user_id} | Delete a user
+[**delete_user**](UserApi.md#delete_user) | **DELETE** /user/{user_id} | Deactivate a user
 [**get_group_invites**](UserApi.md#get_group_invites) | **GET** /user/{user_id}/invite | Read a user&#39;s group invites
 [**get_user**](UserApi.md#get_user) | **GET** /user/{user_id} | Read a user
 [**leave_group**](UserApi.md#leave_group) | **DELETE** /user/{user_id}/group/{group_id} | Leave a group
@@ -255,9 +255,9 @@ void (empty response body)
 # **delete_user**
 > AcrossServerRoutesV1UserSchemasUser delete_user(user_id)
 
-Delete a user
+Deactivate a user
 
-Permanently delete a user from the ACROSS system. This will also delete all associated relations for the user.
+Deactivate a user in the ACROSS system. This will also deactivate all associated relations for the user and expire existing service accounts.
 
 ### Example
 
@@ -292,7 +292,7 @@ with across.sdk.v1.ApiClient(configuration) as api_client:
     user_id = 'user_id_example' # str | 
 
     try:
-        # Delete a user
+        # Deactivate a user
         api_response = api_instance.delete_user(user_id)
         print("The response of UserApi->delete_user:\n")
         pprint(api_response)

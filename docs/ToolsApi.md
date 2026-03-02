@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**calculate_joint_windows_tools_visibility_calculator_windows_get_0**](ToolsApi.md#calculate_joint_windows_tools_visibility_calculator_windows_get_0) | **GET** /tools/visibility-calculator/windows/ | Calculated Joint Visibility Windows
 [**calculate_windows_tools_visibility_calculator_windows_instrument_id_get**](ToolsApi.md#calculate_windows_tools_visibility_calculator_windows_instrument_id_get) | **GET** /tools/visibility-calculator/windows/{instrument_id} | Calculated Visibility Windows
 [**calculate_windows_tools_visibility_calculator_windows_instrument_id_get_0**](ToolsApi.md#calculate_windows_tools_visibility_calculator_windows_instrument_id_get_0) | **GET** /tools/visibility-calculator/windows/{instrument_id} | Calculated Visibility Windows
+[**resolve_tools_resolve_object_get**](ToolsApi.md#resolve_tools_resolve_object_get) | **GET** /tools/resolve-object/ | Resolve an object name
+[**resolve_tools_resolve_object_get_0**](ToolsApi.md#resolve_tools_resolve_object_get_0) | **GET** /tools/resolve-object/ | Resolve an object name
 
 
 # **calculate_joint_windows_tools_visibility_calculator_windows_get**
@@ -358,6 +360,146 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Return visibility window calculation results. |  -  |
 **404** | The visibility calculator does not exist. |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **resolve_tools_resolve_object_get**
+> NameResolver resolve_tools_resolve_object_get(object_name)
+
+Resolve an object name
+
+Resolve an object name into coordinates
+
+### Example
+
+
+```python
+import across.sdk.v1
+from across.sdk.v1.models.name_resolver import NameResolver
+from across.sdk.v1.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = across.sdk.v1.Configuration(
+    host = "/api/v1"
+)
+
+
+# Enter a context with an instance of the API client
+with across.sdk.v1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = across.sdk.v1.ToolsApi(api_client)
+    object_name = 'object_name_example' # str | 
+
+    try:
+        # Resolve an object name
+        api_response = api_instance.resolve_tools_resolve_object_get(object_name)
+        print("The response of ToolsApi->resolve_tools_resolve_object_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ToolsApi->resolve_tools_resolve_object_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **object_name** | **str**|  | 
+
+### Return type
+
+[**NameResolver**](NameResolver.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Return resolved object coordinates. |  -  |
+**404** | The name resolver does not exist. |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **resolve_tools_resolve_object_get_0**
+> NameResolver resolve_tools_resolve_object_get_0(object_name)
+
+Resolve an object name
+
+Resolve an object name into coordinates
+
+### Example
+
+
+```python
+import across.sdk.v1
+from across.sdk.v1.models.name_resolver import NameResolver
+from across.sdk.v1.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = across.sdk.v1.Configuration(
+    host = "/api/v1"
+)
+
+
+# Enter a context with an instance of the API client
+with across.sdk.v1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = across.sdk.v1.ToolsApi(api_client)
+    object_name = 'object_name_example' # str | 
+
+    try:
+        # Resolve an object name
+        api_response = api_instance.resolve_tools_resolve_object_get_0(object_name)
+        print("The response of ToolsApi->resolve_tools_resolve_object_get_0:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ToolsApi->resolve_tools_resolve_object_get_0: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **object_name** | **str**|  | 
+
+### Return type
+
+[**NameResolver**](NameResolver.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Return resolved object coordinates. |  -  |
+**404** | The name resolver does not exist. |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

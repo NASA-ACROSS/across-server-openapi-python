@@ -1,6 +1,6 @@
 # WavelengthBandpass
 
-A class representing a bandpass filter defined in terms of wavelength.  Inherits from `BaseBandpass`, this class specializes the filter to operate in the wavelength domain and provides additional functionality for wavelength-based filters.  Attributes:     type (Literal['WAVELENGTH']): A constant string indicating the type of the bandpass filter.     central_wavelength (float | None): The central wavelength of the filter.     bandwidth (float | None): The bandwidth of the filter.     unit (WavelengthUnit): The unit of measurement for the wavelength.  Methods:     model_post_init(__context: Any) -> None:         Performs validation and calculation of central wavelength and bandwidth based on the min/max range
+A class representing a bandpass filter defined in terms of wavelength.  Inherits from `BaseBandpass`, this class specializes the filter to operate in the wavelength domain and provides additional functionality for wavelength-based filters.  Attributes ---------- type : Literal['WAVELENGTH']     A constant string indicating the type of the bandpass filter. central_wavelength : float or None     The central wavelength of the filter. It is defined as the midpoint between the min and max. bandwidth : float or None     The bandwidth of the filter. It is defined as half the difference between the max and min. unit : WavelengthUnit     The unit of measurement for the wavelength.
 
 ## Properties
 

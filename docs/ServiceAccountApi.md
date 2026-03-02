@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **assign_to_service_account**
-> AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount assign_to_service_account(service_account_id, group_role_id, user_id)
+> ServiceAccount assign_to_service_account(service_account_id, group_role_id, user_id)
 
 Assign group role
 
@@ -27,7 +27,7 @@ Assign a group role to a service account.
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.across_server_routes_v1_user_service_account_schemas_service_account import AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount
+from across.sdk.v1.models.service_account import ServiceAccount
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount**](AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount.md)
+[**ServiceAccount**](ServiceAccount.md)
 
 ### Authorization
 
@@ -261,7 +261,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_service_accounts**
-> List[AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount] get_service_accounts(user_id)
+> List[ServiceAccount] get_service_accounts(user_id)
 
 Read service accounts
 
@@ -273,7 +273,7 @@ Read many service accounts
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.across_server_routes_v1_user_service_account_schemas_service_account import AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount
+from across.sdk.v1.models.service_account import ServiceAccount
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount]**](AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount.md)
+[**List[ServiceAccount]**](ServiceAccount.md)
 
 ### Authorization
 
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user_service_account**
-> AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount get_user_service_account(service_account_id, user_id)
+> ServiceAccount get_user_service_account(service_account_id, user_id)
 
 Read a service account
 
@@ -353,7 +353,7 @@ Read a service account by an ID.
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.across_server_routes_v1_user_service_account_schemas_service_account import AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount
+from across.sdk.v1.models.service_account import ServiceAccount
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount**](AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount.md)
+[**ServiceAccount**](ServiceAccount.md)
 
 ### Authorization
 
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_from_service_account**
-> AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount remove_from_service_account(service_account_id, group_role_id, user_id)
+> ServiceAccount remove_from_service_account(service_account_id, group_role_id, user_id)
 
 Remove group role
 
@@ -435,7 +435,7 @@ Remove a group role from a service account.
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.across_server_routes_v1_user_service_account_schemas_service_account import AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount
+from across.sdk.v1.models.service_account import ServiceAccount
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount**](AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount.md)
+[**ServiceAccount**](ServiceAccount.md)
 
 ### Authorization
 
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_user_service_account**
-> AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount update_user_service_account(service_account_id, user_id, service_account_update)
+> ServiceAccount update_user_service_account(service_account_id, user_id, service_account_update)
 
 Update a service account
 
@@ -519,7 +519,7 @@ Update a service account's information.
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.across_server_routes_v1_user_service_account_schemas_service_account import AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount
+from across.sdk.v1.models.service_account import ServiceAccount
 from across.sdk.v1.models.service_account_update import ServiceAccountUpdate
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
@@ -570,7 +570,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount**](AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount.md)
+[**ServiceAccount**](ServiceAccount.md)
 
 ### Authorization
 
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_service_account_rotate_key**
-> AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount user_service_account_rotate_key(service_account_id, user_id)
+> ServiceAccount user_service_account_rotate_key(service_account_id, user_id)
 
 Rotate a service account key
 
@@ -604,7 +604,7 @@ Rotate service account key and reset expiration based on expiration_duration
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.across_server_routes_v1_user_service_account_schemas_service_account import AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount
+from across.sdk.v1.models.service_account import ServiceAccount
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
@@ -652,7 +652,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount**](AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount.md)
+[**ServiceAccount**](ServiceAccount.md)
 
 ### Authorization
 
