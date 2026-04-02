@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **instrument_id** | **str** |  | 
 **object_name** | **str** |  | 
-**pointing_position** | [**AcrossServerCoreSchemasCoordinateCoordinate**](AcrossServerCoreSchemasCoordinateCoordinate.md) |  | [optional] 
+**pointing_position** | [**Coordinate**](Coordinate.md) |  | [optional] 
 **date_range** | [**DateRange**](DateRange.md) |  | 
 **external_observation_id** | **str** |  | 
 **type** | [**ObservationType**](ObservationType.md) |  | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **reason** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **proposal_reference** | **str** |  | [optional] 
-**object_position** | [**AcrossServerCoreSchemasCoordinateCoordinate**](AcrossServerCoreSchemasCoordinateCoordinate.md) |  | [optional] 
+**object_position** | [**Coordinate**](Coordinate.md) |  | [optional] 
 **depth** | [**UnitValue**](UnitValue.md) |  | [optional] 
 **bandpass** | [**Bandpass**](Bandpass.md) |  | 
 **t_resolution** | **float** |  | [optional] 
@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **schedule_id** | **str** |  | 
 **created_on** | **datetime** |  | 
 **created_by_id** | **str** |  | [optional] 
+**footprint** | [**List[ObservationFootprint]**](ObservationFootprint.md) |  | [optional] [default to []]
 
 ## Example
 

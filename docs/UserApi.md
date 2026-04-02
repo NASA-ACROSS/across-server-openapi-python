@@ -94,7 +94,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_user**
-> object create_user(user_create)
+> Dict[str, object] create_user(user_create)
 
 Create a user
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+**Dict[str, object]**
 
 ### Authorization
 

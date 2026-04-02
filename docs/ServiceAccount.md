@@ -8,9 +8,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **name** | **str** |  | 
 **description** | **str** |  | 
-**expiration** | **datetime** |  | 
-**expiration_duration** | **int** |  | 
-**group_roles** | [**List[GroupRoleRead]**](GroupRoleRead.md) |  | 
+**user** | [**List[AcrossServerRoutesV1GroupRoleSchemasUser]**](AcrossServerRoutesV1GroupRoleSchemasUser.md) |  | 
 
 ## Example
 

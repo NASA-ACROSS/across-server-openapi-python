@@ -13,8 +13,9 @@ Name | Type | Description | Notes
 **telescope** | [**IDNameSchema**](IDNameSchema.md) |  | [optional] 
 **footprints** | **List[List[Point]]** |  | [optional] 
 **filters** | [**List[Filter]**](Filter.md) |  | [optional] 
-**constraints** | [**List[InstrumentConstraintsInner]**](InstrumentConstraintsInner.md) |  | [optional] 
+**constraints** | **List[Dict[str, object]]** |  | [optional] 
 **visibility_type** | [**VisibilityType**](VisibilityType.md) |  | [optional] 
+**observation_strategy** | [**ObservationStrategy**](ObservationStrategy.md) |  | [optional] 
 
 ## Example
 

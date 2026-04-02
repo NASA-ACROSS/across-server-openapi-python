@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_schedule**
-> Schedule get_schedule(schedule_id, include_observations=include_observations)
+> Schedule get_schedule(schedule_id, include_observations=include_observations, include_observations_footprints=include_observations_footprints)
 
 Read a schedule
 
@@ -201,10 +201,11 @@ with across.sdk.v1.ApiClient(configuration) as api_client:
     api_instance = across.sdk.v1.ScheduleApi(api_client)
     schedule_id = 'schedule_id_example' # str | 
     include_observations = False # bool |  (optional) (default to False)
+    include_observations_footprints = False # bool |  (optional) (default to False)
 
     try:
         # Read a schedule
-        api_response = api_instance.get_schedule(schedule_id, include_observations=include_observations)
+        api_response = api_instance.get_schedule(schedule_id, include_observations=include_observations, include_observations_footprints=include_observations_footprints)
         print("The response of ScheduleApi->get_schedule:\n")
         pprint(api_response)
     except Exception as e:
@@ -220,6 +221,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **schedule_id** | **str**|  | 
  **include_observations** | **bool**|  | [optional] [default to False]
+ **include_observations_footprints** | **bool**|  | [optional] [default to False]
 
 ### Return type
 
@@ -245,7 +247,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_schedules**
-> PageSchedule get_schedules(page=page, page_limit=page_limit, date_range_begin=date_range_begin, date_range_end=date_range_end, status=status, external_id=external_id, fidelity=fidelity, created_on=created_on, observatory_ids=observatory_ids, observatory_names=observatory_names, telescope_ids=telescope_ids, telescope_names=telescope_names, name=name, include_observations=include_observations)
+> PageSchedule get_schedules(page=page, page_limit=page_limit, date_range_begin=date_range_begin, date_range_end=date_range_end, status=status, external_id=external_id, fidelity=fidelity, created_on=created_on, observatory_ids=observatory_ids, observatory_names=observatory_names, telescope_ids=telescope_ids, telescope_names=telescope_names, name=name, include_observations=include_observations, include_observations_footprints=include_observations_footprints)
 
 Read schedule(s)
 
@@ -286,11 +288,12 @@ with across.sdk.v1.ApiClient(configuration) as api_client:
     telescope_ids = [] # List[Optional[str]] |  (optional) (default to [])
     telescope_names = [] # List[Optional[str]] |  (optional) (default to [])
     name = 'name_example' # str |  (optional)
-    include_observations = True # bool |  (optional)
+    include_observations = False # bool |  (optional) (default to False)
+    include_observations_footprints = False # bool |  (optional) (default to False)
 
     try:
         # Read schedule(s)
-        api_response = api_instance.get_schedules(page=page, page_limit=page_limit, date_range_begin=date_range_begin, date_range_end=date_range_end, status=status, external_id=external_id, fidelity=fidelity, created_on=created_on, observatory_ids=observatory_ids, observatory_names=observatory_names, telescope_ids=telescope_ids, telescope_names=telescope_names, name=name, include_observations=include_observations)
+        api_response = api_instance.get_schedules(page=page, page_limit=page_limit, date_range_begin=date_range_begin, date_range_end=date_range_end, status=status, external_id=external_id, fidelity=fidelity, created_on=created_on, observatory_ids=observatory_ids, observatory_names=observatory_names, telescope_ids=telescope_ids, telescope_names=telescope_names, name=name, include_observations=include_observations, include_observations_footprints=include_observations_footprints)
         print("The response of ScheduleApi->get_schedules:\n")
         pprint(api_response)
     except Exception as e:
@@ -317,7 +320,8 @@ Name | Type | Description  | Notes
  **telescope_ids** | [**List[Optional[str]]**](str.md)|  | [optional] [default to []]
  **telescope_names** | [**List[Optional[str]]**](str.md)|  | [optional] [default to []]
  **name** | **str**|  | [optional] 
- **include_observations** | **bool**|  | [optional] 
+ **include_observations** | **bool**|  | [optional] [default to False]
+ **include_observations_footprints** | **bool**|  | [optional] [default to False]
 
 ### Return type
 
@@ -343,7 +347,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_schedules_history**
-> PageSchedule get_schedules_history(page=page, page_limit=page_limit, date_range_begin=date_range_begin, date_range_end=date_range_end, status=status, external_id=external_id, fidelity=fidelity, created_on=created_on, observatory_ids=observatory_ids, observatory_names=observatory_names, telescope_ids=telescope_ids, telescope_names=telescope_names, name=name, include_observations=include_observations)
+> PageSchedule get_schedules_history(page=page, page_limit=page_limit, date_range_begin=date_range_begin, date_range_end=date_range_end, status=status, external_id=external_id, fidelity=fidelity, created_on=created_on, observatory_ids=observatory_ids, observatory_names=observatory_names, telescope_ids=telescope_ids, telescope_names=telescope_names, name=name, include_observations=include_observations, include_observations_footprints=include_observations_footprints)
 
 Read schedule(s)
 
@@ -384,11 +388,12 @@ with across.sdk.v1.ApiClient(configuration) as api_client:
     telescope_ids = [] # List[Optional[str]] |  (optional) (default to [])
     telescope_names = [] # List[Optional[str]] |  (optional) (default to [])
     name = 'name_example' # str |  (optional)
-    include_observations = True # bool |  (optional)
+    include_observations = False # bool |  (optional) (default to False)
+    include_observations_footprints = False # bool |  (optional) (default to False)
 
     try:
         # Read schedule(s)
-        api_response = api_instance.get_schedules_history(page=page, page_limit=page_limit, date_range_begin=date_range_begin, date_range_end=date_range_end, status=status, external_id=external_id, fidelity=fidelity, created_on=created_on, observatory_ids=observatory_ids, observatory_names=observatory_names, telescope_ids=telescope_ids, telescope_names=telescope_names, name=name, include_observations=include_observations)
+        api_response = api_instance.get_schedules_history(page=page, page_limit=page_limit, date_range_begin=date_range_begin, date_range_end=date_range_end, status=status, external_id=external_id, fidelity=fidelity, created_on=created_on, observatory_ids=observatory_ids, observatory_names=observatory_names, telescope_ids=telescope_ids, telescope_names=telescope_names, name=name, include_observations=include_observations, include_observations_footprints=include_observations_footprints)
         print("The response of ScheduleApi->get_schedules_history:\n")
         pprint(api_response)
     except Exception as e:
@@ -415,7 +420,8 @@ Name | Type | Description  | Notes
  **telescope_ids** | [**List[Optional[str]]**](str.md)|  | [optional] [default to []]
  **telescope_names** | [**List[Optional[str]]**](str.md)|  | [optional] [default to []]
  **name** | **str**|  | [optional] 
- **include_observations** | **bool**|  | [optional] 
+ **include_observations** | **bool**|  | [optional] [default to False]
+ **include_observations_footprints** | **bool**|  | [optional] [default to False]
 
 ### Return type
 

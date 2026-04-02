@@ -64,6 +64,4 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
-
-# openapi
 openapi.json

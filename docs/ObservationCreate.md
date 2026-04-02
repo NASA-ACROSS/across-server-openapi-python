@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **instrument_id** | **str** |  | 
 **object_name** | **str** |  | 
-**pointing_position** | [**CoordinateInput**](CoordinateInput.md) |  | [optional] 
+**pointing_position** | [**Coordinate**](Coordinate.md) |  | [optional] 
 **date_range** | [**DateRange**](DateRange.md) |  | 
 **external_observation_id** | **str** |  | 
 **type** | [**ObservationType**](ObservationType.md) |  | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **reason** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **proposal_reference** | **str** |  | [optional] 
-**object_position** | [**CoordinateInput**](CoordinateInput.md) |  | [optional] 
+**object_position** | [**Coordinate**](Coordinate.md) |  | [optional] 
 **depth** | [**UnitValue**](UnitValue.md) |  | [optional] 
 **bandpass** | [**Bandpass**](Bandpass.md) |  | 
 **t_resolution** | **float** |  | [optional] 
@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **tracking_type** | [**IVOAObsTrackingType**](IVOAObsTrackingType.md) |  | [optional] 
 **created_on** | **datetime** |  | [optional] 
 **created_by_id** | **str** |  | [optional] 
+**footprint** | [**List[ObservationFootprintCreate]**](ObservationFootprintCreate.md) |  | [optional] [default to []]
 
 ## Example
 

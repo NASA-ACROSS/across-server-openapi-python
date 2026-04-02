@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **permissions** | [**List[Permission]**](Permission.md) |  | 
 **id** | **str** |  | 
 **users** | [**List[AcrossServerRoutesV1GroupRoleSchemasUser]**](AcrossServerRoutesV1GroupRoleSchemasUser.md) |  | 
-**service_accounts** | [**List[AcrossServerRoutesV1GroupRoleSchemasServiceAccount]**](AcrossServerRoutesV1GroupRoleSchemasServiceAccount.md) |  | 
+**service_accounts** | [**List[ServiceAccount]**](ServiceAccount.md) |  | 
 
 ## Example
 
