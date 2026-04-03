@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **tracking_type** | [**IVOAObsTrackingType**](IVOAObsTrackingType.md) |  | [optional] 
 **created_on** | **datetime** |  | [optional] 
 **created_by_id** | **str** |  | [optional] 
+**footprint** | [**List[ObservationFootprintCreate]**](ObservationFootprintCreate.md) |  | [optional] [default to []]
 
 ## Example
 

@@ -29,3 +29,4 @@ pyproject.toml
 .github/**/*
 across/sdk/v1/api_client_wrapper.py
 across/sdk/v1/abstract_credential_storage.py
+test/**

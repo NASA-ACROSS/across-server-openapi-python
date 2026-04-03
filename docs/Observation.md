@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **schedule_id** | **str** |  | 
 **created_on** | **datetime** |  | 
 **created_by_id** | **str** |  | [optional] 
+**footprint** | [**List[ObservationFootprint]**](ObservationFootprint.md) |  | [optional] [default to []]
 
 ## Example
 

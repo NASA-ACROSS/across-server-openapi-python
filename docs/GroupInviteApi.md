@@ -90,7 +90,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_invite**
-> AcrossServerRoutesV1GroupInviteSchemasGroupInvite get_invite(group_id, invite_id)
+> GroupInvite get_invite(group_id, invite_id)
 
 Read a group invite
 
@@ -102,7 +102,7 @@ Read a single group invite by ID
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.across_server_routes_v1_group_invite_schemas_group_invite import AcrossServerRoutesV1GroupInviteSchemasGroupInvite
+from across.sdk.v1.models.group_invite import GroupInvite
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AcrossServerRoutesV1GroupInviteSchemasGroupInvite**](AcrossServerRoutesV1GroupInviteSchemasGroupInvite.md)
+[**GroupInvite**](GroupInvite.md)
 
 ### Authorization
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_invites**
-> List[AcrossServerRoutesV1GroupInviteSchemasGroupInvite] get_invites(group_id)
+> List[GroupInvite] get_invites(group_id)
 
 Read group invites
 
@@ -184,7 +184,7 @@ Read all group invites for a group
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.across_server_routes_v1_group_invite_schemas_group_invite import AcrossServerRoutesV1GroupInviteSchemasGroupInvite
+from across.sdk.v1.models.group_invite import GroupInvite
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[AcrossServerRoutesV1GroupInviteSchemasGroupInvite]**](AcrossServerRoutesV1GroupInviteSchemasGroupInvite.md)
+[**List[GroupInvite]**](GroupInvite.md)
 
 ### Authorization
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_invite**
-> AcrossServerRoutesV1GroupInviteSchemasGroupInvite send_invite(group_id, group_invite_create)
+> GroupInvite send_invite(group_id, group_invite_create)
 
 Create and send a group invite
 
@@ -264,7 +264,7 @@ Create and send a group invite to a user
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.across_server_routes_v1_group_invite_schemas_group_invite import AcrossServerRoutesV1GroupInviteSchemasGroupInvite
+from across.sdk.v1.models.group_invite import GroupInvite
 from across.sdk.v1.models.group_invite_create import GroupInviteCreate
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AcrossServerRoutesV1GroupInviteSchemasGroupInvite**](AcrossServerRoutesV1GroupInviteSchemasGroupInvite.md)
+[**GroupInvite**](GroupInvite.md)
 
 ### Authorization
 

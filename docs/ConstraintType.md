@@ -18,7 +18,31 @@ Represents a constraint.
 
 * `ALTITUDE_SLASH_AZIMUTH_AVOIDANCE` (value: `'Altitude/Azimuth Avoidance'`)
 
+* `GALACTIC_PLANE_AVOIDANCE` (value: `'Galactic Plane Avoidance'`)
+
+* `BRIGHT_STAR_AVOIDANCE` (value: `'Bright Star Avoidance'`)
+
+* `AIRMASS_LIMIT` (value: `'Airmass Limit'`)
+
+* `ECLIPTIC_LATITUDE` (value: `'Ecliptic Latitude'`)
+
+* `GALACTIC_BULGE_AVOIDANCE` (value: `'Galactic Bulge Avoidance'`)
+
+* `SOLAR_SYSTEM_OBJECT_AVOIDANCE` (value: `'Solar System Object Avoidance'`)
+
+* `DAYTIME_AVOIDANCE` (value: `'Daytime Avoidance'`)
+
 * `TEST_CONSTRAINT` (value: `'Test Constraint'`)
+
+* `AND` (value: `'And'`)
+
+* `OR` (value: `'Or'`)
+
+* `NOT` (value: `'Not'`)
+
+* `XOR` (value: `'Xor'`)
+
+* `POINTING` (value: `'Pointing'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

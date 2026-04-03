@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
 **name** | **str** |  | 
-**users** | [**List[AcrossServerRoutesV1RoleSchemasUser]**](AcrossServerRoutesV1RoleSchemasUser.md) |  | 
+**users** | [**List[User]**](User.md) |  | 
 
 ## Example
 

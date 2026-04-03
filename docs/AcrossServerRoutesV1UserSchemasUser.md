@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **last_name** | **str** |  | 
 **email** | **str** |  | 
 **id** | **str** |  | 
-**groups** | [**List[AcrossServerRoutesV1UserSchemasGroup]**](AcrossServerRoutesV1UserSchemasGroup.md) |  | 
+**groups** | [**List[Group]**](Group.md) |  | 
 **roles** | [**List[RoleBase]**](RoleBase.md) |  | 
-**group_roles** | [**List[AcrossServerRoutesV1UserSchemasGroupRole]**](AcrossServerRoutesV1UserSchemasGroupRole.md) |  | 
+**group_roles** | [**List[GroupRole]**](GroupRole.md) |  | 
 **received_invites** | [**List[AcrossServerRoutesV1UserSchemasGroupInvite]**](AcrossServerRoutesV1UserSchemasGroupInvite.md) |  | 
 
 ## Example
