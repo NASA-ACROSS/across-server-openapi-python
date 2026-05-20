@@ -1,7 +1,7 @@
 sdk: ## Generate sdk client
 	@docker run --rm \
 		-v ${PWD}:/local \
-			openapitools/openapi-generator-cli generate \
+			openapitools/openapi-generator-cli:v7.14.0 generate \
 		-i /local/openapi.json \
 		-g python \
 		-o /local/. \

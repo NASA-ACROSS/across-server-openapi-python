@@ -79,7 +79,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_telescopes**
-> List[Telescope] get_telescopes(name=name, instrument_id=instrument_id, instrument_name=instrument_name, created_on=created_on, include_filters=include_filters, include_footprints=include_footprints)
+> List[Telescope] get_telescopes(name=name, observatory_id=observatory_id, observatory_name=observatory_name, instrument_id=instrument_id, instrument_name=instrument_name, created_on=created_on, include_filters=include_filters, include_footprints=include_footprints)
 
 Read telescopes(s)
 
@@ -106,6 +106,8 @@ with across.sdk.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = across.sdk.v1.TelescopeApi(api_client)
     name = 'name_example' # str |  (optional)
+    observatory_id = 'observatory_id_example' # str |  (optional)
+    observatory_name = 'observatory_name_example' # str |  (optional)
     instrument_id = 'instrument_id_example' # str |  (optional)
     instrument_name = 'instrument_name_example' # str |  (optional)
     created_on = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
@@ -114,7 +116,7 @@ with across.sdk.v1.ApiClient(configuration) as api_client:
 
     try:
         # Read telescopes(s)
-        api_response = api_instance.get_telescopes(name=name, instrument_id=instrument_id, instrument_name=instrument_name, created_on=created_on, include_filters=include_filters, include_footprints=include_footprints)
+        api_response = api_instance.get_telescopes(name=name, observatory_id=observatory_id, observatory_name=observatory_name, instrument_id=instrument_id, instrument_name=instrument_name, created_on=created_on, include_filters=include_filters, include_footprints=include_footprints)
         print("The response of TelescopeApi->get_telescopes:\n")
         pprint(api_response)
     except Exception as e:
@@ -129,6 +131,8 @@ with across.sdk.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**|  | [optional] 
+ **observatory_id** | **str**|  | [optional] 
+ **observatory_name** | **str**|  | [optional] 
  **instrument_id** | **str**|  | [optional] 
  **instrument_name** | **str**|  | [optional] 
  **created_on** | **datetime**|  | [optional] 
