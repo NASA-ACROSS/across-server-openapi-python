@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/NASA-ACROSS/across-server-openapi-python/compare/v1.2.0...v1.3.0) (2026-05-20)
+
+
+### Features
+
+* generate for v1.4 ([#32](https://github.com/NASA-ACROSS/across-server-openapi-python/issues/32)) ([0ebfa21](https://github.com/NASA-ACROSS/across-server-openapi-python/commit/0ebfa21fa0be5fbe245a10e66807f7a00b4659ad))
+
 ## [1.2.0](https://github.com/NASA-ACROSS/across-server-openapi-python/compare/v1.1.1...v1.2.0) (2026-04-03)
 
 
