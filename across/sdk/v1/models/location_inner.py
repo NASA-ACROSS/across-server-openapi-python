@@ -17,33 +17,28 @@ from inspect import getfullargspec
 import json
 import pprint
 import re  # noqa: F401
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, ValidationError, field_validator
 from typing import Optional
-from across.sdk.v1.models.energy_bandpass import EnergyBandpass
-from across.sdk.v1.models.frequency_bandpass import FrequencyBandpass
-from across.sdk.v1.models.wavelength_bandpass import WavelengthBandpass
 from typing import Union, Any, List, Set, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field
 
-BANDPASS_ANY_OF_SCHEMAS = ["EnergyBandpass", "FrequencyBandpass", "WavelengthBandpass"]
+LOCATIONINNER_ANY_OF_SCHEMAS = ["int", "str"]
 
-class Bandpass(BaseModel):
+class LocationInner(BaseModel):
     """
-    Bandpass
+    LocationInner
     """
 
-    # data type: EnergyBandpass
-    anyof_schema_1_validator: Optional[EnergyBandpass] = None
-    # data type: FrequencyBandpass
-    anyof_schema_2_validator: Optional[FrequencyBandpass] = None
-    # data type: WavelengthBandpass
-    anyof_schema_3_validator: Optional[WavelengthBandpass] = None
+    # data type: str
+    anyof_schema_1_validator: Optional[StrictStr] = None
+    # data type: int
+    anyof_schema_2_validator: Optional[StrictInt] = None
     if TYPE_CHECKING:
-        actual_instance: Optional[Union[EnergyBandpass, FrequencyBandpass, WavelengthBandpass]] = None
+        actual_instance: Optional[Union[int, str]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: Set[str] = { "EnergyBandpass", "FrequencyBandpass", "WavelengthBandpass" }
+    any_of_schemas: Set[str] = { "int", "str" }
 
     model_config = {
         "validate_assignment": True,
@@ -62,29 +57,23 @@ class Bandpass(BaseModel):
 
     @field_validator('actual_instance')
     def actual_instance_must_validate_anyof(cls, v):
-        instance = Bandpass.model_construct()
+        instance = LocationInner.model_construct()
         error_messages = []
-        # validate data type: EnergyBandpass
-        if not isinstance(v, EnergyBandpass):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `EnergyBandpass`")
-        else:
+        # validate data type: str
+        try:
+            instance.anyof_schema_1_validator = v
             return v
-
-        # validate data type: FrequencyBandpass
-        if not isinstance(v, FrequencyBandpass):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `FrequencyBandpass`")
-        else:
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # validate data type: int
+        try:
+            instance.anyof_schema_2_validator = v
             return v
-
-        # validate data type: WavelengthBandpass
-        if not isinstance(v, WavelengthBandpass):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `WavelengthBandpass`")
-        else:
-            return v
-
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         if error_messages:
             # no match
-            raise ValueError("No match found when setting the actual_instance in Bandpass with anyOf schemas: EnergyBandpass, FrequencyBandpass, WavelengthBandpass. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting the actual_instance in LocationInner with anyOf schemas: int, str. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -97,28 +86,28 @@ class Bandpass(BaseModel):
         """Returns the object represented by the json string"""
         instance = cls.model_construct()
         error_messages = []
-        # anyof_schema_1_validator: Optional[EnergyBandpass] = None
+        # deserialize data into str
         try:
-            instance.actual_instance = EnergyBandpass.from_json(json_str)
+            # validation
+            instance.anyof_schema_1_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.anyof_schema_1_validator
             return instance
         except (ValidationError, ValueError) as e:
-             error_messages.append(str(e))
-        # anyof_schema_2_validator: Optional[FrequencyBandpass] = None
+            error_messages.append(str(e))
+        # deserialize data into int
         try:
-            instance.actual_instance = FrequencyBandpass.from_json(json_str)
+            # validation
+            instance.anyof_schema_2_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.anyof_schema_2_validator
             return instance
         except (ValidationError, ValueError) as e:
-             error_messages.append(str(e))
-        # anyof_schema_3_validator: Optional[WavelengthBandpass] = None
-        try:
-            instance.actual_instance = WavelengthBandpass.from_json(json_str)
-            return instance
-        except (ValidationError, ValueError) as e:
-             error_messages.append(str(e))
+            error_messages.append(str(e))
 
         if error_messages:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into Bandpass with anyOf schemas: EnergyBandpass, FrequencyBandpass, WavelengthBandpass. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into LocationInner with anyOf schemas: int, str. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -132,7 +121,7 @@ class Bandpass(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], EnergyBandpass, FrequencyBandpass, WavelengthBandpass]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], int, str]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

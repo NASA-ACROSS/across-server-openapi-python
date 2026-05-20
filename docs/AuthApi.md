@@ -4,11 +4,82 @@ All URIs are relative to */api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**local_token_auth_local_token_get**](AuthApi.md#local_token_auth_local_token_get) | **GET** /auth/local-token | Local Token
 [**login**](AuthApi.md#login) | **POST** /auth/login | Login
 [**refresh**](AuthApi.md#refresh) | **POST** /auth/refresh | Refresh Token
 [**token**](AuthApi.md#token) | **POST** /auth/token | Token
 [**verify**](AuthApi.md#verify) | **GET** /auth/verify | Verify
 
+
+# **local_token_auth_local_token_get**
+> str local_token_auth_local_token_get(email)
+
+Local Token
+
+For local only, directly return an access token for testing purposes
+that expires after 1 day
+
+### Example
+
+
+```python
+import across.sdk.v1
+from across.sdk.v1.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = across.sdk.v1.Configuration(
+    host = "/api/v1"
+)
+
+
+# Enter a context with an instance of the API client
+with across.sdk.v1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = across.sdk.v1.AuthApi(api_client)
+    email = 'email_example' # str | 
+
+    try:
+        # Local Token
+        api_response = api_instance.local_token_auth_local_token_get(email)
+        print("The response of AuthApi->local_token_auth_local_token_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthApi->local_token_auth_local_token_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **str**|  | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **login**
 > Dict[str, object] login(email)

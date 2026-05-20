@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**decline_invite**](UserApi.md#decline_invite) | **DELETE** /user/{user_id}/invite/{invite_id} | Decline a group invitation
 [**delete_user**](UserApi.md#delete_user) | **DELETE** /user/{user_id} | Deactivate a user
 [**get_group_invites**](UserApi.md#get_group_invites) | **GET** /user/{user_id}/invite | Read a user&#39;s group invites
+[**get_many_user_get**](UserApi.md#get_many_user_get) | **GET** /user/ | Read users
 [**get_user**](UserApi.md#get_user) | **GET** /user/{user_id} | Read a user
 [**leave_group**](UserApi.md#leave_group) | **DELETE** /user/{user_id}/group/{group_id} | Leave a group
 [**update_user**](UserApi.md#update_user) | **PATCH** /user/{user_id} | Update a user
@@ -409,6 +410,71 @@ Name | Type | Description  | Notes
 **200** | List of group invites for a user id |  -  |
 **404** | The user does not exist. |  -  |
 **422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_many_user_get**
+> List[AcrossServerRoutesV1UserSchemasUser] get_many_user_get()
+
+Read users
+
+Read many users
+
+### Example
+
+
+```python
+import across.sdk.v1
+from across.sdk.v1.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
+from across.sdk.v1.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = across.sdk.v1.Configuration(
+    host = "/api/v1"
+)
+
+
+# Enter a context with an instance of the API client
+with across.sdk.v1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = across.sdk.v1.UserApi(api_client)
+
+    try:
+        # Read users
+        api_response = api_instance.get_many_user_get()
+        print("The response of UserApi->get_many_user_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UserApi->get_many_user_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List[AcrossServerRoutesV1UserSchemasUser]**](AcrossServerRoutesV1UserSchemasUser.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | The user does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

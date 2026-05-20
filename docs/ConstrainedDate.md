@@ -6,7 +6,7 @@ Represents a constrained date.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**datetime** | [**Datetime**](Datetime.md) |  | 
+**datetime** | **datetime** |  | 
 **constraint** | [**ConstraintType**](ConstraintType.md) |  | 
 **observatory_id** | **str** |  | 
 

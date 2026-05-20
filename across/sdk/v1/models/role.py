@@ -19,18 +19,18 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List
-from across.sdk.v1.models.permission import Permission
+from across.sdk.v1.models.user import User
 from typing import Optional, Set
 from typing_extensions import Self
 
-class GroupRoleRead(BaseModel):
+class Role(BaseModel):
     """
-    GroupRoleRead
+    Role
     """ # noqa: E501
-    name: StrictStr
-    permissions: List[Permission]
     id: StrictStr
-    __properties: ClassVar[List[str]] = ["name", "permissions", "id"]
+    name: StrictStr
+    users: List[User]
+    __properties: ClassVar[List[str]] = ["id", "name", "users"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +50,7 @@ class GroupRoleRead(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of GroupRoleRead from a JSON string"""
+        """Create an instance of Role from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,18 +71,18 @@ class GroupRoleRead(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in permissions (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in users (list)
         _items = []
-        if self.permissions:
-            for _item_permissions in self.permissions:
-                if _item_permissions:
-                    _items.append(_item_permissions.to_dict())
-            _dict['permissions'] = _items
+        if self.users:
+            for _item_users in self.users:
+                if _item_users:
+                    _items.append(_item_users.to_dict())
+            _dict['users'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of GroupRoleRead from a dict"""
+        """Create an instance of Role from a dict"""
         if obj is None:
             return None
 
@@ -90,9 +90,9 @@ class GroupRoleRead(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "id": obj.get("id"),
             "name": obj.get("name"),
-            "permissions": [Permission.from_dict(_item) for _item in obj["permissions"]] if obj.get("permissions") is not None else None,
-            "id": obj.get("id")
+            "users": [User.from_dict(_item) for _item in obj["users"]] if obj.get("users") is not None else None
         })
         return _obj
 

@@ -14,6 +14,7 @@ across/sdk/v1/api/internal_api.py
 across/sdk/v1/api/observation_api.py
 across/sdk/v1/api/observatory_api.py
 across/sdk/v1/api/permission_api.py
+across/sdk/v1/api/role_api.py
 across/sdk/v1/api/schedule_api.py
 across/sdk/v1/api/service_account_api.py
 across/sdk/v1/api/telescope_api.py
@@ -28,7 +29,8 @@ across/sdk/v1/models/__init__.py
 across/sdk/v1/models/access_token_response.py
 across/sdk/v1/models/across_server_routes_v1_group_role_schemas_group_role.py
 across/sdk/v1/models/across_server_routes_v1_group_role_schemas_user.py
-across/sdk/v1/models/across_server_routes_v1_group_schemas_group.py
+across/sdk/v1/models/across_server_routes_v1_group_schemas_user.py
+across/sdk/v1/models/across_server_routes_v1_user_schemas_group.py
 across/sdk/v1/models/across_server_routes_v1_user_schemas_group_invite.py
 across/sdk/v1/models/across_server_routes_v1_user_schemas_user.py
 across/sdk/v1/models/across_server_routes_v1_user_service_account_schemas_service_account.py
@@ -39,7 +41,6 @@ across/sdk/v1/models/constraint_reason.py
 across/sdk/v1/models/constraint_type.py
 across/sdk/v1/models/coordinate.py
 across/sdk/v1/models/date_range.py
-across/sdk/v1/models/datetime.py
 across/sdk/v1/models/depth_unit.py
 across/sdk/v1/models/energy_bandpass.py
 across/sdk/v1/models/energy_unit.py
@@ -81,6 +82,7 @@ across/sdk/v1/models/page_schedule.py
 across/sdk/v1/models/parameters.py
 across/sdk/v1/models/permission.py
 across/sdk/v1/models/point.py
+across/sdk/v1/models/role.py
 across/sdk/v1/models/role_base.py
 across/sdk/v1/models/schedule.py
 across/sdk/v1/models/schedule_cadence.py
@@ -117,7 +119,8 @@ across/sdk/v1/rest.py
 docs/AccessTokenResponse.md
 docs/AcrossServerRoutesV1GroupRoleSchemasGroupRole.md
 docs/AcrossServerRoutesV1GroupRoleSchemasUser.md
-docs/AcrossServerRoutesV1GroupSchemasGroup.md
+docs/AcrossServerRoutesV1GroupSchemasUser.md
+docs/AcrossServerRoutesV1UserSchemasGroup.md
 docs/AcrossServerRoutesV1UserSchemasGroupInvite.md
 docs/AcrossServerRoutesV1UserSchemasUser.md
 docs/AcrossServerRoutesV1UserServiceAccountSchemasServiceAccount.md
@@ -129,7 +132,6 @@ docs/ConstraintReason.md
 docs/ConstraintType.md
 docs/Coordinate.md
 docs/DateRange.md
-docs/Datetime.md
 docs/DepthUnit.md
 docs/EnergyBandpass.md
 docs/EnergyUnit.md
@@ -180,6 +182,8 @@ docs/Parameters.md
 docs/Permission.md
 docs/PermissionApi.md
 docs/Point.md
+docs/Role.md
+docs/RoleApi.md
 docs/RoleBase.md
 docs/SPICEParameters.md
 docs/Schedule.md

@@ -1,32 +1,27 @@
-# User
+# LocationInner
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | 
-**first_name** | **str** |  | 
-**last_name** | **str** |  | 
-**username** | **str** |  | 
-**email** | **str** |  | 
 
 ## Example
 
 ```python
-from across.sdk.v1.models.user import User
+from across.sdk.v1.models.location_inner import LocationInner
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of User from a JSON string
-user_instance = User.from_json(json)
+# create an instance of LocationInner from a JSON string
+location_inner_instance = LocationInner.from_json(json)
 # print the JSON string representation of the object
-print(User.to_json())
+print(LocationInner.to_json())
 
 # convert the object into a dict
-user_dict = user_instance.to_dict()
-# create an instance of User from a dict
-user_from_dict = User.from_dict(user_dict)
+location_inner_dict = location_inner_instance.to_dict()
+# create an instance of LocationInner from a dict
+location_inner_from_dict = LocationInner.from_dict(location_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
