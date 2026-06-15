@@ -1,6 +1,6 @@
 # across.sdk.v1.ScheduleApi
 
-All URIs are relative to */api/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,10 +28,10 @@ from across.sdk.v1.models.schedule_create_many import ScheduleCreateMany
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -108,10 +108,10 @@ from across.sdk.v1.models.schedule_create import ScheduleCreate
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -188,10 +188,10 @@ from across.sdk.v1.models.schedule import Schedule
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 
@@ -264,10 +264,10 @@ from across.sdk.v1.models.schedule_status import ScheduleStatus
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 
@@ -364,10 +364,10 @@ from across.sdk.v1.models.schedule_status import ScheduleStatus
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 

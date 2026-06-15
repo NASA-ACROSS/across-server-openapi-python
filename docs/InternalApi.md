@@ -1,11 +1,11 @@
 # across.sdk.v1.InternalApi
 
-All URIs are relative to */api/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_service_account**](InternalApi.md#get_service_account) | **GET** /service-account/{service_account_id} | Get a system service account
-[**service_account_rotate_key**](InternalApi.md#service_account_rotate_key) | **PATCH** /service-account/{service_account_id}/rotate_key | Rotate a service account key
+[**service_account_rotate_key**](InternalApi.md#service_account_rotate_key) | **PATCH** /service-account/{service_account_id}/rotate-key | Rotate a service account key
 
 
 # **get_service_account**
@@ -25,10 +25,10 @@ from across.sdk.v1.models.system_service_account import SystemServiceAccount
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -105,10 +105,10 @@ from across.sdk.v1.models.service_account_secret import ServiceAccountSecret
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **permissions** | [**List[Permission]**](Permission.md) |  | 
 **id** | **str** |  | 
+**group** | [**AcrossServerRoutesV1GroupRoleSchemasGroup**](AcrossServerRoutesV1GroupRoleSchemasGroup.md) |  | 
 
 ## Example
 

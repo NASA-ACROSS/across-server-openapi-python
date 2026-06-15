@@ -8,8 +8,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **name** | **str** |  | 
 **short_name** | **str** |  | 
-**users** | [**List[AcrossServerRoutesV1GroupSchemasUser]**](AcrossServerRoutesV1GroupSchemasUser.md) |  | 
-**roles** | [**List[AcrossServerRoutesV1GroupRoleSchemasGroupRole]**](AcrossServerRoutesV1GroupRoleSchemasGroupRole.md) |  | 
+**roles** | [**List[AcrossServerRoutesV1UserSchemasGroupRole]**](AcrossServerRoutesV1UserSchemasGroupRole.md) |  | 
 
 ## Example
 

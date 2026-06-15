@@ -1,6 +1,6 @@
 # across.sdk.v1.GroupApi
 
-All URIs are relative to */api/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **get_group**
-> Group get_group(group_id)
+> AcrossServerRoutesV1GroupSchemasGroup get_group(group_id)
 
 Read a group
 
@@ -22,14 +22,14 @@ Read a group by role ID.
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.group import Group
+from across.sdk.v1.models.across_server_routes_v1_group_schemas_group import AcrossServerRoutesV1GroupSchemasGroup
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Group**](Group.md)
+[**AcrossServerRoutesV1GroupSchemasGroup**](AcrossServerRoutesV1GroupSchemasGroup.md)
 
 ### Authorization
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_many_group_get**
-> List[Group] get_many_group_get()
+> List[AcrossServerRoutesV1GroupSchemasGroup] get_many_group_get()
 
 Read groups
 
@@ -101,14 +101,14 @@ Read many groups
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.group import Group
+from across.sdk.v1.models.across_server_routes_v1_group_schemas_group import AcrossServerRoutesV1GroupSchemasGroup
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 
@@ -134,7 +134,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[Group]**](Group.md)
+[**List[AcrossServerRoutesV1GroupSchemasGroup]**](AcrossServerRoutesV1GroupSchemasGroup.md)
 
 ### Authorization
 
@@ -170,10 +170,10 @@ import across.sdk.v1
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters

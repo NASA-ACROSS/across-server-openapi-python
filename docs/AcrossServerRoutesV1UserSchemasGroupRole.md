@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **name** | **str** |  | 
 **permissions** | [**List[Permission]**](Permission.md) |  | 
+**group** | [**GroupBase**](GroupBase.md) |  | 
 
 ## Example
 

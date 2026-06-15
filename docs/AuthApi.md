@@ -1,6 +1,6 @@
 # across.sdk.v1.AuthApi
 
-All URIs are relative to */api/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,10 +27,10 @@ import across.sdk.v1
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 
@@ -95,10 +95,10 @@ import across.sdk.v1
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -173,10 +173,10 @@ from across.sdk.v1.models.access_token_response import AccessTokenResponse
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -251,10 +251,10 @@ from across.sdk.v1.models.grant_type import GrantType
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -334,10 +334,10 @@ from across.sdk.v1.models.access_token_response import AccessTokenResponse
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 
