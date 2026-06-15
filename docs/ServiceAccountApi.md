@@ -1,17 +1,17 @@
 # across.sdk.v1.ServiceAccountApi
 
-All URIs are relative to */api/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**assign_to_service_account**](ServiceAccountApi.md#assign_to_service_account) | **POST** /user/{user_id}/service-account/{service_account_id}/group-role/{group_role_id} | Assign group role
-[**create_user_service_account**](ServiceAccountApi.md#create_user_service_account) | **POST** /user/{user_id}/service_account/ | Create a service account
-[**delete_user_service_account**](ServiceAccountApi.md#delete_user_service_account) | **DELETE** /user/{user_id}/service_account/{service_account_id} | Delete a service_account
-[**get_service_accounts**](ServiceAccountApi.md#get_service_accounts) | **GET** /user/{user_id}/service_account/ | Read service accounts
-[**get_user_service_account**](ServiceAccountApi.md#get_user_service_account) | **GET** /user/{user_id}/service_account/{service_account_id} | Read a service account
+[**create_user_service_account**](ServiceAccountApi.md#create_user_service_account) | **POST** /user/{user_id}/service-account/ | Create a service account
+[**delete_user_service_account**](ServiceAccountApi.md#delete_user_service_account) | **DELETE** /user/{user_id}/service-account/{service_account_id} | Delete a service_account
+[**get_service_accounts**](ServiceAccountApi.md#get_service_accounts) | **GET** /user/{user_id}/service-account/ | Read service accounts
+[**get_user_service_account**](ServiceAccountApi.md#get_user_service_account) | **GET** /user/{user_id}/service-account/{service_account_id} | Read a service account
 [**remove_from_service_account**](ServiceAccountApi.md#remove_from_service_account) | **DELETE** /user/{user_id}/service-account/{service_account_id}/group-role/{group_role_id} | Remove group role
-[**update_user_service_account**](ServiceAccountApi.md#update_user_service_account) | **PATCH** /user/{user_id}/service_account/{service_account_id} | Update a service account
-[**user_service_account_rotate_key**](ServiceAccountApi.md#user_service_account_rotate_key) | **PATCH** /user/{user_id}/service_account/{service_account_id}/rotate_key | Rotate a service account key
+[**update_user_service_account**](ServiceAccountApi.md#update_user_service_account) | **PATCH** /user/{user_id}/service-account/{service_account_id} | Update a service account
+[**user_service_account_rotate_key**](ServiceAccountApi.md#user_service_account_rotate_key) | **PATCH** /user/{user_id}/service-account/{service_account_id}/rotate-key | Rotate a service account key
 
 
 # **assign_to_service_account**
@@ -31,10 +31,10 @@ from across.sdk.v1.models.across_server_routes_v1_user_service_account_schemas_s
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -116,10 +116,10 @@ from across.sdk.v1.models.service_account_secret import ServiceAccountSecret
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -197,10 +197,10 @@ import across.sdk.v1
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -277,10 +277,10 @@ from across.sdk.v1.models.across_server_routes_v1_user_service_account_schemas_s
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -357,10 +357,10 @@ from across.sdk.v1.models.across_server_routes_v1_user_service_account_schemas_s
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -439,10 +439,10 @@ from across.sdk.v1.models.across_server_routes_v1_user_service_account_schemas_s
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -524,10 +524,10 @@ from across.sdk.v1.models.service_account_update import ServiceAccountUpdate
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -608,10 +608,10 @@ from across.sdk.v1.models.across_server_routes_v1_user_service_account_schemas_s
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters

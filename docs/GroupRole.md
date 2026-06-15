@@ -5,9 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | 
 **name** | **str** |  | 
 **permissions** | [**List[Permission]**](Permission.md) |  | 
+**id** | **str** |  | 
+**group** | [**AcrossServerRoutesV1GroupRoleSchemasGroup**](AcrossServerRoutesV1GroupRoleSchemasGroup.md) |  | 
+**users** | [**List[AcrossServerRoutesV1GroupRoleSchemasUser]**](AcrossServerRoutesV1GroupRoleSchemasUser.md) |  | 
+**service_accounts** | [**List[ServiceAccount]**](ServiceAccount.md) |  | 
 
 ## Example
 

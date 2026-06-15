@@ -2,6 +2,8 @@
 
 # import apis into api package
 from across.sdk.v1.api.auth_api import AuthApi
+from across.sdk.v1.api.broker_alert_api import BrokerAlertApi
+from across.sdk.v1.api.broker_event_api import BrokerEventApi
 from across.sdk.v1.api.filter_api import FilterApi
 from across.sdk.v1.api.group_api import GroupApi
 from across.sdk.v1.api.group_invite_api import GroupInviteApi

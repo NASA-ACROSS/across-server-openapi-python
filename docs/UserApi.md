@@ -1,6 +1,6 @@
 # across.sdk.v1.UserApi
 
-All URIs are relative to */api/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,10 +31,10 @@ import across.sdk.v1
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -111,10 +111,10 @@ from across.sdk.v1.models.user_create import UserCreate
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -190,10 +190,10 @@ import across.sdk.v1
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -254,7 +254,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_user**
-> AcrossServerRoutesV1UserSchemasUser delete_user(user_id)
+> User delete_user(user_id)
 
 Deactivate a user
 
@@ -266,14 +266,14 @@ Deactivate a user in the ACROSS system. This will also deactivate all associated
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
+from across.sdk.v1.models.user import User
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AcrossServerRoutesV1UserSchemasUser**](AcrossServerRoutesV1UserSchemasUser.md)
+[**User**](User.md)
 
 ### Authorization
 
@@ -350,10 +350,10 @@ from across.sdk.v1.models.across_server_routes_v1_user_schemas_group_invite impo
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_many_user_get**
-> List[AcrossServerRoutesV1UserSchemasUser] get_many_user_get()
+> List[User] get_many_user_get()
 
 Read users
 
@@ -425,14 +425,14 @@ Read many users
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
+from across.sdk.v1.models.user import User
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 
@@ -458,7 +458,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[AcrossServerRoutesV1UserSchemasUser]**](AcrossServerRoutesV1UserSchemasUser.md)
+[**List[User]**](User.md)
 
 ### Authorization
 
@@ -479,7 +479,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user**
-> AcrossServerRoutesV1UserSchemasUser get_user(user_id)
+> User get_user(user_id)
 
 Read a user
 
@@ -491,14 +491,14 @@ Read a user by a user ID.
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
+from across.sdk.v1.models.user import User
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AcrossServerRoutesV1UserSchemasUser**](AcrossServerRoutesV1UserSchemasUser.md)
+[**User**](User.md)
 
 ### Authorization
 
@@ -574,10 +574,10 @@ import across.sdk.v1
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -638,7 +638,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_user**
-> AcrossServerRoutesV1UserSchemasUser update_user(user_id, user_update)
+> User update_user(user_id, user_update)
 
 Update a user
 
@@ -650,15 +650,15 @@ Update a user's information for the allowed properties.
 
 ```python
 import across.sdk.v1
-from across.sdk.v1.models.across_server_routes_v1_user_schemas_user import AcrossServerRoutesV1UserSchemasUser
+from across.sdk.v1.models.user import User
 from across.sdk.v1.models.user_update import UserUpdate
 from across.sdk.v1.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v1
+# Defining the host is optional and defaults to /v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = across.sdk.v1.Configuration(
-    host = "/api/v1"
+    host = "/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -699,7 +699,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AcrossServerRoutesV1UserSchemasUser**](AcrossServerRoutesV1UserSchemasUser.md)
+[**User**](User.md)
 
 ### Authorization
 

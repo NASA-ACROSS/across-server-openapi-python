@@ -5,11 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | 
+**username** | **str** |  | 
 **first_name** | **str** |  | 
 **last_name** | **str** |  | 
-**username** | **str** |  | 
 **email** | **str** |  | 
+**id** | **str** |  | 
+**groups** | [**List[Group]**](Group.md) |  | 
+**roles** | [**List[RoleBase]**](RoleBase.md) |  | 
+**group_roles** | [**List[AcrossServerRoutesV1UserSchemasGroupRole]**](AcrossServerRoutesV1UserSchemasGroupRole.md) |  | 
+**received_invites** | [**List[AcrossServerRoutesV1UserSchemasGroupInvite]**](AcrossServerRoutesV1UserSchemasGroupInvite.md) |  | 
 
 ## Example
 
