@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/NASA-ACROSS/across-server-openapi-python/compare/v1.3.0...v1.4.0) (2026-06-15)
+
+
+### Features
+
+* generate sdk for 1.6.0 ([#34](https://github.com/NASA-ACROSS/across-server-openapi-python/issues/34)) ([13698ec](https://github.com/NASA-ACROSS/across-server-openapi-python/commit/13698ec0b1fd5d2fd4862dc9e92f02032fdff5d7))
+
 ## [1.3.0](https://github.com/NASA-ACROSS/across-server-openapi-python/compare/v1.2.0...v1.3.0) (2026-05-20)
 
 
